@@ -1,4 +1,4 @@
-# Intermediate Website – Hypermarket
+# Intermediate Websites – Hypermarket
 
 An intermediate-level website for a hypermarket built with **HTML**, **CSS**, and **JavaScript**.
 
