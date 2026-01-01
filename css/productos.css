@@ -1,0 +1,986 @@
+
+/* Reset básico */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* Fondos */
+#fondo_muebles_y_decoracion {
+    background-image: url('../imagenes/fondos/fondo_m.jpg');
+}
+
+#fondo_alimentos {
+    background-image: url('../imagenes/fondos/fondo.avif');
+}
+
+#fondo_electrodomesticos {
+    background-image: url('../imagenes/fondos/electrodomesticos.jpg');
+}
+
+#fondo_tecnologia {
+    background-image: url('../imagenes/fondos/tecnologia.jpg');
+}
+
+#fondo_ropa {
+    background-image: url('../imagenes/fondos/ropa.jpg');
+}
+
+#fondo_farmacia {
+    background-image: url('../imagenes/fondos/farmacia.jpg');
+}
+
+#ferreteria {
+    background-image: url('../imagenes/fondos/ferreteria.jpg');
+}
+
+
+
+/* Header */
+header {
+    background-color: rgba(0,0,0,0.8);
+    padding: 5px 30px;
+    border-radius: 20px;
+    width: fit-content;  /* La propiedad width: fit-content; ajusta automáticamente el ancho del elemento al tamaño mínimo necesario para que quepa su contenido */
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    white-space: nowrap;  /* white-space: nowrap; impide que el texto o los elementos hijos pasen a una nueva línea es decir, todo el contenido se mantiene en una sola línea */
+    position: fixed;           /* fijo en la ventana */
+    top: 20px;                 /* margen superior */
+    left: 50%;                 /* posición horizontal desde el centro */
+    transform: translateX(-50%); /* centra el header horizontalmente de forma perfecta */
+    width: fit-content;        /* ancho según contenido */
+    z-index: 1000;    /* el header Siempre estará visible por encima de otros elementos de la página en el eje z */
+}
+
+header  img {
+    width: 45px;
+    height: auto;
+}
+
+header  div {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-family: 'Domine-Bold', serif;
+    
+}
+
+header a.logo-header { /* logo clickeable */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none; /* quitar subrayado */
+    color: white; /* para que el h1 mantenga el color */
+}
+header a.logo-header div {
+    margin: 0;
+}
+
+/* Main */
+
+main {
+    text-align: center;
+    margin-top: 160px; /* separacion ideal del main y el header fijo*/
+}
+
+/* section */
+.producto-detalle {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+}
+
+
+/* Contenedor del producto */
+.contenedor-producto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.imagen-producto img {
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.info-producto {
+  max-width: 500px;
+  text-align: left;
+}
+
+.info-producto h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.precio {
+  font-size: 24px;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.descripcion {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.detalles {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  
+}
+
+.detalles li {
+  margin-bottom: 8px;
+}
+
+.btn-comprar {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-comprar:hover {
+  background-color: #e68900;
+}
+
+
+
+/* nav */
+
+nav.menu > ul {   /* Selecciona solo los elementos <ul> que son hijos directos de un elemento <nav> con clase menu. */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+/* Nivel 1 links */
+nav.menu > ul > li {
+    position: relative;
+}
+nav.menu > ul > li > a {
+    display: block;
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+nav.menu > ul > li:hover > a {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* Nivel 2 */
+nav.menu > ul > li > ul {
+    display: none; /* oculto por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 5px;
+    min-width: 160px;
+    z-index: 1000;
+}
+nav.menu > ul > li:hover > ul {
+    display: flex; /* mostrar al hacer hover sobre nivel 1 */
+}
+
+/* Nivel 3 y subniveles */
+nav.menu ul li ul li {
+    position: relative;
+}
+nav.menu ul li ul li > ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 5px;
+    min-width: 160px;
+}
+nav.menu ul li ul li:hover > ul {
+    display: flex;
+}
+
+
+/* Nivel 1: flecha hacia abajo solo si tiene submenú directo */
+nav.menu > ul > li:has(> ul) > a::after {
+    content: " ▼";
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Nivel 2: flecha hacia la derecha solo si tiene submenú directo */
+nav.menu > ul > li > ul > li:has(> ul) > a::after {
+    content: " ▶";
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+/* Nivel 3: subnivel de submenú, flecha hacia la derecha */
+nav.menu > ul > li > ul > li > ul > li:has(> ul) > a::after {
+    content: " ▶";
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+
+/* Links en submenús */
+nav.menu ul li ul li a {
+    padding: 8px 12px;
+    white-space: nowrap;
+}
+
+/* Estilo general de links y hover */
+nav.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+}
+nav.menu a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+
+
+
+
+
+/* ========================== SECCIONES ========================== */
+    
+
+
+/* Aseguramos que las secciones ocupen todo el ancho */
+section {
+    width: 100%;
+    box-sizing: border-box; /* para que el padding no expanda más allá del 100% */
+}
+
+/* Si quieres mantener el contenido centrado dentro de la sección */
+section > * {
+    margin: 0 auto;  
+}
+
+
+
+/* footer */
+footer {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 15px;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+ /* breadcrumb */
+.breadcrumb {
+  background-color: rgba(0,0,0,0.8);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 20px;
+  
+  /* Centrado bajo el header fijo */
+  position: fixed;
+  top: 80px;                /* ajusta según la altura real del header */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  
+}
+
+/* Enlaces dentro del breadcrumb */
+.breadcrumb a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+   background-color: rgba(255,255,255,0.2);
+}
+
+/* Separadores (›) */
+.breadcrumb span,
+.breadcrumb a {
+  margin: 0 5px;
+}
+
+/* Página actual */
+.breadcrumb .actual {
+  font-weight: bold;
+  color: #ffcc00;
+  
+}
+
+
+
+/* Sección Productos Similares */
+
+.productos-similares {
+    padding: 30px 20px;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,0.8);
+    max-width: 1200px;  /* ancho máximo deseado */
+    margin: 0 auto;     /* centra horizontalmente */
+    border-radius: 20px;
+    height: 500px; /* alto fijo */
+    margin-bottom: 20px;
+}
+
+/* Título centrado con fondo negro transparente */
+.productos-similares h2 {
+    font-size: 28px;
+    color: white;
+    padding: 1px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    display: inline-block; /* ajusta el fondo al texto */
+    margin-bottom: 30px;
+}
+
+/* tarjeta de productos */
+.productos-similares .producto {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 18px;
+    border-radius: 10px;
+    width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+     flex: 0 0 auto; /* evita que se encojan */
+     height: 290px;       /* Ajusta la altura  */
+    overflow: hidden;     /* Oculta lo que se salga */
+}
+
+
+/* Contenedor de productos para fila horizontal */
+.productos-similares .productos-container {
+    display: flex;             /* coloca productos en fila */
+    gap: 20px;                 /* espacio entre productos */
+    overflow-x: auto;          /* permite scroll horizontal */
+    scroll-behavior: smooth;   /* animación suave al hacer scroll */
+     padding: 0 20px; /* espacio a los lados */
+}
+
+
+/* scrollbar */
+.productos-similares .productos-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 4px;
+}
+.productos-similares .productos-container::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0.2);
+}
+
+/* Para Firefox */
+.productos-similares .productos-container {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.5) rgba(0,0,0,0.2);
+}
+
+/* ------------------------------------------------------------------------------- */
+
+
+/* Imagen del producto */
+.productos-similares .producto img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+      
+}
+
+
+/* Nombre del producto */
+.productos-similares .producto h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+/* Precio del producto */
+.productos-similares .producto p {
+    margin: 0;
+    font-size: 16px;
+    color:rgb(70, 69, 69)
+}
+
+/* Efecto al pasar el mouse */
+.productos-similares .producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* tarjeta de producto */
+
+.producto {    
+    display: inline-block;
+    background-color: rgba(255,255,255,0.8);
+    color: black;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    vertical-align: top;
+}
+.producto img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+/* Modal sin JavaScript usando :target */
+.modal-imagen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+    z-index: 9999;
+}
+
+/* MODAL AJUSTADO A LA PANTALLA */
+.modal-imagen img {
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Cuando se activa con el hash en la URL */
+.modal-imagen:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Botón invisible para cerrar al hacer clic fuera */
+.modal-imagen .cerrar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/* ========================== MEDIA QUERIES ========================== */
+@media (max-width: 480px) {
+
+    /* Header horizontal */
+    header {
+        flex-direction: row; /* mantener horizontal */
+        justify-content: center; /* centrar contenido */
+        width: fit-content; /* ajustar el ancho al tamaño del contenido */
+        padding: 5px;
+        border-radius: 8px;
+        gap: 8px;
+        flex-wrap: wrap; /* permite que el logo y h1 bajen si no caben en una línea */
+        margin: 10px auto;
+    }
+
+    header .logo-header {
+        gap: 4px;
+        flex: 1 1 auto; /* permite que se ajuste al espacio disponible */
+        justify-content: center;
+    }
+
+    header img {
+        width: 35px; /* reducir tamaño del logo */
+        height: auto;
+    }
+
+    header h1 {
+        font-size: 19px;
+        text-align: center;
+        flex: 1 1 auto; /* se adapta al espacio disponible */
+    }
+
+    /* menú */
+    nav.menu > ul {
+       display: flex;
+       gap: 5px; /* espacio entre los enlaces de nivel 1 */
+       font-size: 16px;
+       
+    }
+   
+    /* Nivel 2 oculto por defecto */
+      nav.menu > ul > li > ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: -80px;
+      flex-direction: column;
+      width: fit-content;      
+      max-width: 70vw;          /* no sobrepasar el ancho de la pantalla */
+      z-index: 1000;
+    
+   }
+
+   /* Mostrar submenú cuando el li o su enlace recibe foco (tocar) */
+   nav.menu > ul > li:focus-within > ul {
+    display: flex;
+   }
+
+  /* Nivel 3 también con focus-within */
+  nav.menu ul li ul li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;       /* se abre debajo del nivel 2 en móviles */
+    left: 40%;         /* se abre a la izquierda del nivel 2 en móviles */
+    width: fit-content;      /* ajustar el ancho al tamaño del contenido */
+    max-width: 95vw;         /* no sobrepasar la pantalla */
+    z-index: 2000;
+  }
+
+   nav.menu ul li ul li:focus-within > ul {
+      display: flex;
+   }
+
+    /* Breadcrumb centrado bajo el header */
+   .breadcrumb {
+        padding: 10px 2px;
+        font-size: 17px;
+        margin: 47px auto; /* centrado */
+        white-space: normal;  
+        width: 90vw;        /* importante para que existan solo dos lineas */
+    }
+   
+    
+
+  /* Main */
+   main {
+       margin-top: 198px;
+    }
+
+    /* Márgenes y centrado de todas las secciones */
+   section {
+     width: 95%;             /* ancho más reducido para dejar espacio a los lados */
+     max-width: 100%;       /* no se haga demasiado ancho en pantallas grandes */
+     margin: 30px auto;    /* margen superior e inferior más grande, y centrado horizontalmente */
+     box-sizing: border-box;  /* incluye padding en el ancho */
+   }
+
+  
+    /* section */
+    .producto-detalle {
+        padding: 10px 5px;
+        border-radius: 15px;
+        margin-top: 10px;
+    }
+
+    .contenedor-producto {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .imagen-producto img {
+        width: 100%;
+        
+    }
+
+    .info-producto {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .info-producto h1 {
+        font-size: 26px;
+    }
+
+    .info-producto p:first-of-type {
+        font-size: 24px;
+    }
+   
+    .info-producto p {
+           text-align: left;
+           font-size: 20px;
+    }
+
+    .info-producto .detalles {
+        text-decoration: none;
+        text-align: left;
+        font-size: 18px;
+    }
+
+     /* PRODUCTOS SIMILARES */
+    .productos-similares {
+        padding: 20px 10px;
+        height: auto; /* elimina alto fijo */
+    }
+
+    .productos-similares h2 {
+        font-size: 24px;
+        padding: 5px 10px;
+    }
+
+    .productos-similares .productos-container {
+        padding: 0 2px; /* espacio a los lados */
+        display: flex;
+        flex-direction: row; /* mantener fila horizontal */
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 15px; /* espacio inferior para scrollbar */
+        scroll-snap-type: x mandatory; /* para que "encaje" al hacer scroll */
+    }
+
+    .productos-similares .producto {
+        width: 150px;
+        height: auto;
+        height: 250px; /* altura fija, todos iguales */
+        flex: 0 0 35%;               /* cada producto ocupa 50% del ancho del móvil */
+        margin: 0;
+        max-width: 39vw;            /* no excede la mitad */
+        scroll-snap-align: center;
+      
+    }
+
+    .productos-similares .producto h3 {
+        font-size: 16px;
+    }
+
+    .productos-similares .producto p {
+        font-size: 14px;
+    }
+
+
+    /* Footer */
+
+    footer {
+    width: 100%;            /* mismo ancho que las secciones */
+    max-width: 100%;     /* igual que las demás secciones */
+    margin: 30px auto;     /* centrado horizontal y margen superior/inferior */
+    padding: 20px;         /* padding interno */
+    box-sizing: border-box; /* incluye padding en el ancho */
+    text-align: center;    /* centrado del contenido interno */
+    font-size: 22px;
+    }
+
+    .footer-content {
+        gap: 10px;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icons img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer-links a {
+        font-size: 20px;
+    }
+
+    html, body {
+    overflow-x: hidden;
+}
+
+
+}
+
+
+
+@media (max-width: 390px) {
+
+    /* Header horizontal */
+    header {
+        flex-direction: row; /* mantener horizontal */
+        justify-content: center; /* centrar contenido */
+        width: fit-content; /* ajustar el ancho al tamaño del contenido */
+        padding: 5px;
+        border-radius: 8px;
+        gap: 8px;
+        flex-wrap: wrap; /* permite que el logo y h1 bajen si no caben en una línea */
+        margin: 10px auto;
+    }
+
+    header .logo-header {
+        gap: 4px;
+        flex: 1 1 auto; /* permite que se ajuste al espacio disponible */
+        justify-content: center;
+    }
+
+    header img {
+        width: 35px; /* reducir tamaño del logo */
+        height: auto;
+    }
+
+    header h1 {
+        font-size: 18px;
+        text-align: center;
+        flex: 1 1 auto; /* se adapta al espacio disponible */
+    }
+
+    /* menú */
+    nav.menu > ul {
+       display: flex;
+       gap: 0px; /* espacio entre los enlaces de nivel 1 */
+       font-size: 16px;
+       
+    }
+   
+    /* Nivel 2 oculto por defecto */
+      nav.menu > ul > li > ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: -80px;
+      flex-direction: column;
+      width: fit-content;      
+      max-width: 70vw;          /* no sobrepasar el ancho de la pantalla */
+      z-index: 1000;
+    
+   }
+
+   /* Mostrar submenú cuando el li o su enlace recibe foco (tocar) */
+   nav.menu > ul > li:focus-within > ul {
+    display: flex;
+   }
+
+  /* Nivel 3 también con focus-within */
+  nav.menu ul li ul li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;       /* se abre debajo del nivel 2 en móviles */
+    left: 40%;         /* se abre a la izquierda del nivel 2 en móviles */
+    width: fit-content;      /* ajustar el ancho al tamaño del contenido */
+    max-width: 95vw;         /* no sobrepasar la pantalla */
+    z-index: 2000;
+  }
+
+   nav.menu ul li ul li:focus-within > ul {
+      display: flex;
+   }
+
+    /* Breadcrumb centrado bajo el header */
+   .breadcrumb {
+      padding: 10px 2px;
+      font-size: 16px;
+      margin: 47px auto; /* centrado */
+      white-space: normal;  
+      width: 95vw;        /* importante para que existan solo dos lineas */
+
+    }
+   
+
+   /* Main */
+   main {
+       margin-top: 200px;
+    }
+
+    /* Márgenes y centrado de todas las secciones */
+   section {
+     width: 95%;             /* ancho más reducido para dejar espacio a los lados */
+     max-width: 100%;       /* no se haga demasiado ancho en pantallas grandes */
+     margin: 30px auto;    /* margen superior e inferior más grande, y centrado horizontalmente */
+     box-sizing: border-box;  /* incluye padding en el ancho */
+   }
+
+
+   /* section */
+    .producto-detalle {
+        padding: 10px 3px;
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+
+    .contenedor-producto {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .imagen-producto img {
+        width: 100%;
+        
+    }
+
+    .info-producto {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .info-producto h1 {
+        font-size: 26px;
+    }
+
+    .info-producto p:first-of-type {
+        font-size: 24px;
+    }
+   
+    .info-producto p {
+           text-align: left;
+           font-size: 20px;
+    }
+
+    .info-producto .detalles {
+        text-decoration: none;
+        text-align: left;
+        font-size: 18px;
+    }
+
+     /* PRODUCTOS SIMILARES */
+    .productos-similares {
+        padding: 20px 10px;
+        height: auto; /* elimina alto fijo */
+    }
+
+    .productos-similares h2 {
+        font-size: 24px;
+        padding: 5px 10px;
+    }
+
+    .productos-similares .productos-container {
+        padding: 0 2px; /* espacio a los lados */
+        display: flex;
+        flex-direction: row; /* mantener fila horizontal */
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 15px; /* espacio inferior para scrollbar */
+        scroll-snap-type: x mandatory; /* para que "encaje" al hacer scroll */
+    }
+
+    .productos-similares .producto {
+        width: 150px;
+        height: auto;
+        height: 250px; /* altura fija, todos iguales */
+        flex: 0 0 35%;               /* cada producto ocupa 50% del ancho del móvil */
+        margin: 0;
+        max-width: 33vw;            /* no excede la mitad */
+        scroll-snap-align: center;
+    }
+
+    .productos-similares .producto h3 {
+        font-size: 16px;
+    }
+
+    .productos-similares .producto p {
+        font-size: 14px;
+    }
+
+  
+   
+    /* Footer */
+
+    footer {
+    width: 100%;            /* mismo ancho que las secciones */
+    max-width: 100%;     /* igual que las demás secciones */
+    margin: 30px auto;     /* centrado horizontal y margen superior/inferior */
+    padding: 20px;         /* padding interno */
+    box-sizing: border-box; /* incluye padding en el ancho */
+    text-align: center;    /* centrado del contenido interno */
+    font-size: 22px;
+    }
+
+    .footer-content {
+        gap: 10px;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+
+    .social-icons img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer-links a {
+        font-size: 18px;
+    }
+
+    html, body {
+    overflow-x: hidden;
+}
+
+  
+}
+

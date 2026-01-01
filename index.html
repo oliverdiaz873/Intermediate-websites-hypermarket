@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!--META ETIQUETAS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hipermercado Superior: tu destino para compras inteligentes con la mejor selección de productos.">
+    <meta name="author" content="Oliver Antonio Díaz"/>
+    <meta name="robots" content="index, follow">  
+    <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
+    <meta name="theme-color" content="#2196f3">
+
+    <!-- etiquetas Open Graph -->
+    <meta property="og:title" content="Hipermercado Superior - Todo lo que necesitas en un solo lugar">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com"> <!--ejemplo de url local-->
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/logo.png">
+    <meta property="og:description" content="Hipermercado Superior: tu destino para compras inteligentes con la mejor selección de productos.">
+    <meta property="og:site_name" content="Hipermercado Superior">
+    <meta property="og:locale" content="es_ES"> 
+
+    <!--  Twitter Cards para X-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hipermercado Superior - Todo lo que necesitas en un solo lugar">
+    <meta name="twitter:description" content="Tu destino para compras inteligentes con la mejor selección de productos.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/logo.png">
+
+    <!-- Título, CSS y Fuentes-->
+    <title>Hipermercado Superior | Compras inteligentes y productos de calidad</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
+    <link rel="icon" href="imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
+    <link rel="icon" href="imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
+    <script src="js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles -->
+  
+  </head>
+
+<body>
+
+    <header>
+
+         <div>  <!-- Logo -->
+          <a href="index.html" class="logo-header" aria-label="Ir a la página principal de Hipermercado Superior">
+             <img src="imagenes/logo/logo.jpeg" alt="Logo de Hipermercado Superior">
+             <h1>Hipermercado Superior</h1>
+          </a>
+        </div>
+
+   <!-- Menú de navegación -->
+   <nav class="menu" role="navigation" aria-label="Menú principal">
+      <ul>
+
+        <!-- Nivel 1 -->
+        <li><a href="index.html">Inicio</a></li>
+
+        <!-- Nivel 1: Categorías -->
+        <!-- href="#" indica que es un enlace vacío, # significa no ir a ninguna página en particular -->
+        <!-- aria-haspopup="true" Sirve para lectores de pantalla (personas no videntes) para que sepan que ese enlace tiene un submenú desplegable. -->
+        <!-- aria-expanded="false" significa “Este menú actualmente está cerrado”. -->
+        <li><a href="#" aria-haspopup="true" aria-expanded="false">Categorías</a>
+
+            <ul>
+
+                <!-- Nivel 2: Alimentos -->
+                <li>
+                    <a href="categorias/Alimentos.html">Alimentos</a>
+                    <ul> <!-- Nivel 3: -->
+                        <li><a href="categorias/Alimentos.html#frutas_y_verduras">Frutas y Verduras</a></li>
+                        <li><a href="categorias/Alimentos.html#despensa">Despensa</a></li>
+                        <li><a href="categorias/Alimentos.html#carnes_pescados_mariscos">Carnes, Pescados y Mariscos</a></li>
+                        <li><a href="categorias/Alimentos.html#lacteos_y_huevos">Lácteos y Huevos</a></li>
+                        <li><a href="categorias/Alimentos.html#bebidas">Bebidas</a></li>
+                        <li><a href="categorias/Alimentos.html#enlatados">Enlatados</a></li>
+                    </ul>
+                </li>
+
+                <!-- Nivel 2: Electrodomésticos -->
+                <li>
+                    <a href="categorias/Electrodomesticos.html">Electrodomésticos</a>
+                    <ul> <!-- Nivel 3: -->
+                        <li><a href="categorias/Electrodomesticos.html#cocina">Cocina</a></li>
+                        <li><a href="categorias/Electrodomesticos.html#lavado">Lavado</a></li>
+                        <li><a href="categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
+                    </ul>
+                </li>
+
+                <!-- Nivel 2: Tecnología -->
+                <li>
+                    <a href="categorias/Tecnologia.html">Tecnología</a>
+                    <ul> <!-- Nivel 3: -->
+                        <li><a href="categorias/Tecnologia.html#televisores">Televisores</a></li>
+                        <li><a href="categorias/Tecnologia.html#laptops">Laptops</a></li>
+                        <li><a href="categorias/Tecnologia.html#tablets">Tablets</a></li>
+                        <li><a href="categorias/Tecnologia.html#celulares">Celulares</a></li>
+                        <li><a href="categorias/Tecnologia.html#bocinas">Bocinas</a></li>
+                    </ul>
+                </li>
+
+                <!-- Nivel 2: Ropa -->
+                <li>
+                    <a href="categorias/Ropa.html">Ropa</a>
+                    <ul> <!-- Nivel 3: -->
+                        <li><a href="categorias/Ropa.html#pantalones_para_hombres">Pantalones para Hombres</a></li>
+                        <li><a href="categorias/Ropa.html#pantalones_para_mujeres">Pantalones para Mujeres</a></li>
+                        <li><a href="categorias/Ropa.html#pantalones_para_niños">Pantalones para Niños</a></li>
+                        <li><a href="categorias/Ropa.html#trajes_para_hombres">Trajes para Hombres</a></li>
+                        <li><a href="categorias/Ropa.html#vestidos">Vestidos</a></li>
+                    </ul>
+                </li>
+
+                <!-- Nivel 2: Muebles y Decoración -->
+                <li>
+                    <a href="categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
+                    <ul> <!-- Nivel 3: -->
+                        <li><a href="categorias/muebles_y_decoracion.html#sofas">Sofás</a></li>
+                        <li><a href="categorias/muebles_y_decoracion.html#sillones">Sillones</a></li>
+                        <li><a href="categorias/muebles_y_decoracion.html#mesas">Mesas</a></li>
+                        <li><a href="categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
+                    </ul>
+                </li>
+
+                <!-- Nivel 2: Farmacia -->
+                <li>
+                    <a href="categorias/Farmacia.html">Farmacia</a>
+                    <ul> <!-- Nivel 3: -->
+                        <li><a href="categorias/Farmacia.html#analgesicos">Analgésicos</a></li>
+                        <li><a href="categorias/Farmacia.html#dermocosmetica">Dermocosmética</a></li>
+                        <li><a href="categorias/Farmacia.html#vitaminas_y_minerales">Vitaminas y Minerales</a></li>
+                        <li><a href="categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
+                    </ul>
+                </li>
+
+                <!-- Nivel 2: Ferretería -->
+                <li>
+                    <a href="categorias/Ferreteria.html">Ferretería</a>
+                    <ul> <!-- Nivel 3: -->
+                        <li><a href="categorias/Ferreteria.html#herramientas_manuales">Herramientas Manuales</a></li>
+                        <li><a href="categorias/Ferreteria.html#pinturas_y_acabados">Pinturas y Acabados</a></li>
+                        <li><a href="categorias/Ferreteria.html#electricidad">Electricidad</a></li>
+                        <li><a href="categorias/Ferreteria.html#plomeria">Plomería</a></li>
+                    </ul>
+                </li>
+
+                <!-- Nivel 2: Juguetes -->
+                <li>
+                    <a href="categorias/juguetes.html">Juguetes</a>
+                    <ul> <!-- Nivel 3: -->
+                        <li><a href="categorias/juguetes.html#juguetes_para_niños">Juguetes para Niños</a></li>
+                        <li><a href="categorias/juguetes.html#juguetes_para_niñas">Juguetes para Niñas</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </li>
+
+        <!-- Nivel 1 -->
+        <li><a href="index.html#ofertas">Ofertas</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+
+    </ul>
+</nav>
+
+
+    </header>
+
+     <main> <!--main-->
+
+          <!-- Sección: Productos Destacados -->
+          <section class="productos-destacados">
+             <h2>Productos Destacados</h2>
+
+             <div class="productos-container">
+
+               <!-- Producto 1 -->
+                <a href="productos/tecnologia/televisores/tv_samsung_75.html">
+                 <article class="producto">
+                   <img src="imagenes/productos/Tecnologia/Televisores/TV_led_samsung.avif" alt="televisor Samsung 75 pulgadas" loading="lazy">
+                   <h3>Televisor samsung 75 pulgadas</h3>
+                   <p>Precio: $44,000</p>
+                 </article>
+                 </a>
+
+               <!-- Producto 2 -->
+                <a href="productos/electrodomesticos/cocina/nevera_lg.html">
+               <article class="producto">
+                   <img src="imagenes/productos/Electrodomesticos/cocina/Neveras/Nevera_LG.png" alt="Nevera LG" loading="lazy">
+                   <h3>Nevera LG</h3>
+                   <p>Precio: $80,000</p>
+               </article>
+                </a>
+                 
+
+               <!-- Producto 3 -->
+                <a href="productos/electrodomesticos/climatizacion/ventilador_daiwa.html">
+                <article class="producto">
+                   <img src="imagenes/productos/Electrodomesticos/climatizacion/ventiladores/ventilador_Daiwa.png" alt="Ventilador Daiwa de mesa color negro" loading="lazy">
+                   <h3>Ventilador Daiwa</h3>
+                   <p>Precio: $15,000</p>
+                </article>
+                </a>
+                
+                 <!-- Producto 4 -->
+                   <a href="productos/muebles_y_decoracion/sofas/sofa_cama_blanco.html">
+                  <article class="producto">
+                   <img src="imagenes/productos/Muebles_y_decoracion/sofa/sofa_cama_blanco.png" alt="Sofá cama blanco" loading="lazy">
+                   <h3>Sofá cama blanco</h3>
+                   <p>Precio: $9,000</p>
+                  </article>
+                  </a>
+
+                    <!-- Producto 5 -->
+                   <a href="productos/alimentos/carnes_pescados_y_mariscos/carne_de_res_para_hamburguesas.html">
+                  <article class="producto">
+                   <img src="imagenes/productos/Alimentos/carnes_pescados_mariscos/res/carne_de_res.avif" alt="Carne de Res para Hamburguesas" loading="lazy">
+                   <h3>Carne de Res para Hamburguesas</h3>
+                   <p>Precio: $370.00 /1 LB</p>
+                  </article>
+                   </a>
+
+                     <!-- Producto 6 -->
+                   <a href="productos/Alimentos/carnes_pescados_y_mariscos/pollo_entero_don_pollo.html">
+                  <article class="producto">
+                   <img src="imagenes/productos/Alimentos/carnes_pescados_mariscos/pollo/pollo.avif" alt="Pollo fresco entero" loading="lazy">
+                   <h3>Pollo Entero Don pollo</h3>
+                   <p>$300.00 / 1 unidad </p>
+                  </article>
+                  </a>
+     
+            </div>
+      </section>
+
+
+        <!-- Sección: Ofertas -->
+        <section class="productos-destacados destino reveal" id="ofertas">
+             <h2>Ofertas de la Semana</h2>
+             <div class="productos-container">
+
+               <!-- producto 1 -->
+                <a href="productos/Alimentos/Frutas_y_verduras/manzanas_verdes.html">
+               <article class="producto">
+                  <img src="imagenes/productos/Alimentos/frutas_y_verduras/manzana_verde.avif" alt="Descuento en Manzanas Verdes" loading="lazy">
+                  <h3>Manzanas Verdes -20%</h3>
+                  <p>
+                    Antes: <span class="precio-antiguo">RD$ 56.25/ 1 KG</span>
+                    <span class="flecha">→</span>
+                    <span class="precio-nuevo">Ahora: RD$ 45.00/ 1 KG</span>
+                  </p>
+                </article>
+                </a>
+
+              <!-- producto 2 -->
+               <a href="productos/Alimentos/lacteos_y_huevos/huevos.html">
+              <article class="producto">
+                <img src="imagenes/productos/Alimentos/lacteos_y_huevos/huevos/huevos_30unidades.avif" alt="Huevos en Oferta" loading="lazy">
+                <h3>Huevos -10%</h3>
+                <p>
+                  Antes: <span class="precio-antiguo">RD$ 222.22 / 30 unidades</span>
+                  <span class="flecha">→</span>
+                  <span class="precio-nuevo">Ahora: RD$ 200.00 / 30 unidades</span>
+                </p>
+             </article>
+             </a>
+
+            <!-- producto 3-->
+             <a href="productos/electrodomesticos/cocina/freezer_7_pies.html">
+            <article class="producto">
+              <img src="imagenes/productos/Electrodomesticos/cocina/freezer/freezer_7pies.png" alt="Freezer en Oferta" loading="lazy">
+              <h3>Freezer 7 pies -15%</h3>
+              <p>
+                Antes: <span class="precio-antiguo">RD$ 19,411</span>
+                <span class="flecha">→</span>
+                <span class="precio-nuevo">Ahora: RD$ 16,500</span>
+              </p>
+            </article>
+            </a>
+
+          <!-- producto 4 -->
+           <a href="productos/tecnologia/celulares/celular_a26.html">
+          <article class="producto">
+              <img src="imagenes/productos/Tecnologia/Celulares/celular_samsung_A26.png" alt="Oferta en Celulares Samsung" loading="lazy">
+              <h3>Celular Samsung A26 -10%</h3>
+              <p>
+                Antes: <span class="precio-antiguo">RD$ 44,444</span>
+                <span class="flecha">→</span>
+                <span class="precio-nuevo">Ahora: RD$ 40,000</span>
+             </p>
+            </article>
+            </a>
+
+         <!-- producto 5 -->
+          <a href="productos/electrodomesticos/cocina/cilindro_duragas.html">
+         <article class="producto">
+            <img src="imagenes/productos/Electrodomesticos/cocina/Cilindros_de_gas/cilindro_de_gas_duragas.avif" alt="Oferta en Cilindros de Gas" loading="lazy">
+            <h3>Cilindros de Gas -15%</h3>
+            <p>
+                Antes: <span class="precio-antiguo">RD$ 6,117</span>
+                <span class="flecha">→</span>
+                <span class="precio-nuevo">Ahora: RD$ 5,200</span>
+            </p>
+         </article>
+         </a>
+
+    </div>
+</section>
+
+
+
+        <!-- Sección: Sobre Nosotros -->
+        <section class="sobre-nosotros reveal">
+             <div class="contenedor">
+               <img src="imagenes/logo/logo.jpeg" alt="logo del Hipermercado Superior" loading="lazy">
+                 <div class="texto">
+                  <h2>Sobre Nosotros</h2>
+                  <p>En <strong>Hipermercado Superior</strong> trabajamos para ofrecerte calidad, variedad y precios justos. 
+                  Nuestro compromiso es brindarte la mejor experiencia de compra tanto en tienda física como online.</p>
+                 </div>
+             </div>
+        </section>
+
+    </main>
+
+
+    <footer> <!--footer-->
+        
+         <div class="footer-content">
+              <!-- Derechos reservados -->
+              <small>&copy; 2025 Hipermercado Superior. Todos los derechos reservados.</small>
+
+              <!-- Íconos de redes sociales -->
+              <div class="social-icons">
+                   <a href="https://facebook.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Facebook">
+                    <img src="imagenes/iconos/redes/facebook.png" alt="ir a facebook de Hipermercado Superior">
+                   </a>
+
+                   <a href="https://twitter.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en X (antes Twitter)">
+                    <img src="imagenes/iconos/redes/x.png" alt="ir a x de Hipermercado Superior">
+                   </a>
+
+                   <a href="https://instagram.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Instagram">
+                    <img src="imagenes/iconos/redes/instagram.png" alt="ir a instagram de Hipermercado Superior">
+                   </a>
+              </div>
+
+                 <!-- Enlaces legales -->
+                <div class="footer-links">
+                  <a href="legal/privacy.html" title="Política de Privacidad">Política de Privacidad</a> |
+                  <a href="legal/terms.html" title="Términos de Uso">Términos de Uso</a>
+                </div>
+            </div>
+
+    </footer>
+
+
+
+</body>
+</html>
