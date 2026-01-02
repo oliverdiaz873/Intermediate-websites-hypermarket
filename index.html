@@ -35,8 +35,11 @@
     <link rel="icon" href="imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
+
+    <!-- Scripts -->
     <script src="js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles -->
-  
+    <script src="js/boton_de_busqueda.js" defer></script>   <!-- codigo js para el botón de búsqueda -->
+
   </head>
 
 <body>
@@ -160,6 +163,13 @@
         <!-- Nivel 1 -->
         <li><a href="index.html#ofertas">Ofertas</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+
+        <!-- botón de búsqueda -->
+       <li class="buscador-header">
+        <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+        <button type="button" aria-label="Buscar productos" id="btn-buscar">🔍</button>
+        <ul id="resultados-busqueda" class="resultados-busqueda"></ul>  <!-- Coincidencencias -->
+       </li>
 
     </ul>
 </nav>

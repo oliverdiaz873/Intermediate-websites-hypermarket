@@ -180,6 +180,103 @@ nav.menu a:hover {
     background-color: rgba(255,255,255,0.2);
 }
 
+/* ================= botón de búsqueda ================= */
+
+.buscador-header {
+    display: flex;
+    align-items: center;
+}
+
+.buscador-header button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.buscador-header button:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+}
+
+/* Accesibilidad: foco con teclado */
+.buscador-header button:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Input oculto por defecto */
+#input-buscar {
+    display: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 200px;
+}
+
+/* Mostrar input y ocultar demás menú cuando se activa */
+.menu-busqueda-activa nav.menu > ul > li:not(.buscador-header) {
+    display: none;
+}
+
+.menu-busqueda-activa #input-buscar {
+    display: inline-block;
+}
+
+/* Estilos del input cuando aparece */
+#input-buscar:focus {
+    box-shadow: 0 0 5px rgba(255,255,255,0.7);
+}
+
+
+
+
+/* Contenedor resultados */
+.resultados-busqueda {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 2000;
+    display: none;
+}
+
+.resultados-busqueda li {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.resultados-busqueda li:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* Activar buscador: input visible, ocultar demás botones */
+body.menu-busqueda-activa header nav.menu > ul > li:not(.buscador-header) {
+    display: none;
+}
+
+body.menu-busqueda-activa .buscador-header input {
+    display: block;
+}
+
+
+
 
 /* ========================== SECCIONES ========================== */
     
