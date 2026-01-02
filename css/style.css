@@ -191,11 +191,21 @@ nav.menu a:hover {
     background-color: transparent;
     border: none;
     color: white;
-    font-size: 20px;
+    font-size: 10px;
     cursor: pointer;
     padding: 8px 12px;
+    width: 37px;
+    height: 37px;
     border-radius: 10px;
     transition: background-color 0.3s, transform 0.2s;
+    display: flex;        /* para centrar la imagen de la lupa */
+    align-items: center;      /* centra vertical */
+    justify-content: center;  /* centra horizontal */
+}
+
+.buscador-header button img {
+  width: 38px;
+  height: 38px;
 }
 
 .buscador-header button:hover {
@@ -218,6 +228,7 @@ nav.menu a:hover {
     border: none;
     outline: none;
     width: 200px;
+    margin-right: 8px;
 }
 
 /* Mostrar input y ocultar demás menú cuando se activa */
@@ -233,8 +244,6 @@ nav.menu a:hover {
 #input-buscar:focus {
     box-shadow: 0 0 5px rgba(255,255,255,0.7);
 }
-
-
 
 
 /* Contenedor resultados */
