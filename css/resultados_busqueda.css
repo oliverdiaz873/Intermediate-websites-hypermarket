@@ -275,7 +275,7 @@ body.menu-busqueda-activa .buscador-header input {
     max-width: 1200px;
     padding: 0 20px;
     text-align: center;
-     margin-top: 120px; /* separacion ideal del main y el header fijo*/
+    margin: 120px auto 0 auto; /* ← centra horizontal */ /* separacion ideal del main y el header fijo*/
 }
 
 
