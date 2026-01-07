@@ -219,6 +219,7 @@ nav.menu a:hover {
     outline-offset: 2px;
 }
 
+
 /* Input oculto por defecto */
 #input-buscar {
     display: none;
@@ -227,7 +228,7 @@ nav.menu a:hover {
     border-radius: 10px;
     border: none;
     outline: none;
-    width: 200px;
+    width: 300px;
     margin-right: 8px;
 }
 
@@ -283,6 +284,8 @@ body.menu-busqueda-activa header nav.menu > ul > li:not(.buscador-header) {
 body.menu-busqueda-activa .buscador-header input {
     display: block;
 }
+
+
 
 
 /* ========================== SECCIONES ========================== */
@@ -362,6 +365,7 @@ body.menu-busqueda-activa .buscador-header input {
     flex: 0 0 auto; /* evita que se encojan */
     height: 290px;       /* Ajusta la altura  */
     overflow: hidden;     /* Oculta lo que se salga */
+    margin-bottom: 1px;
 }
 
 

@@ -1,5 +1,4 @@
 
-
 .producto-card {
     display: flex;
     flex-direction: column;
@@ -7,17 +6,25 @@
 
 .btn-agregar {
     margin-top: 8px;
-    padding: 8px 0;
-    width: 100%;
-
-    background-color: #2196f3;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-
-    font-size: 13px;
+    
+    width: 60%;
+    height: 40px;
+    color: #000000;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 40px;
+    background-color: #ffcc00;
+    outline: none;
+    padding: 0.5rem;
+    margin-bottom: 3px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    align-self: center;
 }
 
 .btn-agregar:hover {
@@ -152,10 +159,5 @@
     display: block;
     margin-bottom: 4px;
     margin-right: 4px;
-    line-height: 1.2;
-
-    
-
-   
-    
+    line-height: 1.2;   
 }

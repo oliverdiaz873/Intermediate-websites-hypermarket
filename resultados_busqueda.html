@@ -39,6 +39,7 @@
 
     <!-- Scripts -->
     <script src="js/menu_movil.js" defer></script>   <!-- comportamiento del menú en móviles -->
+    <script src="js/productos.js" defer></script> 
     <script src="js/boton_de_busqueda.js" defer></script>   <!-- botón de búsqueda -->
     <script src="js/carrito.js" defer></script>             <!-- carrito de compras -->
 </head>
@@ -170,7 +171,7 @@
        <li class="buscador-header">
          <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
             <button type="button" aria-label="Buscar productos" id="btn-buscar">
-               <img src="imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar">
+               <img src="imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
             </button>
          <ul id="resultados-busqueda" class="resultados-busqueda"></ul>  <!-- Coincidencencias -->
        </li>
@@ -204,8 +205,7 @@
         </p>
     </main>
 
-    <script src="js/boton_de_busqueda.js"></script>
-    <script src="js/carrito.js"></script>
+    
 </body>
 
 <footer> <!--footer-->
