@@ -1069,6 +1069,197 @@ const productos = [
 
     //--Muebles y Decoración--//
 
+    //Floreros
+    {
+        id: "florero_de_plantas",
+        nombre: "Florero de Plantas",
+        url: "productos/muebles_y_decoracion/floreros/florero_de_plantas.html",
+        categoria: "floreros",
+        precio: 2000, // número para carrito
+        precioTexto: "Precio: $2,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/floreros/florero_de_plantas.avif"
+    },
+     {
+        id: "florero_de_vidrio",
+        nombre: "Florero de Vidrio",
+        url: "productos/muebles_y_decoracion/floreros/florero_de_vidrio.html",
+        categoria: "floreros",
+        precio: 4000, // número para carrito
+        precioTexto: "Precio: $4,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/floreros/florero_de_vidrio.avif"
+    },
+     {
+        id: "jarron",
+        nombre: "Jarrón",
+        url: "productos/muebles_y_decoracion/floreros/jarron.html",
+        categoria: "floreros",
+        precio: 3000, // número para carrito
+        precioTexto: "Precio: $3,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/floreros/jarron.avif"
+    },
+     {
+        id: "jarrones",
+        nombre: "Jarrones",
+        url: "productos/muebles_y_decoracion/floreros/jarrones.html",
+        categoria: "floreros",
+        precio: 3500, // número para carrito
+        precioTexto: "Precio: $3,500", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/floreros/jarrones.avif"
+    },
+    {
+        id: "tulipanes",
+        nombre: "Tulipanes",
+        url: "productos/muebles_y_decoracion/floreros/tulipanes.html",
+        categoria: "floreros",
+        precio: 4200, // número para carrito
+        precioTexto: "Precio: $4,200", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/floreros/tulipanes.avif"
+    },
+
+    //Mesas
+    {
+        id: "Mesa_de_Madera",
+        nombre: "Mesa de Madera",
+        url: "productos/muebles_y_decoracion/mesas/mesa_de_madera.html",
+        categoria: "mesas",
+        precio: 4000, // número para carrito
+        precioTexto: "Precio: $4,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/mesas/mesa_madera.avif"
+    },
+     {
+        id: "mesa_de_noche",
+        nombre: "Mesa de Noche",
+        url: "productos/muebles_y_decoracion/mesas/mesa_de_noche.html",
+        categoria: "mesas",
+        precio: 3000, // número para carrito
+        precioTexto: "Precio: $3,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/mesas/mesa_de_noche.avif"
+    },
+     {
+        id: "mesa_moderna",
+        nombre: "Mesa Moderna",
+        url: "productos/muebles_y_decoracion/mesas/mesa_moderna.html",
+        categoria: "mesas",
+        precio: 6300, // número para carrito
+        precioTexto: "Precio: $6,300", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/mesas/mesa_moderna.avif"
+    },
+    {
+        id: "mesa_oscura",
+        nombre: "Mesa Oscura",
+        url: "productos/muebles_y_decoracion/mesas/mesa_oscura.html",
+        categoria: "mesas",
+        precio: 8000, // número para carrito
+        precioTexto: "Precio: $8,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/mesas/mesa_oscura.avif"
+    },
+    {
+        id: "mesa_pequena",
+        nombre: "Mesa Pequeña",
+        url: "productos/muebles_y_decoracion/mesas/mesa_pequena.html",
+        categoria: "mesas",
+        precio: 12500, // número para carrito
+        precioTexto: "Precio: $12,500", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/mesas/mesa_pequena.avif"
+    },
+
+    //Sillones
+     {
+        id: "sillon_amarillo",
+        nombre: "Sillón Amarillo",
+        url: "productos/muebles_y_decoracion/sillones/sillon_amarillo.html",
+        categoria: "sillones",
+        precio: 4500, // número para carrito
+        precioTexto: "Precio: $4,500", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/sillon/sillon_amarillo.avif"
+    },
+    {
+        id: "sillon_azul",
+        nombre: "Sillón Azul",
+        url: "productos/muebles_y_decoracion/sillones/sillon_azul.html",
+        categoria: "sillones",
+        precio: 5500, // número para carrito
+        precioTexto: "Precio: $5,500", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/sillon/sillon_azul.avif"
+    },
+     {
+        id: "sillon_blanco",
+        nombre: "Sillón Blanco",
+        url: "productos/muebles_y_decoracion/sillones/sillon_blanco.html",
+        categoria: "sillones",
+        precio: 4000, // número para carrito
+        precioTexto: "Precio: $4,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/sillon/sillon_blanco.avif"
+    },
+     {
+        id: "sillon_gris",
+        nombre: "Sillón Gris",
+        url: "productos/muebles_y_decoracion/sillones/sillon_gris.html",
+        categoria: "sillones",
+        precio: 5000, // número para carrito
+        precioTexto: "Precio: $5,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/sillon/sillon_gris.avif"
+    },
+     {
+        id: "sillon_verde",
+        nombre: "Sillón Verde",
+        url: "productos/muebles_y_decoracion/sillones/sillon_verde.html",
+        categoria: "sillones",
+        precio: 7000, // número para carrito
+        precioTexto: "Precio: $7,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/muebles_y_decoracion/sillon/sillon_verde.avif"
+    },
+ 
+    //Sofás
+    {
+        id: "sofa_cama_blanco",
+        nombre: "Sofá Cama Blanco",
+        url: "productos/muebles_y_decoracion/sofas/sofa_cama_blanco.html",
+        categoria: "sofas",
+        precio: 9000, // número para carrito
+        precioTexto: "Precio: $9,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Muebles_y_decoracion/sofa/sofa_cama_blanco.png"
+    },
+    {
+        id: "Sofa_gris",
+        nombre: "Sofá Gris",
+        url: "productos/muebles_y_decoracion/sofas/sofa_gris.html",
+        categoria: "sofas",
+        precio: 8000, // número para carrito
+        precioTexto: "Precio: $8,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Muebles_y_decoracion/sofa/sofa_gris.avif"
+    },
+    {
+        id: "Sofa_media_luna",
+        nombre: "Sofá Media Luna",
+        url: "productos/muebles_y_decoracion/sofas/sofa_media_luna.html",
+        categoria: "sofas",
+        precio: 3000, // número para carrito
+        precioTexto: "Precio: $3,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Muebles_y_decoracion/sofa/sofa_media_luna.avif"
+    },
+    {
+        id: "Sofa_negro",
+        nombre: "Sofá Negro",
+        url: "productos/muebles_y_decoracion/sofas/sofa_negro.html",
+        categoria: "sofas",
+        precio: 5000, // número para carrito
+        precioTexto: "Precio: $5,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Muebles_y_decoracion/sofa/sofa_negro.avif"
+    },
+    {
+        id: "Sofa_verde",
+        nombre: "Sofá Verde",
+        url: "productos/muebles_y_decoracion/sofas/sofa_verde.html",
+        categoria: "sofas",
+        precio: 14000, // número para carrito
+        precioTexto: "Precio: $14,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Muebles_y_decoracion/sofa/sofa_verde.avif"
+    },
+ 
+ 
+
+
 
 
 

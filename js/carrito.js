@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const STORAGE_KEY = 'carrito';
     const contadorCarrito = document.getElementById('contador-carrito');
-    const listaCarrito = document.getElementById('lista-carrito'); // solo existe en carrito.html
+    const listaCarrito = document.getElementById('lista-carrito');
     const totalUnidadesEl = document.getElementById('total-unidades');
     const totalCarritoEl = document.getElementById('total-carrito');
 
     let carrito = cargarCarrito();
 
-    // Delegación para agregar productos desde index.html u otras páginas
+    // === Agregar productos ===
     document.addEventListener('click', e => {
         const btn = e.target.closest('.btn-agregar');
         if (!btn) return;
@@ -22,28 +22,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const nombre = articulo.dataset.nombre;
         const precio = parseFloat(articulo.dataset.precio) || 0;
         const img = articulo.dataset.img || '';
+        const url = articulo.dataset.url || null;
 
-        agregarProducto({ id, nombre, precio, img });
+        agregarProducto({ id, nombre, precio, img, url });
     });
 
-    // Delegación de eventos dentro del carrito (solo si existe)
+    // === Eventos dentro del carrito ===
     if (listaCarrito) {
-        listaCarrito.addEventListener('click', e => {
-            const target = e.target;
-            const itemEl = target.closest('.item-carrito');
-            if (!itemEl) return;
-            const id = itemEl.dataset.id;
+    listaCarrito.addEventListener('click', e => {
+        const itemEl = e.target.closest('.item-carrito');
+        if (!itemEl) return;
 
-            if (target.classList.contains('btn-eliminar')) eliminarProducto(id);
-            if (target.classList.contains('btn-increase')) cambiarCantidad(id, 1);
-            if (target.classList.contains('btn-decrease')) cambiarCantidad(id, -1);
-        });
-    }
+        const id = itemEl.dataset.id;
 
-    // === Funciones de carrito ===
+        // ⛔ Si el clic fue en un botón, NO navegar
+        if (e.target.closest('button')) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (e.target.classList.contains('btn-eliminar')) eliminarProducto(id);
+            if (e.target.classList.contains('btn-increase')) cambiarCantidad(id, 1);
+            if (e.target.classList.contains('btn-decrease')) cambiarCantidad(id, -1);
+            return;
+        }
+
+        // ✅ Si el clic fue en el link o imagen → navegar
+        const link = itemEl.querySelector('.carrito-link');
+        if (link) {
+            window.location.href = link.href;
+        }
+    });
+}
+
+
+    // === Lógica de carrito ===
     function agregarProducto(producto) {
         const existente = carrito.find(p => p.id === producto.id);
-        if (existente) existente.cantidad += 1;
+        if (existente) existente.cantidad++;
         else carrito.push({ ...producto, cantidad: 1 });
 
         guardarCarrito();
@@ -59,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function cambiarCantidad(id, delta) {
         const item = carrito.find(p => p.id === id);
         if (!item) return;
+
         item.cantidad += delta;
         if (item.cantidad <= 0) eliminarProducto(id);
         else {
@@ -67,34 +83,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // === Cálculos ===
-    function calcularTotalUnidades() {
-        return carrito.reduce((sum, p) => sum + p.cantidad, 0);
-    }
+    // === Totales ===
+    const calcularTotalUnidades = () =>
+        carrito.reduce((sum, p) => sum + p.cantidad, 0);
 
-    function calcularTotalPrecio() {
-        return carrito.reduce((sum, p) => sum + p.cantidad * p.precio, 0);
-    }
+    const calcularTotalPrecio = () =>
+        carrito.reduce((sum, p) => sum + p.cantidad * p.precio, 0);
 
-    // === Render UI ===
+    // === UI ===
     function actualizarUI() {
-        actualizarContador();
-        actualizarAside();
+        if (contadorCarrito) contadorCarrito.textContent = calcularTotalUnidades();
+        if (totalUnidadesEl) totalUnidadesEl.textContent = calcularTotalUnidades();
+        if (totalCarritoEl) totalCarritoEl.textContent = calcularTotalPrecio().toLocaleString();
         if (listaCarrito) renderizarCarrito();
     }
 
-    function actualizarContador() {
-        if (contadorCarrito) contadorCarrito.textContent = calcularTotalUnidades();
-    }
-
-    function actualizarAside() {
-        if (totalUnidadesEl) totalUnidadesEl.textContent = calcularTotalUnidades();
-        if (totalCarritoEl) totalCarritoEl.textContent = calcularTotalPrecio().toLocaleString();
-    }
-
     function renderizarCarrito() {
-        if (!listaCarrito) return;
-
         if (carrito.length === 0) {
             listaCarrito.innerHTML = '<p>Tu carrito está vacío.</p>';
             return;
@@ -102,20 +106,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         listaCarrito.innerHTML = carrito.map(p => {
             const subtotal = p.precio * p.cantidad;
+
+            const contenido = `
+                <img src="${escapeHtml(p.img)}" alt="${escapeHtml(p.nombre)}" class="item-img">
+                <strong>${escapeHtml(p.nombre)}</strong>
+            `;
+
             return `
                 <div class="item-carrito" data-id="${escapeHtml(p.id)}">
-                    <img src="${escapeHtml(p.img)}" alt="${escapeHtml(p.nombre)}" class="item-img">
                     <div class="carrito-item-info">
-                        <strong>${escapeHtml(p.nombre)}</strong>
+                        ${p.url
+                            ? `<a href="${escapeHtml(p.url)}" class="carrito-link">${contenido}</a>`
+                            : contenido}
                         <div>RD$ ${p.precio.toLocaleString()}</div>
                     </div>
+
                     <div class="carrito-item-cantidad">
-                        <button class="btn-decrease" aria-label="Disminuir cantidad">−</button>
-                        <span class="cantidad">${p.cantidad}</span>
-                        <button class="btn-increase" aria-label="Aumentar cantidad">+</button>
+                        <button class="btn-decrease">−</button>
+                        <span>${p.cantidad}</span>
+                        <button class="btn-increase">+</button>
                     </div>
-                    <div class="carrito-item-subtotal">RD$ ${subtotal.toLocaleString()}</div>
-                    <button class="btn-eliminar" aria-label="Eliminar producto">Eliminar</button>
+
+                    <div>RD$ ${subtotal.toLocaleString()}</div>
+                    <button class="btn-eliminar">Eliminar</button>
                 </div>
             `;
         }).join('');
@@ -127,18 +140,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function cargarCarrito() {
-        try {
-            return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-        } catch {
-            return [];
-        }
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
     }
 
     function escapeHtml(str) {
         if (typeof str !== 'string') return str;
-        return str.replace(/[&<>"']/g, m => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":"&#39;" })[m]);
+        return str.replace(/[&<>"']/g, m =>
+            ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":"&#39;" }[m])
+        );
     }
 
-    // === Inicialización ===
     actualizarUI();
 });

@@ -288,12 +288,7 @@ body.menu-busqueda-activa .buscador-header input {
 
 
 
-
-
-
-
-
-/* Main container */
+/* Main*/
 .carrito-page {
     display: flex;
     justify-content: center;
@@ -316,13 +311,16 @@ body.menu-busqueda-activa .buscador-header input {
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    color: black;
+    color: rgb(0, 0, 0);
+
 }
 
 .productos-carrito h2 {
     margin-bottom: 1rem;
-    font-size: 1.5rem;
-    color: #2196f3;
+    margin-top: 5px;
+    font-size: 1.7rem;
+    font-family: sans-serif;
+    color: #000000;
 }
 
 /* Cada item del carrito */
@@ -331,7 +329,8 @@ body.menu-busqueda-activa .buscador-header input {
     align-items: center;
     gap: 1rem;
     padding: 1rem 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 0.5px solid #c5c5c5;
+    
 }
 
 .item-carrito:last-child {
@@ -397,6 +396,17 @@ body.menu-busqueda-activa .buscador-header input {
     background-color: #d32f2f;
 }
 
+/* Link */
+.carrito-link,
+.carrito-link:visited,
+.carrito-link:hover,
+.carrito-link:active {
+    color: inherit;          /* Usa el color del texto normal */
+    text-decoration: none;   /* Quita subrayado */
+}
+
+
+
 /* Aside con resumen */
 .resumen-compra {
     flex: 1;
@@ -411,7 +421,7 @@ body.menu-busqueda-activa .buscador-header input {
 }
 
 .resumen-compra h3 {
-    color: #2196f3;
+    color: #000000;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
