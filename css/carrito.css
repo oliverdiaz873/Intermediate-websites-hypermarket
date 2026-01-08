@@ -1,163 +1,462 @@
 
-.producto-card {
-    display: flex;
-    flex-direction: column;
-}
-
-.btn-agregar {
-    margin-top: 8px;
-    
-    width: 60%;
-    height: 40px;
-    color: #000000;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 40px;
-    background-color: #ffcc00;
-    outline: none;
-    padding: 0.5rem;
-    margin-bottom: 3px;
-    border: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s;
-    align-self: center;
-}
-
-.btn-agregar:hover {
-    background-color: #1976d2;
-}
-
-
-
-
-
-
-
-/* Carrito en el header----------------------------------------------------- */
-.carrito-header {
-    cursor: pointer;
-    margin-left: 15px;
-    font-size: 18px;
-    position: relative;
-}
-
-#contador-carrito {
-    background-color: red;
-    color: #fff;
-    font-size: 12px;
-    padding: 2px 6px;
-    border-radius: 50%;
-    margin-left: 4px;
-}
-
-/* Contenedor del carrito */
-.carrito {
-    position: fixed;
-    top: 80px;
-     right: -500px;
-    width: 400px;
-    max-height: 80vh;
-    background: #000000;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    overflow-y: auto;
-    transition: right 0.3s ease;
-    z-index: 1000;
-}
-
-.carrito.activo {
-    right: 0;
-}
-
-.carrito h2 {
-    margin-top: 0;
-    font-size: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-}
-
-
-/* Item del carrito */
-.item-carrito {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    font-size: 14px;
-    border-bottom: #fff 0.5px solid;
-}
-
-.item-carrito button {
-    background-color: red;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 4px 6px;
-    cursor: pointer;
-    font-size: 12px;
-}
-
-.item-carrito button:hover {
-    background-color: darkred;
-}
-
-/* Total */
-.total {
-    font-weight: bold;
-    font-size: 16px;
-    margin-top: 15px;
-    text-align: right;
-}
-
-
-
-/* Controles de cantidad (+ / -) */
-.carrito-item-cantidad {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    white-space: nowrap;
-}
-
-.carrito-item-cantidad button {
-    width: 24px;
-    height: 24px;
+/* Reset básico */
+html, body {
+    margin: 0;
     padding: 0;
-    font-size: 14px;
-    line-height: 1;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('../imagenes/fondos/fondo.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: rgba(0,0,0,0.8);
+    padding: 5px 30px;
+    border-radius: 20px;
+    width: fit-content;  /* La propiedad width: fit-content; ajusta automáticamente el ancho del elemento al tamaño mínimo necesario para que quepa su contenido */
+    margin: 20px auto;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 15px;
+    white-space: nowrap;  /* white-space: nowrap; impide que el texto o los elementos hijos pasen a una nueva línea es decir, todo el contenido se mantiene en una sola línea */
+    position: fixed;           /* fijo en la ventana */
+    top: 20px;                 /* margen superior */
+    left: 50%;                 /* posición horizontal desde el centro */
+    transform: translateX(-50%); /* centra el header horizontalmente de forma perfecta */
+    z-index: 1000;    /* el header Siempre estará visible por encima de otros elementos de la página en el eje z */
 }
 
-.carrito-item-cantidad .cantidad {
-    min-width: 16px;
+header  img {
+    width: 45px;
+    height: auto;
+}
+
+header  h1 {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: 1px;
+    font-family: 'Domine-Bold', serif;
+    
+}
+
+header a.logo-header { /* logo clickeable */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none; /* quitar subrayado */
+    color: white; /* para que el h1 mantenga el color */
+}
+header a.logo-header h1 {
+    margin: 0;
+}
+
+/* Main */
+main {
     text-align: center;
-    font-weight: bold;
+    margin-top: 120px; /* separacion ideal del main y el header fijo*/
 }
 
-.carrito-item-subtotal {
-    margin-left: 12px;   /* separa del bloque de botones */
-    margin-right: 12px;
+/* tarjeta de producto */
+
+.producto {    
+    display: inline-block;
+    background-color: rgba(255,255,255,0.8);
+    color: black;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    vertical-align: top;
+}
+.producto img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* nav */
+nav.menu > ul {   /* Selecciona solo los elementos <ul> que son hijos directos de un elemento <nav> con clase menu. */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+/* Nivel 1 links */
+nav.menu > ul > li {
+    position: relative;
+}
+nav.menu > ul > li > a {
+    display: block;
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+nav.menu > ul > li:hover > a {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* Nivel 2 */
+nav.menu > ul > li > ul {
+    display: none; /* oculto por defecto */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 5px;
+    min-width: 160px;
+    z-index: 1000;
+}
+nav.menu > ul > li:hover > ul {
+    display: flex; /* mostrar al hacer hover sobre nivel 1 */
+}
+
+/* Nivel 3 y subniveles */
+nav.menu ul li ul li {
+    position: relative;
+}
+nav.menu ul li ul li > ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 5px;
+    min-width: 160px;
+}
+nav.menu ul li ul li:hover > ul {
+    display: flex;
+}
+
+
+/* Nivel 1: flecha hacia abajo solo si tiene submenú directo */
+nav.menu > ul > li:has(> ul) > a::after {
+    content: " ▼";
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Nivel 2: flecha hacia la derecha solo si tiene submenú directo */
+nav.menu > ul > li > ul > li:has(> ul) > a::after {
+    content: " ▶";
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+/* Links en submenús */
+nav.menu ul li ul li a {
+    padding: 8px 12px;
     white-space: nowrap;
-    font-weight: bold;
 }
 
+/* Estilo general de links y hover */
+nav.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+}
+nav.menu a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* ================= botón de búsqueda ================= */
+
+.buscador-header {
+    display: flex;
+    align-items: center;
+}
+
+.buscador-header button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+    padding: 8px 12px;
+    width: 37px;
+    height: 37px;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;        /* para centrar la imagen de la lupa */
+    align-items: center;      /* centra vertical */
+    justify-content: center;  /* centra horizontal */
+}
+
+.buscador-header button img {
+  width: 38px;
+  height: 38px;
+}
+
+.buscador-header button:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+}
+
+/* Accesibilidad: foco con teclado */
+.buscador-header button:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+
+/* Input oculto por defecto */
+#input-buscar {
+    display: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 300px;
+    margin-right: 8px;
+}
+
+/* Mostrar input y ocultar demás menú cuando se activa */
+.menu-busqueda-activa nav.menu > ul > li:not(.buscador-header) {
+    display: none;
+}
+
+.menu-busqueda-activa #input-buscar {
+    display: inline-block;
+}
+
+/* Estilos del input cuando aparece */
+#input-buscar:focus {
+    box-shadow: 0 0 5px rgba(255,255,255,0.7);
+}
+
+
+/* Contenedor resultados */
+.resultados-busqueda {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 2000;
+    display: none;
+}
+
+.resultados-busqueda li {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.resultados-busqueda li:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* Activar buscador: input visible, ocultar demás botones */
+body.menu-busqueda-activa header nav.menu > ul > li:not(.buscador-header) {
+    display: none;
+}
+
+body.menu-busqueda-activa .buscador-header input {
+    display: block;
+}
+
+
+
+
+
+
+
+
+/* Main container */
+.carrito-page {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+/* Contenedor principal de carrito y aside */
+.carrito-container {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Productos del carrito */
+.productos-carrito {
+    flex: 2;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: black;
+}
+
+.productos-carrito h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #2196f3;
+}
+
+/* Cada item del carrito */
+.item-carrito {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-carrito:last-child {
+    border-bottom: none;
+}
+
+.item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
 .carrito-item-info {
-    flex: 2;
-    padding: 4px 4px;
-     min-width: 0;
-
+    flex: 1;
 }
 
 .carrito-item-info strong {
     display: block;
-    margin-bottom: 4px;
-    margin-right: 4px;
-    line-height: 1.2;   
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+.carrito-item-cantidad {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.carrito-item-cantidad button {
+    background-color: #2196f3;
+    border: none;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.carrito-item-cantidad button:hover {
+    background-color: #1976d2;
+}
+
+.carrito-item-subtotal {
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+    color: #555;
+}
+
+.btn-eliminar {
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-eliminar:hover {
+    background-color: #d32f2f;
+}
+
+/* Aside con resumen */
+.resumen-compra {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    height: fit-content;
+    position: sticky;
+    top: 2rem;
+    color: black;
+}
+
+.resumen-compra h3 {
+    color: #2196f3;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.resumen-compra p {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+#btn-pagar {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+}
+
+#btn-pagar:hover {
+    background-color: #388e3c;
+}
+
+/* Mensaje de carrito vacío */
+.productos-carrito p {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+    color: #777;
+}
+
+
+/* Responsive: en pantallas pequeñas, aside va debajo */
+@media (max-width: 900px) {
+    .carrito-container {
+        flex-direction: column;
+    }
+
+    .resumen-compra {
+        position: relative;
+        top: 0;
+        width: 100%;
+        margin-top: 1.5rem;
+    }
 }

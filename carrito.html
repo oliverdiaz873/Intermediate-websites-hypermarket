@@ -1,55 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <!--META ETIQUETAS-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Resultados de búsqueda en Hipermercado Superior: encuentra rápidamente los productos que buscas.">
-    <meta name="author" content="Oliver Antonio Díaz"/>
-    <meta name="robots" content="index, follow">  
-    <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
-    <meta name="theme-color" content="#2196f3">
-
-    <!-- etiquetas Open Graph -->
-    <meta property="og:title" content="Hipermercado Superior - Resultados de búsqueda">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/resultados_busqueda.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/logo.png">
-    <meta property="og:description" content="Encuentra rápidamente los productos que buscas en Hipermercado Superior.">
-    <meta property="og:site_name" content="Hipermercado Superior">
-    <meta property="og:locale" content="es_ES"> 
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hipermercado Superior - Resultados de búsqueda">
-    <meta name="twitter:description" content="Encuentra rápidamente los productos que buscas en Hipermercado Superior.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/logo.png">
-
-    <!-- Título, CSS y Fuentes-->
-    <title>Hipermercado Superior | Resultados de búsqueda</title>
-    <link rel="stylesheet" href="css/fonts.css">
+    <title>Carrito de Compras - Hipermercado Superior</title>
     <link rel="stylesheet" href="css/carrito.css">
-    <link rel="stylesheet" href="css/resultados_busqueda.css"> <!-- específico para esta página -->
-
-    <!-- Favicons -->
-    <link rel="icon" href="imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
-    <link rel="icon" href="imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
-    <link rel="icon" href="imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-
-    <!-- Scripts -->
-    <script src="js/menu_movil.js" defer></script>   <!-- comportamiento del menú en móviles -->
-    <script src="js/productos.js" defer></script> 
-    <script src="js/boton_de_busqueda.js" defer></script>   <!-- botón de búsqueda -->
-    <script src="js/carrito.js" defer></script>             <!-- carrito de compras -->
 </head>
-
-
 <body>
 
-      <header>
+<header>
 
-         <div>  <!-- Logo -->
+      <div>  <!-- Logo -->
           <a href="index.html" class="logo-header" aria-label="Ir a la página principal de Hipermercado Superior">
              <img src="imagenes/logo/logo.jpeg" alt="Logo de Hipermercado Superior">
              <h1>Hipermercado Superior</h1>
@@ -176,62 +137,39 @@
          <ul id="resultados-busqueda" class="resultados-busqueda"></ul>  <!-- Coincidencencias -->
        </li>
 
-       <div class="carrito-header" onclick="toggleCarrito()">
-            🛒 <span id="contador-carrito">0</span>
-       </div>
+       <!-- botón del carrito -->
+       <a href="carrito.html" class="carrito-header" aria-label="Ver carrito">
+          🛒 <span id="contador-carrito">0</span>
+        </a>
+
 
     </ul>
 </nav>
 
-    </header>
+    
 
-     
+</header>
 
-    <main class="contenedor-resultados">
-        <h2 id="titulo-resultados">Resultados</h2>
-
-        <div id="lista-resultados" class="lista-resultados">
-            <!-- Aquí se insertan los productos -->
+<main class="carrito-page">
+    <div class="carrito-container">
+        <!-- Productos del carrito -->
+        <div class="productos-carrito">
+            <h2>Mi Carrito</h2>
+            <div id="lista-carrito"></div>
         </div>
 
-        <p id="sin-resultados" class="sin-resultados">
-            No se encontraron productos.
-        </p>
-    </main>
+        <!-- Aside lateral -->
+        <aside class="resumen-compra">
+            <h3>Resumen de la Compra</h3>
+            <p>Total de productos: <span id="total-unidades">0</span></p>
+            <p>Total a pagar: RD$ <span id="total-carrito">0</span></p>
+            <button id="btn-pagar">Pagar Ahora</button>
+        </aside>
+    </div>
+</main>
 
-    
+<script src="js/carrito.js" defer></script>
+
 </body>
-
-<footer> <!--footer-->
-        
-         <div class="footer-content">
-              <!-- Derechos reservados -->
-              <small>&copy; 2025 Hipermercado Superior. Todos los derechos reservados.</small>
-
-              <!-- Íconos de redes sociales -->
-              <div class="social-icons">
-                   <a href="https://facebook.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Facebook">
-                    <img src="imagenes/iconos/redes/facebook.png" alt="ir a facebook de Hipermercado Superior">
-                   </a>
-
-                   <a href="https://twitter.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en X (antes Twitter)">
-                    <img src="imagenes/iconos/redes/x.png" alt="ir a x de Hipermercado Superior">
-                   </a>
-
-                   <a href="https://instagram.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Instagram">
-                    <img src="imagenes/iconos/redes/instagram.png" alt="ir a instagram de Hipermercado Superior">
-                   </a>
-              </div>
-
-                 <!-- Enlaces legales -->
-                <div class="footer-links">
-                  <a href="legal/privacy.html" title="Política de Privacidad">Política de Privacidad</a> |
-                  <a href="legal/terms.html" title="Términos de Uso">Términos de Uso</a>
-                </div>
-            </div>
-
-    </footer>
-
-
 </html>
 
