@@ -1,13 +1,108 @@
 document.addEventListener('DOMContentLoaded', () => {
     const STORAGE_KEY = 'carrito';
-    const contadorCarrito = document.getElementById('contador-carrito');
-    const listaCarrito = document.getElementById('lista-carrito');
-    const totalUnidadesEl = document.getElementById('total-unidades');
-    const totalCarritoEl = document.getElementById('total-carrito');
 
-    let carrito = cargarCarrito();
+    // Cargar carrito desde localStorage o iniciar vacío
+    let carrito = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
-    // === Agregar productos ===
+    // === Funciones para carrito ===
+    function guardarCarrito() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(carrito));
+    }
+
+    function calcularTotalUnidades() {
+        return carrito.reduce((sum, p) => sum + p.cantidad, 0);
+    }
+
+    function calcularTotalPrecio() {
+        return carrito.reduce((sum, p) => sum + p.cantidad * p.precio, 0);
+    }
+
+    function agregarProducto(producto) {
+        const existente = carrito.find(p => p.id === producto.id);
+        if (existente) {
+            existente.cantidad++;
+        } else {
+            carrito.push({ ...producto, cantidad: 1 });
+        }
+        guardarCarrito();
+        actualizarUI();
+    }
+
+    function eliminarProducto(id) {
+        carrito = carrito.filter(p => p.id !== id);
+        guardarCarrito();
+        actualizarUI();
+    }
+
+    function cambiarCantidad(id, delta) {
+        const item = carrito.find(p => p.id === id);
+        if (!item) return;
+        item.cantidad += delta;
+        if (item.cantidad <= 0) eliminarProducto(id);
+        else {
+            guardarCarrito();
+            actualizarUI();
+        }
+    }
+
+    function escapeHtml(str) {
+        if (typeof str !== 'string') return str;
+        return str.replace(/[&<>"']/g, m =>
+            ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":"&#39;" }[m])
+        );
+    }
+
+    // === Actualizar UI del carrito y contador ===
+    function actualizarUI() {
+        // Contador header
+        const contadorCarrito = document.getElementById('contador-carrito');
+        if (contadorCarrito) contadorCarrito.textContent = calcularTotalUnidades();
+
+        // Totales carrito en carrito.html
+        const totalUnidadesEl = document.getElementById('total-unidades');
+        if (totalUnidadesEl) totalUnidadesEl.textContent = calcularTotalUnidades();
+
+        const totalCarritoEl = document.getElementById('total-carrito');
+        if (totalCarritoEl) totalCarritoEl.textContent = calcularTotalPrecio().toLocaleString();
+
+        // Lista de carrito en carrito.html
+        const listaCarrito = document.getElementById('lista-carrito');
+        if (listaCarrito) renderizarCarrito(listaCarrito);
+    }
+
+    function renderizarCarrito(listaCarrito) {
+        if (carrito.length === 0) {
+            listaCarrito.innerHTML = '<p>Tu carrito está vacío.</p>';
+            return;
+        }
+
+        listaCarrito.innerHTML = carrito.map(p => {
+            const subtotal = p.precio * p.cantidad;
+            const contenido = `
+                <img src="${escapeHtml(p.img)}" alt="${escapeHtml(p.nombre)}" class="item-img">
+                <strong>${escapeHtml(p.nombre)}</strong>
+            `;
+            return `
+                <div class="item-carrito" data-id="${escapeHtml(p.id)}">
+                    <div class="carrito-item-info">
+                        ${p.url
+                            ? `<a href="${escapeHtml(p.url)}" class="carrito-link">${contenido}</a>`
+                            : contenido}
+                        <div>RD$ ${p.precio.toLocaleString()}</div>
+                    </div>
+                    <div class="carrito-item-cantidad">
+                        <button class="btn-decrease">−</button>
+                        <span>${p.cantidad}</span>
+                        <button class="btn-increase">+</button>
+                    </div>
+                    <div>RD$ ${subtotal.toLocaleString()}</div>
+                    <button class="btn-eliminar">Eliminar</button>
+                </div>
+            `;
+        }).join('');
+    }
+
+    // === Delegación de eventos para agregar productos dinámicos ===
     document.addEventListener('click', e => {
         const btn = e.target.closest('.btn-agregar');
         if (!btn) return;
@@ -27,15 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
         agregarProducto({ id, nombre, precio, img, url });
     });
 
-    // === Eventos dentro del carrito ===
-    if (listaCarrito) {
-    listaCarrito.addEventListener('click', e => {
+    // === Delegación de eventos dentro del carrito ===
+    document.addEventListener('click', e => {
         const itemEl = e.target.closest('.item-carrito');
         if (!itemEl) return;
 
         const id = itemEl.dataset.id;
 
-        // ⛔ Si el clic fue en un botón, NO navegar
         if (e.target.closest('button')) {
             e.preventDefault();
             e.stopPropagation();
@@ -46,109 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // ✅ Si el clic fue en el link o imagen → navegar
         const link = itemEl.querySelector('.carrito-link');
-        if (link) {
-            window.location.href = link.href;
-        }
+        if (link) window.location.href = link.href;
     });
-}
 
-
-    // === Lógica de carrito ===
-    function agregarProducto(producto) {
-        const existente = carrito.find(p => p.id === producto.id);
-        if (existente) existente.cantidad++;
-        else carrito.push({ ...producto, cantidad: 1 });
-
-        guardarCarrito();
-        actualizarUI();
-    }
-
-    function eliminarProducto(id) {
-        carrito = carrito.filter(p => p.id !== id);
-        guardarCarrito();
-        actualizarUI();
-    }
-
-    function cambiarCantidad(id, delta) {
-        const item = carrito.find(p => p.id === id);
-        if (!item) return;
-
-        item.cantidad += delta;
-        if (item.cantidad <= 0) eliminarProducto(id);
-        else {
-            guardarCarrito();
-            actualizarUI();
-        }
-    }
-
-    // === Totales ===
-    const calcularTotalUnidades = () =>
-        carrito.reduce((sum, p) => sum + p.cantidad, 0);
-
-    const calcularTotalPrecio = () =>
-        carrito.reduce((sum, p) => sum + p.cantidad * p.precio, 0);
-
-    // === UI ===
-    function actualizarUI() {
-        if (contadorCarrito) contadorCarrito.textContent = calcularTotalUnidades();
-        if (totalUnidadesEl) totalUnidadesEl.textContent = calcularTotalUnidades();
-        if (totalCarritoEl) totalCarritoEl.textContent = calcularTotalPrecio().toLocaleString();
-        if (listaCarrito) renderizarCarrito();
-    }
-
-    function renderizarCarrito() {
-        if (carrito.length === 0) {
-            listaCarrito.innerHTML = '<p>Tu carrito está vacío.</p>';
-            return;
-        }
-
-        listaCarrito.innerHTML = carrito.map(p => {
-            const subtotal = p.precio * p.cantidad;
-
-            const contenido = `
-                <img src="${escapeHtml(p.img)}" alt="${escapeHtml(p.nombre)}" class="item-img">
-                <strong>${escapeHtml(p.nombre)}</strong>
-            `;
-
-            return `
-                <div class="item-carrito" data-id="${escapeHtml(p.id)}">
-                    <div class="carrito-item-info">
-                        ${p.url
-                            ? `<a href="${escapeHtml(p.url)}" class="carrito-link">${contenido}</a>`
-                            : contenido}
-                        <div>RD$ ${p.precio.toLocaleString()}</div>
-                    </div>
-
-                    <div class="carrito-item-cantidad">
-                        <button class="btn-decrease">−</button>
-                        <span>${p.cantidad}</span>
-                        <button class="btn-increase">+</button>
-                    </div>
-
-                    <div>RD$ ${subtotal.toLocaleString()}</div>
-                    <button class="btn-eliminar">Eliminar</button>
-                </div>
-            `;
-        }).join('');
-    }
-
-    // === LocalStorage ===
-    function guardarCarrito() {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(carrito));
-    }
-
-    function cargarCarrito() {
-        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-    }
-
-    function escapeHtml(str) {
-        if (typeof str !== 'string') return str;
-        return str.replace(/[&<>"']/g, m =>
-            ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":"&#39;" }[m])
-        );
-    }
-
+    // === Inicializar UI al cargar la página ===
     actualizarUI();
 });

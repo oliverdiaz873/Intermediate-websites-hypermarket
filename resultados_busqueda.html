@@ -38,10 +38,8 @@
     <link rel="icon" href="imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
 
     <!-- Scripts -->
-    <script src="js/menu_movil.js" defer></script>   <!-- comportamiento del menú en móviles -->
-    <script src="js/productos.js" defer></script> 
-    <script src="js/boton_de_busqueda.js" defer></script>   <!-- botón de búsqueda -->
-    <script src="js/carrito.js" defer></script>             <!-- carrito de compras -->
+    
+
 </head>
 
 
@@ -178,8 +176,13 @@
 
        <!-- botón del carrito -->
        <a href="carrito.html" class="carrito-header" aria-label="Ver carrito">
-          🛒 <span id="contador-carrito">0</span>
-        </a>
+              <img 
+                 src="imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                 alt="Carrito de compras"
+                 class="icono-carrito"
+               >
+                <span id="contador-carrito">0</span>
+       </a>
 
     </ul>
 </nav>
@@ -199,6 +202,12 @@
             No se encontraron productos.
         </p>
     </main>
+
+
+<script src="js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles -->
+    <script src="js/productos.js" defer></script> 
+    <script src="js/boton_de_busqueda.js" defer></script>   <!-- codigo js para el botón de búsqueda -->
+    <script src="js/carrito.js" defer></script>
 
     
 </body>

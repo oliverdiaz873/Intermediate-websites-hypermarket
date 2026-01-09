@@ -285,6 +285,38 @@ body.menu-busqueda-activa .buscador-header input {
     display: block;
 }
 
+/* Botón carrito */
+.carrito-header {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+/* icono del carrito */
+.icono-carrito {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* contador del carrito */
+#contador-carrito {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+    background: red;
+    color: white;
+    font-size: 11px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    line-height: 1;
+}
+
 
 /* ========================== SECCIONES ========================== */
     

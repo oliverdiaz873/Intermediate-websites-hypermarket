@@ -1,6 +1,6 @@
 
-
 document.addEventListener("DOMContentLoaded", function () {
+
     const btnBuscar = document.getElementById("btn-buscar");
     const inputBuscar = document.getElementById("input-buscar");
     const resultados = document.getElementById("resultados-busqueda");
@@ -16,23 +16,35 @@ document.addEventListener("DOMContentLoaded", function () {
     const listaCarrito = document.getElementById('lista-carrito');
     const contadorCarrito = document.getElementById('contador-carrito');
     const totalCarritoEl = document.getElementById('total-carrito');
-    let carrito = cargarCarrito();
 
-    function guardarCarrito() {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(carrito));
-    }
+    let carrito = cargarCarrito();
 
     function cargarCarrito() {
         try {
             const raw = localStorage.getItem(STORAGE_KEY);
             return raw ? JSON.parse(raw) : [];
-        } catch (e) {
+        } catch {
             return [];
         }
     }
 
+    function guardarCarrito() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(carrito));
+    }
+
+    function actualizarContadorCarrito() {
+        const totalUnidades = carrito.reduce((s, it) => s + (it.cantidad || 0), 0);
+        if (contadorCarrito) {
+            contadorCarrito.textContent = totalUnidades;
+        }
+    }
+
     function renderizarCarrito() {
-        if (!listaCarrito) return;
+        if (!listaCarrito) {
+            actualizarContadorCarrito();
+            return;
+        }
+
         if (carrito.length === 0) {
             listaCarrito.innerHTML = '<p>Tu carrito está vacío.</p>';
         } else {
@@ -45,32 +57,45 @@ document.addEventListener("DOMContentLoaded", function () {
                             <div>RD$ ${Number(item.precio).toLocaleString()}</div>
                         </div>
                         <div class="carrito-item-cantidad">
-                            <button class="btn-decrease" aria-label="Disminuir cantidad">−</button>
-                            <span class="cantidad">${item.cantidad}</span>
-                            <button class="btn-increase" aria-label="Aumentar cantidad">+</button>
+                            <button class="btn-decrease">−</button>
+                            <span>${item.cantidad}</span>
+                            <button class="btn-increase">+</button>
                         </div>
-                        <div class="carrito-item-subtotal">RD$ ${Number(subtotal).toLocaleString()}</div>
-                        <button class="btn-eliminar" aria-label="Eliminar producto">Eliminar</button>
+                        <div class="carrito-item-subtotal">
+                            RD$ ${Number(subtotal).toLocaleString()}
+                        </div>
+                        <button class="btn-eliminar">Eliminar</button>
                     </div>
                 `;
             }).join('');
         }
 
-        const total = carrito.reduce((sum, it) => sum + (Number(it.precio) || 0) * (it.cantidad || 0), 0);
-        if (totalCarritoEl) totalCarritoEl.textContent = Number(total).toLocaleString();
-        if (contadorCarrito) {
-            const totalUnidades = carrito.reduce((s, it) => s + (it.cantidad || 0), 0);
-            contadorCarrito.textContent = totalUnidades;
+        const total = carrito.reduce(
+            (sum, it) => sum + (Number(it.precio) || 0) * (it.cantidad || 0),
+            0
+        );
+
+        if (totalCarritoEl) {
+            totalCarritoEl.textContent = Number(total).toLocaleString();
         }
+
+        actualizarContadorCarrito();
     }
 
     function agregarProducto(producto) {
         const existente = carrito.find(i => i.id === producto.id);
+
         if (existente) {
             existente.cantidad += 1;
         } else {
-            carrito.push({ id: producto.id, nombre: producto.nombre, precio: Number(producto.precio) || 0, cantidad: 1 });
+            carrito.push({
+                id: producto.id,
+                nombre: producto.nombre,
+                precio: Number(producto.precio) || 0,
+                cantidad: 1
+            });
         }
+
         guardarCarrito();
         renderizarCarrito();
     }
@@ -84,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function cambiarCantidad(id, delta) {
         const item = carrito.find(i => i.id === id);
         if (!item) return;
+
         item.cantidad += delta;
         if (item.cantidad <= 0) {
             eliminarProducto(id);
@@ -93,71 +119,65 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    window.toggleCarrito = function () {
-        const carritoEl = document.getElementById('carrito');
-        if (!carritoEl) return;
-        carritoEl.classList.toggle('activo');
-    };
-
     function escapeHtml(str) {
         if (typeof str !== 'string') return str;
-        return str.replace(/[&<>\"']/g, function (m) {
-            return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": "&#39;" })[m];
-        });
+        return str.replace(/[&<>\"']/g, m =>
+            ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":"&#39;" }[m])
+        );
     }
 
-    renderizarCarrito();
+    window.toggleCarrito = function () {
+        const carritoEl = document.getElementById('carrito');
+        if (carritoEl) carritoEl.classList.toggle('activo');
+    };
 
-    // Delegación global para botones de carrito
+    // Delegación global (Agregar / Carrito)
     document.addEventListener('click', (e) => {
-        const btn = e.target.closest('.btn-agregar');
-        if (btn) {
-            const card = btn.closest('.resultado-card');
-            if (!card) return;
-            const id = btn.dataset.id;
-            const nombre = btn.dataset.nombre;
-            const precio = Number(btn.dataset.precio) || 0;
-            agregarProducto({ id, nombre, precio });
+
+        const btnAgregar = e.target.closest('.btn-agregar');
+        if (btnAgregar) {
+            agregarProducto({
+                id: btnAgregar.dataset.id,
+                nombre: btnAgregar.dataset.nombre,
+                precio: btnAgregar.dataset.precio
+            });
+            return;
         }
 
         const itemEl = e.target.closest('.item-carrito');
-        if (itemEl) {
-            const id = itemEl.dataset.id;
-            if (e.target.classList.contains('btn-eliminar')) eliminarProducto(id);
-            if (e.target.classList.contains('btn-increase')) cambiarCantidad(id, 1);
-            if (e.target.classList.contains('btn-decrease')) cambiarCantidad(id, -1);
-        }
+        if (!itemEl) return;
+
+        const id = itemEl.dataset.id;
+
+        if (e.target.classList.contains('btn-eliminar')) eliminarProducto(id);
+        if (e.target.classList.contains('btn-increase')) cambiarCantidad(id, 1);
+        if (e.target.classList.contains('btn-decrease')) cambiarCantidad(id, -1);
     });
 
     /**********************
-     * BUSCADOR / AUTOCOMPLETADO
+     * BUSCADOR
      **********************/
-   if (btnBuscar && inputBuscar) {
+    if (btnBuscar && inputBuscar) {
+        const iconoBuscar = document.getElementById("icono-buscar");
 
-    const iconoBuscar = document.getElementById("icono-buscar");
+        btnBuscar.addEventListener("click", () => {
+            const activo = body.classList.toggle("menu-busqueda-activa");
 
-    btnBuscar.addEventListener("click", function () {
-        const estaActivo = body.classList.toggle("menu-busqueda-activa");
-
-        if (estaActivo) {
-            // Cambiar lupa por X roja
-            iconoBuscar.src = "imagenes/iconos/close_icon/close_red2.png";
-            iconoBuscar.alt = "Cerrar búsqueda";
-            inputBuscar.focus();
-        } else {
-            // Volver a lupa
-            iconoBuscar.src = "imagenes/iconos/magnifying_glass_icon/magnifying_glass.png";
-            iconoBuscar.alt = "Buscar";
-            inputBuscar.value = "";
-            resultados.style.display = "none";
-        }
-    });
-
-}
-
+            if (activo) {
+                iconoBuscar.src = "imagenes/iconos/close_icon/close_red2.png";
+                iconoBuscar.alt = "Cerrar búsqueda";
+                inputBuscar.focus();
+            } else {
+                iconoBuscar.src = "imagenes/iconos/magnifying_glass_icon/magnifying_glass.png";
+                iconoBuscar.alt = "Buscar";
+                inputBuscar.value = "";
+                resultados.style.display = "none";
+            }
+        });
+    }
 
     if (inputBuscar && resultados) {
-        inputBuscar.addEventListener("input", function () {
+        inputBuscar.addEventListener("input", () => {
             const valor = normalizarTexto(inputBuscar.value);
             resultados.innerHTML = "";
 
@@ -176,32 +196,25 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             coincidencias.forEach(p => {
-    const li = document.createElement("li");
-    li.classList.add("item-busqueda");
-
-    li.innerHTML = `
-        <img src="${p.imagen}" alt="${p.nombre}">
-        <span>${p.nombre}</span>
-    `;
-
-    li.addEventListener("click", () => irAResultados(p.nombre));
-    resultados.appendChild(li);
-});
-
+                const li = document.createElement("li");
+                li.className = "item-busqueda";
+                li.innerHTML = `<img src="${p.imagen}"><span>${p.nombre}</span>`;
+                li.addEventListener("click", () => irAResultados(p.nombre));
+                resultados.appendChild(li);
+            });
 
             resultados.style.display = "block";
         });
 
-        inputBuscar.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") {
-                const texto = inputBuscar.value.trim();
-                if (texto !== "") irAResultados(texto);
+        inputBuscar.addEventListener("keydown", e => {
+            if (e.key === "Enter" && inputBuscar.value.trim()) {
+                irAResultados(inputBuscar.value);
             }
         });
     }
 
     /**********************
-     * RESULTADOS DE BÚSQUEDA
+     * RESULTADOS
      **********************/
     if (contenedorResultados && tituloResultados && sinResultados) {
         const params = new URLSearchParams(window.location.search);
@@ -225,47 +238,40 @@ document.addEventListener("DOMContentLoaded", function () {
             card.className = "resultado-card";
 
             card.innerHTML = `
-    <img src="${p.imagen}" alt="${p.nombre}">
-    <div class="resultado-info">
-        <h3>${p.nombre}</h3>
-        <div class="resultado-precio">
-            ${p.precioTexto ? p.precioTexto : "RD$ " + Number(p.precio).toLocaleString()}
-        </div>
-        <div class="resultado-botones">
-            <button class="btn-agregar"
-                data-id="${p.id}"
-                data-nombre="${p.nombre}"
-                data-precio="${p.precio}">
-                Agregar
-            </button>
-        </div>
-    </div>
-`;
+                 <img src="${p.imagen}">
+                     <div class="resultado-info">
+                           <h3>${p.nombre}</h3>
+                     <div class="resultado-precio">
+                            ${p.precioTexto || "RD$ " + p.precio}
+                     </div>
+                      <button class="btn-agregar"
+                        data-id="${p.id}"
+                        data-nombre="${p.nombre}"
+                        data-precio="${p.precio}">
+                         Agregar
+                     </button>
+                   </div>
+                 `;
 
-
-      card.addEventListener("click", (e) => {
-    // Si el click fue en el botón Agregar, NO navegar
-    if (e.target.closest(".btn-agregar")) return;
-
-    window.location.href = p.url;
-});
-
+            card.addEventListener("click", e => {
+                if (!e.target.closest('.btn-agregar')) {
+                    window.location.href = p.url;
+                }
+            });
 
             contenedorResultados.appendChild(card);
         });
     }
+
+    renderizarCarrito();
 });
 
-// Normalización de texto (para buscar)
+/************ UTILIDADES ************/
 function normalizarTexto(texto) {
     return texto.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-// Redirige a la página de resultados
 function irAResultados(texto) {
-    const query = encodeURIComponent(texto.trim());
-    window.location.href = `resultados_busqueda.html?q=${query}`;
+    const q = encodeURIComponent(texto.trim());
+    window.location.href = `resultados_busqueda.html?q=${q}`;
 }
-
-
- 

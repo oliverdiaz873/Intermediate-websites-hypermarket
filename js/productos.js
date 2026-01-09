@@ -1,6 +1,8 @@
 /**********************
  * DATOS DE PRODUCTOS
  **********************/
+// Un array de objetos es un array cuyos elementos son estructuras de datos de tipo Object.
+
 const productos = [
 
     //--Alimentos--//
@@ -1257,27 +1259,151 @@ const productos = [
         imagen: "imagenes/productos/Muebles_y_decoracion/sofa/sofa_verde.avif"
     },
  
+    //--Ropa--//
+
+    //Pantalones para Hombres
+    {
+        id: "pantalon_negro",
+        nombre: "Pantalón Negro",
+        url: "productos/ropa/pantalones_para_hombres/pantalon_negro.html",
+        categoria: "pantalones_para_hombres",
+        precio: 4000, // número para carrito
+        precioTexto: "Precio: $4,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_hombres/pantalon_negro.avif"
+    },
+     {
+        id: "pantalones_de_golf",
+        nombre: "Pantalones de Golf",
+        url: "productos/ropa/pantalones_para_hombres/pantalones_de_golf.html",
+        categoria: "pantalones_para_hombres",
+        precio: 2000, // número para carrito
+        precioTexto: "Precio: $2,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_hombres/pantalones_de_golf.avif"
+    },
+    {
+        id: "pantalones_deportivos_joggers",
+        nombre: "Pantalones Deportivos Joggers",
+        url: "productos/ropa/pantalones_para_hombres/pantalones_deportivos_joggers.html",
+        categoria: "pantalones_para_hombres",
+        precio: 3000, // número para carrito
+        precioTexto: "Precio: $3,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_hombres/pantalones_deportivos_joggers.avif"
+    },
+    {
+        id: "pantalones_jeans",
+        nombre: "Pantalones Jeans",
+        url: "productos/ropa/pantalones_para_hombres/pantalones_jeans.html",
+        categoria: "pantalones_para_hombres",
+        precio: 5000, // número para carrito
+        precioTexto: "Precio: $5,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_hombres/pantalones_jeans.avif"
+    },
+    {
+        id: "pantalones_joggers",
+        nombre: "Pantalones Joggers",
+        url: "productos/ropa/pantalones_para_hombres/pantalones_joggers.html",
+        categoria: "pantalones_para_hombres",
+        precio: 4000, // número para carrito
+        precioTexto: "Precio: $4,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_hombres/pantalones_joggers.avif"
+    },
  
+    // Pantalones para Mujeres
 
+    {
+        id: "leggings_de_licra",
+        nombre: "Leggings de Licra",
+        url: "productos/ropa/pantalones_para_mujeres/leggings.html",
+        categoria: "pantalones_para_mujeres",
+        precio: 1500, // número para carrito
+        precioTexto: "Precio: $1,500", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_mujeres/licra.avif"
+    },
+     {
+        id: "pantalon_acampanado",
+        nombre: "Pantalón Acampanado",
+        url: "productos/ropa/pantalones_para_mujeres/pantalon_acampanado.html",
+        categoria: "pantalones_para_mujeres",
+        precio: 2500, // número para carrito
+        precioTexto: "Precio: $2,500", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_acampanado.avif"
+    },
+    {
+        id: "pantalon_casual",
+        nombre: "Pantalón Casual",
+        url: "productos/ropa/pantalones_para_mujeres/pantalon_casual.html",
+        categoria: "pantalones_para_mujeres",
+        precio: 4000, // número para carrito
+        precioTexto: "Precio: $4,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_casual.avif"
+    },
+    {
+        id: "pantalon_jean",
+        nombre: "Pantalón Jean",
+        url: "productos/ropa/pantalones_para_mujeres/pantalon_jean.html",
+        categoria: "pantalones_para_mujeres",
+        precio: 5000, // número para carrito
+        precioTexto: "Precio: $5,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_jean_mujer.avif"
+    },
+    {
+        id: "pantalon_liso_mujer",
+        nombre: "Pantalón Liso Mujer",
+        url: "productos/ropa/pantalones_para_mujeres/pantalon_liso.html",
+        categoria: "pantalones_para_mujeres",
+        precio: 4000, // número para carrito
+        precioTexto: "Precio: $4,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_liso_mujer.avif"
+    },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // Pantalones para Niños
+    {
+        id: "jean_para_ninos",
+        nombre: "Jean para Niños",
+        url: "productos/ropa/pantalones_para_ninos/jean_para_ninos.html",
+        categoria: "pantalones_para_ninos",
+        precio: 1000, // número para carrito
+        precioTexto: "Precio: $1,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_ninos/jean_ninos.avif"
+    },
+    {
+        id: "licra_para_ninos",
+        nombre: "Licra para Niños",
+        url: "productos/ropa/pantalones_para_ninos/licra_para_ninos.html",
+        categoria: "pantalones_para_ninos",
+        precio: 1500, // número para carrito
+        precioTexto: "Precio: $1,500", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_ninos/licra.avif"
+    },
+    {
+        id: "pantalon_deportivo",
+        nombre: "Pantalón Deportivo",
+        url: "productos/ropa/pantalones_para_ninos/pantalon_deportivo.html",
+        categoria: "pantalones_para_ninos",
+        precio: 2300, // número para carrito
+        precioTexto: "Precio: $2,300", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_ninos/pantalon_deportivo.avif"
+    },
+    {
+        id: "pantalon_liso",
+        nombre: "Pantalón Liso",
+        url: "productos/ropa/pantalones_para_ninos/pantalon_liso.html",
+        categoria: "pantalones_para_ninos",
+        precio: 2000, // número para carrito
+        precioTexto: "Precio: $2,000", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_ninos/pantalon_liso.avif"
+    },
+    {
+        id: "pantalones_lisos_para_ninos",
+        nombre: "Pantalones Lisos para Niños",
+        url: "productos/ropa/pantalones_para_ninos/pantalones_lisos.html",
+        categoria: "pantalones_para_ninos",
+        precio: 2500, // número para carrito
+        precioTexto: "Precio: $2,500", // texto para mostrar en resultados
+        imagen: "imagenes/productos/Ropa/pantalones_para_ninos/pantalon_para_ninos.avif"
+    },
+ 
+ 
 
 
 ];
