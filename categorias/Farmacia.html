@@ -36,7 +36,13 @@
     <link rel="icon" href="../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+    
+    <!-- Scripts -->
+    <script src="../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles -->
+    <script src="../js/productos.js" defer></script> 
+    <script src="../js/boton_de_busqueda.js" defer></script>   <!-- codigo js para el botón de búsqueda -->
+    <script src="../js/carrito.js" defer></script>
+  </head>
 
 
 
@@ -159,6 +165,25 @@
         <li><a href="../index.html#ofertas">Ofertas</a></li>
         <li><a href="../contacto.html">Contacto</a></li>
 
+       <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul>  <!-- Coincidencencias -->
+       </li>
+
+       <!-- botón del carrito -->
+       <a href="../carrito.html" class="carrito-header" aria-label="Ver carrito">
+              <img 
+                 src="../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                 alt="Carrito de compras"
+                 class="icono-carrito"
+               >
+                <span id="contador-carrito">0</span>
+       </a>
+
     </ul>
 </nav>
 
@@ -180,53 +205,60 @@
 
              <div class="productos-container">
 
-               <!-- Producto 1 -->
+               <div class="producto-card">
                  <a href="../productos/farmacia/analgesicos/equate_analgesico.html">
-                 <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/analgesicos/equate.avif" alt="Equate Analgésico">
-                   <h3>Equate Analgésico</h3>
-                   <p>Precio: $1,000</p>
-                 </div>
+                   <article class="producto" data-id="equate-analgesico" data-nombre="Equate Analgésico" data-precio="1000" data-img="../imagenes/productos/Farmacia/analgesicos/equate.avif" data-url="../productos/farmacia/analgesicos/equate_analgesico.html">
+                     <img src="../imagenes/productos/Farmacia/analgesicos/equate.avif" alt="Equate Analgésico">
+                     <h3>Equate Analgésico</h3>
+                     <p>Precio: $1,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 2 -->
-                  <a href="../productos/farmacia/analgesicos/flanax.html">
-               <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/analgesicos/flanax.png" alt="Flanax Analgésico">
-                   <h3>Flanax Analgésico</h3>
-                   <p>Precio: $2,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/analgesicos/flanax.html">
+                   <article class="producto" data-id="flanax-analgesico" data-nombre="Flanax Analgésico" data-precio="2000" data-img="../imagenes/productos/Farmacia/analgesicos/flanax.png" data-url="../productos/farmacia/analgesicos/flanax.html">
+                     <img src="../imagenes/productos/Farmacia/analgesicos/flanax.png" alt="Flanax Analgésico">
+                     <h3>Flanax Analgésico</h3>
+                     <p>Precio: $2,000</p>
+                   </article>
                  </a>
-                 
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 3 -->
-                <a href="../productos/farmacia/analgesicos/thera_gesic.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/analgesicos/thera-gesic.avif" alt="Thera-Gesic Analgésico">
-                   <h3>Thera-Gesic Analgésico</h3>
-                   <p>Precio: $3,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/analgesicos/thera_gesic.html">
+                   <article class="producto" data-id="thera-gesic" data-nombre="Thera-Gesic Analgésico" data-precio="3000" data-img="../imagenes/productos/Farmacia/analgesicos/thera-gesic.avif" data-url="../productos/farmacia/analgesicos/thera_gesic.html">
+                     <img src="../imagenes/productos/Farmacia/analgesicos/thera-gesic.avif" alt="Thera-Gesic Analgésico">
+                     <h3>Thera-Gesic Analgésico</h3>
+                     <p>Precio: $3,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-
-               <!-- Producto 4 -->
+               <div class="producto-card">
                  <a href="../productos/farmacia/analgesicos/tylenol.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/analgesicos/tylenol.avif" alt="Tylenol Analgésico">
-                   <h3>Tylenol Analgésico</h3>
-                   <p>Precio: $5,000</p>
-                 </div>
+                   <article class="producto" data-id="tylenol-analgesico" data-nombre="Tylenol Analgésico" data-precio="5000" data-img="../imagenes/productos/Farmacia/analgesicos/tylenol.avif" data-url="../productos/farmacia/analgesicos/tylenol.html">
+                     <img src="../imagenes/productos/Farmacia/analgesicos/tylenol.avif" alt="Tylenol Analgésico">
+                     <h3>Tylenol Analgésico</h3>
+                     <p>Precio: $5,000</p>
+                   </article>
                  </a>
-                
-                 <!-- Producto 5 -->
-                 <a href="../productos/farmacia/analgesicos/vaporizing.html">
-                 <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/analgesicos/vaporizing.avif" alt="Vaporizing Analgésico">
-                   <h3>Vaporizing Analgésico</h3>
-                   <p>Precio: $3,000</p>
-                 </div>
-                 </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
+               <div class="producto-card">
+                 <a href="../productos/farmacia/analgesicos/vaporizing.html">
+                   <article class="producto" data-id="vaporizing-analgesico" data-nombre="Vaporizing Analgésico" data-precio="3000" data-img="../imagenes/productos/Farmacia/analgesicos/vaporizing.avif" data-url="../productos/farmacia/analgesicos/vaporizing.html">
+                     <img src="../imagenes/productos/Farmacia/analgesicos/vaporizing.avif" alt="Vaporizing Analgésico">
+                     <h3>Vaporizing Analgésico</h3>
+                     <p>Precio: $3,000</p>
+                   </article>
+                 </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
             </div>
       </section>
@@ -238,62 +270,72 @@
 
              <div class="productos-container">
 
-               <!-- Producto 1 -->
-                <a href="../productos/farmacia/dermocosmetica/acido_hialuronico.html">
-                 <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Dermocosmetica/cerave_acido_hyaluronico.avif" alt="CeraVe Ácido Hialurónico">
-                   <h3>CeraVe Ácido Hialurónico</h3>
-                   <p>Precio: $2,500</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/dermocosmetica/acido_hialuronico.html">
+                   <article class="producto" data-id="cerave-acido-hialuronico" data-nombre="CeraVe Ácido Hialurónico" data-precio="2500" data-img="../imagenes/productos/Farmacia/Dermocosmetica/cerave_acido_hyaluronico.avif" data-url="../productos/farmacia/dermocosmetica/acido_hialuronico.html">
+                     <img src="../imagenes/productos/Farmacia/Dermocosmetica/cerave_acido_hyaluronico.avif" alt="CeraVe Ácido Hialurónico">
+                     <h3>CeraVe Ácido Hialurónico</h3>
+                     <p>Precio: $2,500</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 2 -->
-
-               <a href="../productos/farmacia/dermocosmetica/hidratante_cerave.html">
-               <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Dermocosmetica/hidratante_cerave.jpg" alt="Hidratante CeraVe">
-                   <h3>Hidratante CeraVe</h3>
-                   <p>Precio: $1,500</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/dermocosmetica/hidratante_cerave.html">
+                   <article class="producto" data-id="hidratante-cerave" data-nombre="Hidratante CeraVe" data-precio="1500" data-img="../imagenes/productos/Farmacia/Dermocosmetica/hidratante_cerave.jpg" data-url="../productos/farmacia/dermocosmetica/hidratante_cerave.html">
+                     <img src="../imagenes/productos/Farmacia/Dermocosmetica/hidratante_cerave.jpg" alt="Hidratante CeraVe">
+                     <h3>Hidratante CeraVe</h3>
+                     <p>Precio: $1,500</p>
+                   </article>
                  </a>
-                 
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 3 -->
-                <a href="../productos/farmacia/dermocosmetica/hidratante_grande.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Dermocosmetica/hidratante_cerave_grande.avif" alt="Hidratante CeraVe Grande">
-                   <h3>Hidratante CeraVe Grande</h3>
-                   <p>Precio: $2,000</p>
-                 </div>
-                  </a>
-
-               <!-- Producto 4 -->
-
-               <a href="../productos/farmacia/dermocosmetica/hidratante_eucerin.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Dermocosmetica/hidratante_eucerin.avif" alt="Hidratante Eucerin">
-                   <h3>Hidratante Eucerin</h3>
-                   <p>Precio: $2,200</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/dermocosmetica/hidratante_grande.html">
+                   <article class="producto" data-id="hidratante-cerave-grande" data-nombre="Hidratante CeraVe Grande" data-precio="2000" data-img="../imagenes/productos/Farmacia/Dermocosmetica/hidratante_cerave_grande.avif" data-url="../productos/farmacia/dermocosmetica/hidratante_grande.html">
+                     <img src="../imagenes/productos/Farmacia/Dermocosmetica/hidratante_cerave_grande.avif" alt="Hidratante CeraVe Grande">
+                     <h3>Hidratante CeraVe Grande</h3>
+                     <p>Precio: $2,000</p>
+                   </article>
                  </a>
-                
-                    <a href="../productos/farmacia/dermocosmetica/retinol.html">
-                  <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Dermocosmetica/retinol.avif" alt="Retinol">
-                   <h3>Retinol</h3>
-                   <p>Precio: $1,100</p>
-                 </div>
-                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-                  <a href="../productos/farmacia/dermocosmetica/serum_vitaminac.html">
-                 <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Dermocosmetica/serum_vitaminC.avif" alt="Serum Vitamina C">
-                   <h3>Serum Vitamina C</h3>
-                   <p>Precio: $1,400</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/dermocosmetica/hidratante_eucerin.html">
+                   <article class="producto" data-id="hidratante-eucerin" data-nombre="Hidratante Eucerin" data-precio="2200" data-img="../imagenes/productos/Farmacia/Dermocosmetica/hidratante_eucerin.avif" data-url="../productos/farmacia/dermocosmetica/hidratante_eucerin.html">
+                     <img src="../imagenes/productos/Farmacia/Dermocosmetica/hidratante_eucerin.avif" alt="Hidratante Eucerin">
+                     <h3>Hidratante Eucerin</h3>
+                     <p>Precio: $2,200</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-                
+               <div class="producto-card">
+                 <a href="../productos/farmacia/dermocosmetica/retinol.html">
+                   <article class="producto" data-id="retinol" data-nombre="Retinol" data-precio="1100" data-img="../imagenes/productos/Farmacia/Dermocosmetica/retinol.avif" data-url="../productos/farmacia/dermocosmetica/retinol.html">
+                     <img src="../imagenes/productos/Farmacia/Dermocosmetica/retinol.avif" alt="Retinol">
+                     <h3>Retinol</h3>
+                     <p>Precio: $1,100</p>
+                   </article>
+                 </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
+
+               <div class="producto-card">
+                 <a href="../productos/farmacia/dermocosmetica/serum_vitaminac.html">
+                   <article class="producto" data-id="serum-vitamina-c" data-nombre="Serum Vitamina C" data-precio="1400" data-img="../imagenes/productos/Farmacia/Dermocosmetica/serum_vitaminC.avif" data-url="../productos/farmacia/dermocosmetica/serum_vitaminac.html">
+                     <img src="../imagenes/productos/Farmacia/Dermocosmetica/serum_vitaminC.avif" alt="Serum Vitamina C">
+                     <h3>Serum Vitamina C</h3>
+                     <p>Precio: $1,400</p>
+                   </article>
+                 </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
+
             </div>
       </section>
 
@@ -304,54 +346,61 @@
 
              <div class="productos-container">
 
-               <!-- Producto 1 -->
-                <a href="../productos/farmacia/vitaminas_y_minerales/multivitaminico.html">
-                 <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/multivitaminico.avif" alt="Multivitamínico">
-                   <h3>Multivitamínico</h3>
-                   <p>Precio: $3,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/vitaminas_y_minerales/multivitaminico.html">
+                   <article class="producto" data-id="multivitaminico" data-nombre="Multivitamínico" data-precio="3000" data-img="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/multivitaminico.avif" data-url="../productos/farmacia/vitaminas_y_minerales/multivitaminico.html">
+                     <img src="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/multivitaminico.avif" alt="Multivitamínico">
+                     <h3>Multivitamínico</h3>
+                     <p>Precio: $3,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 2 -->
+               <div class="producto-card">
                  <a href="../productos/farmacia/vitaminas_y_minerales/omega3.html">
-               <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/omega3.avif" alt="Omega 3">
-                   <h3>Omega 3</h3>
-                   <p>Precio: $4,000</p>
-                 </div>
+                   <article class="producto" data-id="omega3" data-nombre="Omega 3" data-precio="4000" data-img="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/omega3.avif" data-url="../productos/farmacia/vitaminas_y_minerales/omega3.html">
+                     <img src="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/omega3.avif" alt="Omega 3">
+                     <h3>Omega 3</h3>
+                     <p>Precio: $4,000</p>
+                   </article>
                  </a>
-                 
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 3 -->
-                <a href="../productos/farmacia/vitaminas_y_minerales/vitafusion.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/vitafusion.avif" alt="Vitafusion">
-                   <h3>Vitafusion</h3>
-                   <p>Precio: $1,300</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/vitaminas_y_minerales/vitafusion.html">
+                   <article class="producto" data-id="vitafusion" data-nombre="Vitafusion" data-precio="1300" data-img="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/vitafusion.avif" data-url="../productos/farmacia/vitaminas_y_minerales/vitafusion.html">
+                     <img src="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/vitafusion.avif" alt="Vitafusion">
+                     <h3>Vitafusion</h3>
+                     <p>Precio: $1,300</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-
-               <!-- Producto 4 -->
-                <a href="../productos/farmacia/vitaminas_y_minerales/vitaminac.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/vitaminaC.avif" alt="Vitamina C">
-                   <h3>Vitamina C</h3>
-                   <p>Precio: $2,000</p>
-                 </div>
-                </a>
-
-                 <!-- Producto 5 -->
-                  <a href="../productos/farmacia/vitaminas_y_minerales/flintstones.html">
-                  <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/flintstones.avif" alt="Flintstones">
-                   <h3>Flintstones</h3>
-                   <p>Precio: $2,500</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/vitaminas_y_minerales/vitaminac.html">
+                   <article class="producto" data-id="vitamina-c" data-nombre="Vitamina C" data-precio="2000" data-img="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/vitaminaC.avif" data-url="../productos/farmacia/vitaminas_y_minerales/vitaminac.html">
+                     <img src="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/vitaminaC.avif" alt="Vitamina C">
+                     <h3>Vitamina C</h3>
+                     <p>Precio: $2,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-                  
+               <div class="producto-card">
+                 <a href="../productos/farmacia/vitaminas_y_minerales/flintstones.html">
+                   <article class="producto" data-id="flintstones" data-nombre="Flintstones" data-precio="2500" data-img="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/flintstones.avif" data-url="../productos/farmacia/vitaminas_y_minerales/flintstones.html">
+                     <img src="../imagenes/productos/Farmacia/Vitaminas_y_Minerales/flintstones.avif" alt="Flintstones">
+                     <h3>Flintstones</h3>
+                     <p>Precio: $2,500</p>
+                   </article>
+                 </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
+
             </div>
       </section>
 
@@ -362,53 +411,61 @@
 
              <div class="productos-container">
 
-               <!-- Producto 1 -->
-                <a href="../productos/farmacia/antigripales_y_resfriado/antiflu_Des.html">
-                 <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Antigripales/Antiflu-Des.avif" alt="Antiflu-Des">
-                   <h3>Antiflu-Des</h3>
-                   <p>Precio: $1,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/antigripales_y_resfriado/antiflu_Des.html">
+                   <article class="producto" data-id="antiflu-des" data-nombre="Antiflu-Des" data-precio="1000" data-img="../imagenes/productos/Farmacia/Antigripales/Antiflu-Des.avif" data-url="../productos/farmacia/antigripales_y_resfriado/antiflu_Des.html">
+                     <img src="../imagenes/productos/Farmacia/Antigripales/Antiflu-Des.avif" alt="Antiflu-Des">
+                     <h3>Antiflu-Des</h3>
+                     <p>Precio: $1,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 2 -->
-                <a href="../productos/farmacia/antigripales_y_resfriado/coldyflu.html">
-               <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Antigripales/coldyflu.avif" alt="Coldyflu">
-                   <h3>Coldyflu</h3>
-                   <p>Precio: $2,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/antigripales_y_resfriado/coldyflu.html">
+                   <article class="producto" data-id="coldyflu" data-nombre="Coldyflu" data-precio="2000" data-img="../imagenes/productos/Farmacia/Antigripales/coldyflu.avif" data-url="../productos/farmacia/antigripales_y_resfriado/coldyflu.html">
+                     <img src="../imagenes/productos/Farmacia/Antigripales/coldyflu.avif" alt="Coldyflu">
+                     <h3>Coldyflu</h3>
+                     <p>Precio: $2,000</p>
+                   </article>
                  </a>
-                 
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 3 -->
-                <a href="../productos/farmacia/antigripales_y_resfriado/mucinex.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Antigripales/mucinex.avif" alt="Mucinex">
-                   <h3>Mucinex</h3>
-                   <p>Precio: $3,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/antigripales_y_resfriado/mucinex.html">
+                   <article class="producto" data-id="mucinex" data-nombre="Mucinex" data-precio="3000" data-img="../imagenes/productos/Farmacia/Antigripales/mucinex.avif" data-url="../productos/farmacia/antigripales_y_resfriado/mucinex.html">
+                     <img src="../imagenes/productos/Farmacia/Antigripales/mucinex.avif" alt="Mucinex">
+                     <h3>Mucinex</h3>
+                     <p>Precio: $3,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-
-               <!-- Producto 4 -->
-                <a href="../productos/farmacia/antigripales_y_resfriado/nyquil.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Antigripales/nyquil.avif" alt="Nyquil">
-                   <h3>Nyquil</h3>
-                   <p>Precio: $3,500</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/farmacia/antigripales_y_resfriado/nyquil.html">
+                   <article class="producto" data-id="nyquil" data-nombre="Nyquil" data-precio="3500" data-img="../imagenes/productos/Farmacia/Antigripales/nyquil.avif" data-url="../productos/farmacia/antigripales_y_resfriado/nyquil.html">
+                     <img src="../imagenes/productos/Farmacia/Antigripales/nyquil.avif" alt="Nyquil">
+                     <h3>Nyquil</h3>
+                     <p>Precio: $3,500</p>
+                   </article>
                  </a>
-                
-                  <a href="../productos/farmacia/antigripales_y_resfriado/theraflu.html">
-                  <div class="producto">
-                   <img src="../imagenes/productos/Farmacia/Antigripales/theraflu.avif" alt="Theraflu">
-                   <h3>Theraflu</h3>
-                   <p>Precio: $2,200</p>
-                 </div>
-                 </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-                  
+               <div class="producto-card">
+                 <a href="../productos/farmacia/antigripales_y_resfriado/theraflu.html">
+                   <article class="producto" data-id="theraflu" data-nombre="Theraflu" data-precio="2200" data-img="../imagenes/productos/Farmacia/Antigripales/theraflu.avif" data-url="../productos/farmacia/antigripales_y_resfriado/theraflu.html">
+                     <img src="../imagenes/productos/Farmacia/Antigripales/theraflu.avif" alt="Theraflu">
+                     <h3>Theraflu</h3>
+                     <p>Precio: $2,200</p>
+                   </article>
+                 </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
+
             </div>
       </section>
 

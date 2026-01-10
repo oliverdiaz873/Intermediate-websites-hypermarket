@@ -376,8 +376,8 @@ body.menu-busqueda-activa .buscador-header input {
 }
 
 .item-img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 8px;
 }

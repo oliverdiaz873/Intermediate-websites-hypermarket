@@ -224,9 +224,144 @@ nav.menu a:hover {
 }
 
 
+/* ================= botón de búsqueda ================= */
+
+.buscador-header {
+    display: flex;
+    align-items: center;
+}
+
+.buscador-header button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+    padding: 8px 12px;
+    width: 37px;
+    height: 37px;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;        /* para centrar la imagen de la lupa */
+    align-items: center;      /* centra vertical */
+    justify-content: center;  /* centra horizontal */
+}
+
+.buscador-header button img {
+  width: 38px;
+  height: 38px;
+}
+
+.buscador-header button:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+}
+
+/* Accesibilidad: foco con teclado */
+.buscador-header button:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+
+/* Input oculto por defecto */
+#input-buscar {
+    display: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    width: 300px;
+    margin-right: 8px;
+}
+
+/* Mostrar input y ocultar demás menú cuando se activa */
+.menu-busqueda-activa nav.menu > ul > li:not(.buscador-header) {
+    display: none;
+}
+
+.menu-busqueda-activa #input-buscar {
+    display: inline-block;
+}
+
+/* Estilos del input cuando aparece */
+#input-buscar:focus {
+    box-shadow: 0 0 5px rgba(255,255,255,0.7);
+}
+
+
+/* Contenedor resultados */
+.resultados-busqueda {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 2000;
+    display: none;
+}
+
+.resultados-busqueda li {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.resultados-busqueda li:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* Activar buscador: input visible, ocultar demás botones */
+body.menu-busqueda-activa header nav.menu > ul > li:not(.buscador-header) {
+    display: none;
+}
+
+body.menu-busqueda-activa .buscador-header input {
+    display: block;
+}
+
+/* Botón carrito */
+.carrito-header {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+/* icono del carrito */
+.icono-carrito {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* contador del carrito */
+#contador-carrito {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+    background: red;
+    color: white;
+    font-size: 11px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    line-height: 1;
+}
 
 /* Sección Productos Destacados y ofertas */
-
 .productos-destacados {
     padding: 30px 20px;
     box-sizing: border-box;
@@ -260,6 +395,7 @@ nav.menu a:hover {
     flex: 0 0 auto; /* evita que se encojan */
     height: 290px;       /* Ajusta la altura  */
     overflow: hidden;     /* Oculta lo que se salga */
+     margin-bottom: 1px;
 }
 
 
@@ -330,6 +466,33 @@ section {
 /* Si quieres mantener el contenido centrado dentro de la sección */
 section > * {
     margin: 0 auto;  
+}
+
+
+/* Botón agregar */
+.btn-agregar {
+    margin-top: 8px;
+    width: 35%;
+    height: 35px;
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 100px;
+    outline: none;
+    padding: 0.5rem;
+    margin-bottom: 3px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    align-self: center;
+    background-color: #ffcc00;
+}
+.btn-agregar:hover {
+    background-color: #ffffff;
 }
 
 

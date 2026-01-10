@@ -36,7 +36,13 @@
     <link rel="icon" href="../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+    
+    <!-- Scripts -->
+    <script src="../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles -->
+    <script src="../js/productos.js" defer></script> 
+    <script src="../js/boton_de_busqueda.js" defer></script>   <!-- codigo js para el botón de búsqueda -->
+    <script src="../js/carrito.js" defer></script>
+  </head>
 
 
 
@@ -161,6 +167,25 @@
         <li><a href="../index.html#ofertas">Ofertas</a></li>
         <li><a href="../contacto.html">Contacto</a></li>
 
+       <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul>  <!-- Coincidencencias -->
+       </li>
+
+       <!-- botón del carrito -->
+       <a href="../carrito.html" class="carrito-header" aria-label="Ver carrito">
+              <img 
+                 src="../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                 alt="Carrito de compras"
+                 class="icono-carrito"
+               >
+                <span id="contador-carrito">0</span>
+       </a>
+
     </ul>
 </nav>
      
@@ -183,56 +208,61 @@
 
              <div class="productos-container">
 
-               <!-- Producto 1 -->
-                <a href="../productos/ropa/pantalones_para_hombres/pantalon_negro.html">
-                 <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_hombres/pantalon_negro.avif" alt="Pantalón Negro">
-                   <h3>Pantalón Negro</h3>
-                   <p>Precio: $4,000</p>
-                 </div>
-                  </a>
-
-               <!-- Producto 2 -->
-
-               <a href="../productos/ropa/pantalones_para_hombres/pantalones_de_golf.html">
-               <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_de_golf.avif" alt="Pantalones de Golf">
-                   <h3>Pantalones de Golf</h3>
-                   <p>Precio: $2,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_hombres/pantalon_negro.html">
+                   <article class="producto" data-id="pantalon-negro" data-nombre="Pantalón Negro" data-precio="4000" data-img="../imagenes/productos/Ropa/pantalones_para_hombres/pantalon_negro.avif" data-url="../productos/ropa/pantalones_para_hombres/pantalon_negro.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_hombres/pantalon_negro.avif" alt="Pantalón Negro">
+                     <h3>Pantalón Negro</h3>
+                     <p>Precio: $4,000</p>
+                   </article>
                  </a>
-                 
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 3 -->
-                <a href="../productos/ropa/pantalones_para_hombres/pantalones_deportivos_joggers.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_deportivos_joggers.avif" alt="Pantalones Deportivos Joggers">
-                   <h3>Pantalones Deportivos Joggers</h3>
-                   <p>Precio: $3,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_hombres/pantalones_de_golf.html">
+                   <article class="producto" data-id="pantalones-de-golf" data-nombre="Pantalones de Golf" data-precio="2000" data-img="../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_de_golf.avif" data-url="../productos/ropa/pantalones_para_hombres/pantalones_de_golf.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_de_golf.avif" alt="Pantalones de Golf">
+                     <h3>Pantalones de Golf</h3>
+                     <p>Precio: $2,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-
-               <!-- Producto 4 -->
-
-               <a href="../productos/ropa/pantalones_para_hombres/pantalones_jeans.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_jeans.avif" alt="Pantalones Jeans">
-                   <h3>Pantalones Jeans</h3>
-                   <p>Precio: $5,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_hombres/pantalones_deportivos_joggers.html">
+                   <article class="producto" data-id="pantalones-deportivos-joggers" data-nombre="Pantalones Deportivos Joggers" data-precio="3000" data-img="../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_deportivos_joggers.avif" data-url="../productos/ropa/pantalones_para_hombres/pantalones_deportivos_joggers.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_deportivos_joggers.avif" alt="Pantalones Deportivos Joggers">
+                     <h3>Pantalones Deportivos Joggers</h3>
+                     <p>Precio: $3,000</p>
+                   </article>
                  </a>
-                
-                   <a href="../productos/ropa/pantalones_para_hombres/pantalones_joggers.html">
-                  <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_joggers.avif" alt="Pantalones Joggers">
-                   <h3>Pantalones Joggers</h3>
-                   <p>Precio: $4,000</p>
-                 </div>
-                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-                  
-            
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_hombres/pantalones_jeans.html">
+                   <article class="producto" data-id="pantalones-jeans" data-nombre="Pantalones Jeans" data-precio="5000" data-img="../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_jeans.avif" data-url="../productos/ropa/pantalones_para_hombres/pantalones_jeans.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_jeans.avif" alt="Pantalones Jeans">
+                     <h3>Pantalones Jeans</h3>
+                     <p>Precio: $5,000</p>
+                   </article>
+                 </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
+
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_hombres/pantalones_joggers.html">
+                   <article class="producto" data-id="pantalones-joggers" data-nombre="Pantalones Joggers" data-precio="4000" data-img="../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_joggers.avif" data-url="../productos/ropa/pantalones_para_hombres/pantalones_joggers.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_joggers.avif" alt="Pantalones Joggers">
+                     <h3>Pantalones Joggers</h3>
+                     <p>Precio: $4,000</p>
+                   </article>
+                 </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
+
             </div>
       </section>
 
@@ -243,55 +273,61 @@
 
              <div class="productos-container">
 
-               <!-- Producto 1 -->
-                <a href="../productos/ropa/pantalones_para_mujeres/leggings.html">
-                 <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_mujeres/licra.avif" alt="Leggings de Licra">
-                   <h3>Leggings de Licra</h3>
-                   <p>Precio: $1,500</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_mujeres/leggings.html">
+                   <article class="producto" data-id="leggings-licra" data-nombre="Leggings de Licra" data-precio="1500" data-img="../imagenes/productos/Ropa/pantalones_para_mujeres/licra.avif" data-url="../productos/ropa/pantalones_para_mujeres/leggings.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_mujeres/licra.avif" alt="Leggings de Licra">
+                     <h3>Leggings de Licra</h3>
+                     <p>Precio: $1,500</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 2 -->
-
-               <a href="../productos/ropa/pantalones_para_mujeres/pantalon_acampanado.html">
-               <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_acampanado.avif" alt="Pantalón Acampanado">
-                   <h3>Pantalón Acampanado</h3>
-                   <p>Precio: $2,500</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_mujeres/pantalon_acampanado.html">
+                   <article class="producto" data-id="pantalon-acampanado" data-nombre="Pantalón Acampanado" data-precio="2500" data-img="../imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_acampanado.avif" data-url="../productos/ropa/pantalones_para_mujeres/pantalon_acampanado.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_acampanado.avif" alt="Pantalón Acampanado">
+                     <h3>Pantalón Acampanado</h3>
+                     <p>Precio: $2,500</p>
+                   </article>
                  </a>
-                 
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 3 -->
-                <a href="../productos/ropa/pantalones_para_mujeres/pantalon_casual.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_casual.avif" alt="Pantalón Casual">
-                   <h3>Pantalón Casual</h3>
-                   <p>Precio: $4,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_mujeres/pantalon_casual.html">
+                   <article class="producto" data-id="pantalon-casual" data-nombre="Pantalón Casual" data-precio="4000" data-img="../imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_casual.avif" data-url="../productos/ropa/pantalones_para_mujeres/pantalon_casual.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_casual.avif" alt="Pantalón Casual">
+                     <h3>Pantalón Casual</h3>
+                     <p>Precio: $4,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-
-               <!-- Producto 4 -->
-               <a href="../productos/ropa/pantalones_para_mujeres/pantalon_jean.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_jean_mujer.avif" alt="Pantalón Jean">
-                   <h3>Pantalón Jean</h3>
-                   <p>Precio: $5,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_mujeres/pantalon_jean.html">
+                   <article class="producto" data-id="pantalon-jean-mujer" data-nombre="Pantalón Jean" data-precio="5000" data-img="../imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_jean_mujer.avif" data-url="../productos/ropa/pantalones_para_mujeres/pantalon_jean.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_jean_mujer.avif" alt="Pantalón Jean">
+                     <h3>Pantalón Jean</h3>
+                     <p>Precio: $5,000</p>
+                   </article>
                  </a>
-                
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-                   <a href="../productos/ropa/pantalones_para_mujeres/pantalon_liso.html">
-                  <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_liso_mujer.avif" alt="Pantalón Liso Mujer">
-                   <h3>Pantalón Liso Mujer</h3>
-                   <p>Precio: $4,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_mujeres/pantalon_liso.html">
+                   <article class="producto" data-id="pantalon-liso-mujer" data-nombre="Pantalón Liso Mujer" data-precio="4000" data-img="../imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_liso_mujer.avif" data-url="../productos/ropa/pantalones_para_mujeres/pantalon_liso.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_mujeres/pantalon_liso_mujer.avif" alt="Pantalón Liso Mujer">
+                     <h3>Pantalón Liso Mujer</h3>
+                     <p>Precio: $4,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-                
             </div>
       </section>
 
@@ -302,55 +338,61 @@
 
              <div class="productos-container">
 
-               <!-- Producto 1 -->
-                <a href="../productos/ropa/pantalones_para_ninos/jean_para_ninos.html">
-                 <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_ninos/jean_ninos.avif" alt="Jean Niños">
-                   <h3>Jean para Niños</h3>
-                   <p>Precio: $1,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_ninos/jean_para_ninos.html">
+                   <article class="producto" data-id="jean-para-ninos" data-nombre="Jean para Niños" data-precio="1000" data-img="../imagenes/productos/Ropa/pantalones_para_ninos/jean_ninos.avif" data-url="../productos/ropa/pantalones_para_ninos/jean_para_ninos.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_ninos/jean_ninos.avif" alt="Jean Niños">
+                     <h3>Jean para Niños</h3>
+                     <p>Precio: $1,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 2 -->
-
-               <a href="../productos/ropa/pantalones_para_ninos/licra_para_ninos.html">
-               <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_ninos/licra.avif" alt="Licra Niños">
-                   <h3>Licra para Niños</h3>
-                   <p>Precio: $1,500</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_ninos/licra_para_ninos.html">
+                   <article class="producto" data-id="licra-para-ninos" data-nombre="Licra para Niños" data-precio="1500" data-img="../imagenes/productos/Ropa/pantalones_para_ninos/licra.avif" data-url="../productos/ropa/pantalones_para_ninos/licra_para_ninos.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_ninos/licra.avif" alt="Licra Niños">
+                     <h3>Licra para Niños</h3>
+                     <p>Precio: $1,500</p>
+                   </article>
                  </a>
-                 
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 3 -->
+               <div class="producto-card">
                  <a href="../productos/ropa/pantalones_para_ninos/pantalon_deportivo.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_ninos/pantalon_deportivo.avif" alt="Pantalón Deportivo">
-                   <h3>Pantalón Deportivo</h3>
-                   <p>Precio: $2,300</p>
-                 </div>
+                   <article class="producto" data-id="pantalon-deportivo-ninos" data-nombre="Pantalón Deportivo" data-precio="2300" data-img="../imagenes/productos/Ropa/pantalones_para_ninos/pantalon_deportivo.avif" data-url="../productos/ropa/pantalones_para_ninos/pantalon_deportivo.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_ninos/pantalon_deportivo.avif" alt="Pantalón Deportivo">
+                     <h3>Pantalón Deportivo</h3>
+                     <p>Precio: $2,300</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-
-               <!-- Producto 4 -->
-
-               <a href="../productos/ropa/pantalones_para_ninos/pantalon_liso.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_ninos/pantalon_liso.avif" alt="Pantalón Liso">
-                   <h3>Pantalón Liso</h3>
-                   <p>Precio: $2,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/pantalones_para_ninos/pantalon_liso.html">
+                   <article class="producto" data-id="pantalon-liso-ninos" data-nombre="Pantalón Liso" data-precio="2000" data-img="../imagenes/productos/Ropa/pantalones_para_ninos/pantalon_liso.avif" data-url="../productos/ropa/pantalones_para_ninos/pantalon_liso.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_ninos/pantalon_liso.avif" alt="Pantalón Liso">
+                     <h3>Pantalón Liso</h3>
+                     <p>Precio: $2,000</p>
+                   </article>
                  </a>
-                
+                 <button class="btn-agregar">Agregar</button>
+               </div>
+
+               <div class="producto-card">
                  <a href="../productos/ropa/pantalones_para_ninos/pantalones_lisos.html">
-                  <div class="producto">
-                   <img src="../imagenes/productos/Ropa/pantalones_para_ninos/pantalon_para_ninos.avif" alt="pantalones para niños">
-                   <h3>Pantalones para Niños lisos</h3>
-                   <p>Precio: $2,500</p>
-                 </div>
+                   <article class="producto" data-id="pantalones-lisos-ninos" data-nombre="Pantalones para Niños lisos" data-precio="2500" data-img="../imagenes/productos/Ropa/pantalones_para_ninos/pantalon_para_ninos.avif" data-url="../productos/ropa/pantalones_para_ninos/pantalones_lisos.html">
+                     <img src="../imagenes/productos/Ropa/pantalones_para_ninos/pantalon_para_ninos.avif" alt="pantalones para niños">
+                     <h3>Pantalones para Niños lisos</h3>
+                     <p>Precio: $2,500</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-                  
             </div>
       </section>
 
@@ -362,53 +404,61 @@
 
              <div class="productos-container">
 
-               <!-- Producto 1 -->
-                <a href="../productos/ropa/trajes_para_hombres/traje_2piezas.html">
-                 <div class="producto">
-                   <img src="../imagenes/productos/Ropa/trajes_para_hombre/traje_2piezas.avif" alt="Traje 2 Piezas">
-                   <h3>Traje 2 Piezas</h3>
-                   <p>Precio: $5,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/trajes_para_hombres/traje_2piezas.html">
+                   <article class="producto" data-id="traje-2piezas" data-nombre="Traje 2 Piezas" data-precio="5000" data-img="../imagenes/productos/Ropa/trajes_para_hombre/traje_2piezas.avif" data-url="../productos/ropa/trajes_para_hombres/traje_2piezas.html">
+                     <img src="../imagenes/productos/Ropa/trajes_para_hombre/traje_2piezas.avif" alt="Traje 2 Piezas">
+                     <h3>Traje 2 Piezas</h3>
+                     <p>Precio: $5,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 2 -->
-               <a href="../productos/ropa/trajes_para_hombres/traje_azul.html">
-               <div class="producto">
-                   <img src="../imagenes/productos/Ropa/trajes_para_hombre/traje_azul.avif" alt="Traje Azul">
-                   <h3>Traje Azul</h3>
-                   <p>Precio: $4,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/trajes_para_hombres/traje_azul.html">
+                   <article class="producto" data-id="traje-azul" data-nombre="Traje Azul" data-precio="4000" data-img="../imagenes/productos/Ropa/trajes_para_hombre/traje_azul.avif" data-url="../productos/ropa/trajes_para_hombres/traje_azul.html">
+                     <img src="../imagenes/productos/Ropa/trajes_para_hombre/traje_azul.avif" alt="Traje Azul">
+                     <h3>Traje Azul</h3>
+                     <p>Precio: $4,000</p>
+                   </article>
                  </a>
-                 
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 3 -->
-                <a href="../productos/ropa/trajes_para_hombres/traje_completo.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Ropa/trajes_para_hombre/traje_completo.avif" alt="Traje Completo">
-                   <h3>Traje Completo</h3>
-                   <p>Precio: $3,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/trajes_para_hombres/traje_completo.html">
+                   <article class="producto" data-id="traje-completo" data-nombre="Traje Completo" data-precio="3000" data-img="../imagenes/productos/Ropa/trajes_para_hombre/traje_completo.avif" data-url="../productos/ropa/trajes_para_hombres/traje_completo.html">
+                     <img src="../imagenes/productos/Ropa/trajes_para_hombre/traje_completo.avif" alt="Traje Completo">
+                     <h3>Traje Completo</h3>
+                     <p>Precio: $3,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-
-               <!-- Producto 4 -->
+               <div class="producto-card">
                  <a href="../productos/ropa/trajes_para_hombres/traje_elegante.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Ropa/trajes_para_hombre/traje_elegante.avif" alt="Traje Elegante">
-                   <h3>Traje Elegante</h3>
-                   <p>Precio: $3,500</p>
-                 </div>
+                   <article class="producto" data-id="traje-elegante" data-nombre="Traje Elegante" data-precio="3500" data-img="../imagenes/productos/Ropa/trajes_para_hombre/traje_elegante.avif" data-url="../productos/ropa/trajes_para_hombres/traje_elegante.html">
+                     <img src="../imagenes/productos/Ropa/trajes_para_hombre/traje_elegante.avif" alt="Traje Elegante">
+                     <h3>Traje Elegante</h3>
+                     <p>Precio: $3,500</p>
+                   </article>
                  </a>
-                
-                 <a href="../productos/ropa/trajes_para_hombres/traje_negro.html">
-                  <div class="producto">
-                   <img src="../imagenes/productos/Ropa/trajes_para_hombre/traje_negro.avif" alt="Traje Negro">
-                   <h3>Traje Negro</h3>
-                   <p>Precio: $4,200</p>
-                 </div>
-                 </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-                  
+               <div class="producto-card">
+                 <a href="../productos/ropa/trajes_para_hombres/traje_negro.html">
+                   <article class="producto" data-id="traje-negro" data-nombre="Traje Negro" data-precio="4200" data-img="../imagenes/productos/Ropa/trajes_para_hombre/traje_negro.avif" data-url="../productos/ropa/trajes_para_hombres/traje_negro.html">
+                     <img src="../imagenes/productos/Ropa/trajes_para_hombre/traje_negro.avif" alt="Traje Negro">
+                     <h3>Traje Negro</h3>
+                     <p>Precio: $4,200</p>
+                   </article>
+                 </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
+
             </div>
       </section>
 
@@ -419,54 +469,61 @@
 
              <div class="productos-container">
 
-               <!-- Producto 1 -->
-                <a href="../productos/ropa/vestidos/vestido_ajustado.html">
-                 <div class="producto">
-                   <img src="../imagenes/productos/Ropa/vestido_de_mujer/vestido_ajustado.avif" alt="Vestido Ajustado">
-                   <h3>Vestido Ajustado</h3>
-                   <p>Precio: $5,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/vestidos/vestido_ajustado.html">
+                   <article class="producto" data-id="vestido-ajustado" data-nombre="Vestido Ajustado" data-precio="5000" data-img="../imagenes/productos/Ropa/vestido_de_mujer/vestido_ajustado.avif" data-url="../productos/ropa/vestidos/vestido_ajustado.html">
+                     <img src="../imagenes/productos/Ropa/vestido_de_mujer/vestido_ajustado.avif" alt="Vestido Ajustado">
+                     <h3>Vestido Ajustado</h3>
+                     <p>Precio: $5,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 2 -->
-                <a href="../productos/ropa/vestidos/vestido_de_cuello_cuadrado.html">
-               <div class="producto">
-                   <img src="../imagenes/productos/Ropa/vestido_de_mujer/vestido_cuello_cuadrado.avif" alt="vestido de cuello cuadrado">
-                   <h3>Vestido de Cuello Cuadrado</h3>
-                   <p>Precio: $4,500</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/vestidos/vestido_de_cuello_cuadrado.html">
+                   <article class="producto" data-id="vestido-cuello-cuadrado" data-nombre="Vestido de Cuello Cuadrado" data-precio="4500" data-img="../imagenes/productos/Ropa/vestido_de_mujer/vestido_cuello_cuadrado.avif" data-url="../productos/ropa/vestidos/vestido_de_cuello_cuadrado.html">
+                     <img src="../imagenes/productos/Ropa/vestido_de_mujer/vestido_cuello_cuadrado.avif" alt="vestido de cuello cuadrado">
+                     <h3>Vestido de Cuello Cuadrado</h3>
+                     <p>Precio: $4,500</p>
+                   </article>
                  </a>
-                 
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-               <!-- Producto 3 -->
-                <a href="../productos/ropa/vestidos/vestido_de_invierno.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Ropa/vestido_de_mujer/vestido_de_invierno.avif" alt="Vestido de Invierno">
-                   <h3>Vestido de Invierno</h3>
-                   <p>Precio: $6,000</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/vestidos/vestido_de_invierno.html">
+                   <article class="producto" data-id="vestido-de-invierno" data-nombre="Vestido de Invierno" data-precio="6000" data-img="../imagenes/productos/Ropa/vestido_de_mujer/vestido_de_invierno.avif" data-url="../productos/ropa/vestidos/vestido_de_invierno.html">
+                     <img src="../imagenes/productos/Ropa/vestido_de_mujer/vestido_de_invierno.avif" alt="Vestido de Invierno">
+                     <h3>Vestido de Invierno</h3>
+                     <p>Precio: $6,000</p>
+                   </article>
                  </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-
-               <!-- Producto 4 -->
-
-               <a href="../productos/ropa/vestidos/vestido_elegante.html">
-                <div class="producto">
-                   <img src="../imagenes/productos/Ropa/vestido_de_mujer/vestido_elegante.avif" alt="Vestido Elegante">
-                   <h3>Vestido Elegante</h3>
-                   <p>Precio: $3,500</p>
-                 </div>
+               <div class="producto-card">
+                 <a href="../productos/ropa/vestidos/vestido_elegante.html">
+                   <article class="producto" data-id="vestido-elegante" data-nombre="Vestido Elegante" data-precio="3500" data-img="../imagenes/productos/Ropa/vestido_de_mujer/vestido_elegante.avif" data-url="../productos/ropa/vestidos/vestido_elegante.html">
+                     <img src="../imagenes/productos/Ropa/vestido_de_mujer/vestido_elegante.avif" alt="Vestido Elegante">
+                     <h3>Vestido Elegante</h3>
+                     <p>Precio: $3,500</p>
+                   </article>
                  </a>
-                
-                   <a href="../productos/ropa/vestidos/vestido_negro.html">
-                  <div class="producto">
-                   <img src="../imagenes/productos/Ropa/vestido_de_mujer/vestido_negro.avif" alt="Vestido Negro">
-                   <h3>Vestido Negro</h3>
-                   <p>Precio: $4,200</p>
-                   </div>
-                   </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
 
-                  
+               <div class="producto-card">
+                 <a href="../productos/ropa/vestidos/vestido_negro.html">
+                   <article class="producto" data-id="vestido-negro" data-nombre="Vestido Negro" data-precio="4200" data-img="../imagenes/productos/Ropa/vestido_de_mujer/vestido_negro.avif" data-url="../productos/ropa/vestidos/vestido_negro.html">
+                     <img src="../imagenes/productos/Ropa/vestido_de_mujer/vestido_negro.avif" alt="Vestido Negro">
+                     <h3>Vestido Negro</h3>
+                     <p>Precio: $4,200</p>
+                   </article>
+                 </a>
+                 <button class="btn-agregar">Agregar</button>
+               </div>
+
             </div>
       </section>
 

@@ -164,11 +164,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const activo = body.classList.toggle("menu-busqueda-activa");
 
             if (activo) {
-                iconoBuscar.src = "imagenes/iconos/close_icon/close_red2.png";
+                iconoBuscar.src = "/imagenes/iconos/close_icon/close_red2.png";
                 iconoBuscar.alt = "Cerrar búsqueda";
                 inputBuscar.focus();
             } else {
-                iconoBuscar.src = "imagenes/iconos/magnifying_glass_icon/magnifying_glass.png";
+                iconoBuscar.src = "/imagenes/iconos/magnifying_glass_icon/magnifying_glass.png";
                 iconoBuscar.alt = "Buscar";
                 inputBuscar.value = "";
                 resultados.style.display = "none";
@@ -273,5 +273,5 @@ function normalizarTexto(texto) {
 
 function irAResultados(texto) {
     const q = encodeURIComponent(texto.trim());
-    window.location.href = `resultados_busqueda.html?q=${q}`;
+    window.location.href = `/resultados_busqueda.html?q=${q}`;
 }
