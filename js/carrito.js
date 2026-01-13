@@ -54,18 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // === Actualizar UI del carrito y contador ===
     function actualizarUI() {
-        // Contador header
         const contadorCarrito = document.getElementById('contador-carrito');
         if (contadorCarrito) contadorCarrito.textContent = calcularTotalUnidades();
 
-        // Totales carrito en carrito.html
         const totalUnidadesEl = document.getElementById('total-unidades');
         if (totalUnidadesEl) totalUnidadesEl.textContent = calcularTotalUnidades();
 
         const totalCarritoEl = document.getElementById('total-carrito');
         if (totalCarritoEl) totalCarritoEl.textContent = calcularTotalPrecio().toLocaleString();
 
-        // Lista de carrito en carrito.html
         const listaCarrito = document.getElementById('lista-carrito');
         if (listaCarrito) renderizarCarrito(listaCarrito);
     }
@@ -102,25 +99,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }).join('');
     }
 
-    // === Delegación de eventos para agregar productos dinámicos ===
-    document.addEventListener('click', e => {
-        const btn = e.target.closest('.btn-agregar');
-        if (!btn) return;
+    // === Delegación de eventos para agregar productos ===
+   document.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-agregar');
+    if (!btn) return;
 
-        const productoCard = btn.closest('.producto-card');
-        if (!productoCard) return;
+    e.preventDefault(); // <-- evita que el <a> se siga
+    e.stopPropagation(); // <-- evita que otros handlers se disparen
 
-        const articulo = productoCard.querySelector('.producto');
-        if (!articulo) return;
+    const articulo = btn.closest('.producto');
+    if (!articulo) return;
 
-        const id = articulo.dataset.id;
-        const nombre = articulo.dataset.nombre;
-        const precio = parseFloat(articulo.dataset.precio) || 0;
-        const img = articulo.dataset.img || '';
-        const url = articulo.dataset.url || null;
+    const id = articulo.dataset.id;
+    const nombre = articulo.dataset.nombre;
+    const precio = parseFloat(articulo.dataset.precio) || 0;
+    const img = articulo.dataset.img || '';
+    const url = articulo.dataset.url || null;
 
-        agregarProducto({ id, nombre, precio, img, url });
-    });
+    agregarProducto({ id, nombre, precio, img, url });
+});
+
 
     // === Delegación de eventos dentro del carrito ===
     document.addEventListener('click', e => {
@@ -146,3 +144,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // === Inicializar UI al cargar la página ===
     actualizarUI();
 });
+

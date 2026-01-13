@@ -529,8 +529,8 @@ const productos = [
         imagen: "/imagenes/productos/Electrodomesticos/cocina/freezer/freezer_7pies.png"
     },
     {
-        id: "nevera_lg",
-        nombre: "Nevera LG",
+        id: "nevera_lg_grande_moderna",
+        nombre: "Nevera LG Grande Moderna",
         url: "productos/electrodomesticos/cocina/nevera_lg.html",
         categoria: "cocina",
         precio: 80000, // número para carrito
@@ -1497,10 +1497,241 @@ const productos = [
         imagen: "/imagenes/productos/Ropa/vestido_de_mujer/vestido_negro.avif"
     },
 
+    //--Tecnología--//
 
+    //Bocinas
+    {
+        id: "bocina_aiwa",
+        nombre: "Bocina Aiwa",
+        url: "productos/tecnologia/bocinas/bocina_Aiwa.html",
+        categoria: "bocinas",
+        precio: 5000, // número para carrito
+        precioTexto: "Precio: $5000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Bocina/bocina_aiwa.png"
+    },
+     {
+        id: "bocina_lg",
+        nombre: "Bocina LG",
+        url: "productos/tecnologia/bocinas/bocina_lg.html",
+        categoria: "bocinas",
+        precio: 4500, // número para carrito
+        precioTexto: "Precio: $4,500", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Bocina/bocina_lg.png"
+    },
+     {
+        id: "bocina_samsung",
+        nombre: "Bocina Samsung",
+        url: "productos/tecnologia/bocinas/bocina_samsung.html",
+        categoria: "bocinas",
+        precio: 6000, // número para carrito
+        precioTexto: "Precio: $6,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Bocina/bocina_samsung.avif"
+    },
+     {
+        id: "bocina_stage",
+        nombre: "Bocina Stage",
+        url: "productos/tecnologia/bocinas/bocina_stage.html",
+        categoria: "bocinas",
+        precio: 5500, // número para carrito
+        precioTexto: "Precio: $5,500", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Bocina/bocina_stage.png"
+    },
+    {
+        id: "bocina_tecnomaster",
+        nombre: "Bocina Tecnomaster",
+        url: "productos/tecnologia/bocinas/bocina_tecnomaster.html",
+        categoria: "bocinas",
+        precio: 9000, // número para carrito
+        precioTexto: "Precio: $9,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Bocina/bocina_tecnomaster.avif"
+    },
 
+    //Celulares
+    {
+        id: "celular_samsung_a26",
+        nombre: "Celular Samsung A26",
+        url: "productos/tecnologia/celulares/celular_a26.html",
+        categoria: "celulares",
+        precio: 40000, // número para carrito
+        precioTexto: "Precio: $40,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Celulares/celular_samsung_A26.png"
+    },
+    {
+        id: "celular_samsung_a35",
+        nombre: "Celular Samsung A35",
+        url: "productos/tecnologia/celulares/celular_a35.html",
+        categoria: "celulares",
+        precio: 23000, // número para carrito
+        precioTexto: "Precio: $23,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Celulares/celular_samsung_A35.png"
+    },
+    {
+        id: "celular_s24_ultra",
+        nombre: "Celular S24 Ultra",
+        url: "productos/tecnologia/celulares/celular_s24.html",
+        categoria: "celulares",
+        precio: 55000, // número para carrito
+        precioTexto: "Precio: $55,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Celulares/celular_s24ultra.png"
+    },
+    {
+        id: "iphone_14",
+        nombre: "iPhone 14",
+        url: "productos/tecnologia/celulares/iphone_14.html",
+        categoria: "celulares",
+        precio: 35000, // número para carrito
+        precioTexto: "Precio: $35,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Celulares/iphone14.avif"
+    },
+    {
+        id: "iphone_14_pro",
+        nombre: "iPhone 14 Pro",
+        url: "productos/tecnologia/celulares/iphone_14pro.html",
+        categoria: "celulares",
+        precio: 42000, // número para carrito
+        precioTexto: "Precio: $42,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Celulares/iphone14pro.webp"
+    },
 
- 
+    //Laptops
+    {
+        id: "laptop_asus",
+        nombre: "Laptop Asus",
+        url: "productos/tecnologia/laptops/laptop_asus.html",
+        categoria: "laptops",
+        precio: 45000, // número para carrito
+        precioTexto: "Precio: $45,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Laptops/laptop_asus.png"
+    },
+    {
+        id: "laptop_dell",
+        nombre: "Laptop Dell",
+        url: "productos/tecnologia/laptops/laptop_dell.html",
+        categoria: "laptops",
+        precio: 48000, // número para carrito
+        precioTexto: "Precio: $48,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Laptops/laptop_dell.png"
+    },
+    {
+        id: "laptop_dragonx",
+        nombre: "Laptop DragonX",
+        url: "productos/tecnologia/laptops/laptop_dragonx.html",
+        categoria: "laptops",
+        precio: 54000, // número para carrito
+        precioTexto: "Precio: $54,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Laptops/laptop_dragonx.png"
+    },
+    {
+        id: "laptop_hp",
+        nombre: "Laptop HP",
+        url: "productos/tecnologia/laptops/laptop_hp.html",
+        categoria: "laptops",
+        precio: 56000, // número para carrito
+        precioTexto: "Precio: $56,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Laptops/laptop_hp.png"
+    },
+     {
+        id: "laptop_lenovo",
+        nombre: "Laptop Lenovo",
+        url: "productos/tecnologia/laptops/laptop_lenovo.html",
+        categoria: "laptops",
+        precio: 70000, // número para carrito
+        precioTexto: "Precio: $70,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Laptops/laptop_lenovo.png"
+    },
 
+    //Tablets
+     {
+        id: "tablet_apple",
+        nombre: "Tablet Apple",
+        url: "productos/tecnologia/tablets/tablet_apple.html",
+        categoria: "tablets",
+        precio: 30000, // número para carrito
+        precioTexto: "Precio: $30,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Tablets/tablet_apple.avif"
+    },
+     {
+        id: "tablet_rted",
+        nombre: "Tablet RTED",
+        url: "productos/tecnologia/tablets/tablet_rted.html",
+        categoria: "tablets",
+        precio: 23000, // número para carrito
+        precioTexto: "Precio: $23,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Tablets/tablet_RTED.avif"
+    },
+     {
+        id: "tablet_samsung",
+        nombre: "Tablet Samsung",
+        url: "productos/tecnologia/tablets/tablet_samsung.html",
+        categoria: "tablets",
+        precio: 26000, // número para carrito
+        precioTexto: "Precio: $26,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Tablets/tablet_Samsung.avif"
+    },
+      {
+        id: "tablet_tcl",
+        nombre: "Tablet TCL",
+        url: "productos/tecnologia/tablets/tablet_tcl.html",
+        categoria: "tablets",
+        precio: 15000, // número para carrito
+        precioTexto: "Precio: $15,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Tablets/tablet-tcl.png"
+    },
+     {
+        id: "tablet_tecnomaster",
+        nombre: "Tablet Tecnomaster",
+        url: "productos/tecnologia/tablets/tablet_tecnomaster.html",
+        categoria: "tablets",
+        precio: 22000, // número para carrito
+        precioTexto: "Precio: $22,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Tablets/tablet_tecnomaster.avif"
+    },
+
+    //Televisores
+    {
+        id: "televisor_led_50",
+        nombre: "Televisor LED 50 Pulgadas",
+        url: "productos/tecnologia/televisores/televisor_led_50.html",
+        categoria: "televisores",
+        precio: 36500, // número para carrito
+        precioTexto: "Precio: $36,500", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Televisores/TV_led_50pulgadas.png"
+    },
+     {
+        id: "televisor_led_lg",
+        nombre: "Televisor LED LG",
+        url: "productos/tecnologia/televisores/televisor_lg.html",
+        categoria: "televisores",
+        precio: 57000, // número para carrito
+        precioTexto: "Precio: $57,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/televisores/TV_led_LG.png"
+    },
+     {
+        id: "televisor_led_samsung",
+        nombre: "Televisor LED Samsung",
+        url: "productos/tecnologia/televisores/televisor_samsung_led.html",
+        categoria: "televisores",
+        precio: 56000, // número para carrito
+        precioTexto: "Precio: $56,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/Televisores/TV_led_samsung.avif"
+    },
+     {
+        id: "televisor_led_tecnomaster",
+        nombre: "Televisor LED Tecnomaster",
+        url: "productos/tecnologia/televisores/televisor_tecnomaster.html",
+        categoria: "televisores",
+        precio: 55200, // número para carrito
+        precioTexto: "Precio: $55,200", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/televisores/TV_led_tecnomaster.png"
+    },
+    {
+        id: "televisor_samsung_75_pulgadas",
+        nombre: "Televisor Samsung 75 pulgadas",
+        url: "productos/tecnologia/televisores/tv_samsung_75.html",
+        categoria: "televisores",
+        precio: 44000, // número para carrito
+        precioTexto: "Precio: $44,000", // texto para mostrar en resultados
+        imagen: "/imagenes/productos/Tecnologia/televisores/TV_samsung.png"
+    },
 
 ];

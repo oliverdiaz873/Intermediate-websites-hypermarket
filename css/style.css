@@ -367,8 +367,7 @@ body.menu-busqueda-activa .buscador-header input {
     margin: 0 auto;     /* centra horizontalmente */
     border-radius: 20px;
     margin-bottom: 20px;
-    height: 500px;
-    
+    height: 510px;
 }
 
 /* Título centrado con fondo negro transparente */
@@ -382,7 +381,7 @@ body.menu-busqueda-activa .buscador-header input {
     margin-bottom: 30px;
 }
 
-/* tarjeta de productos */
+/* tarjeta de productos de la sección de productos destacados */
 .productos-destacados .producto {
     background-color: rgb(255, 255, 255);
     color: black;
@@ -391,9 +390,15 @@ body.menu-busqueda-activa .buscador-header input {
     width: 200px;
     transition: transform 0.3s, box-shadow 0.3s;
     flex: 0 0 auto; /* evita que se encojan */
-    height: 290px;       /* Ajusta la altura  */
+    flex-direction: column;
+    height: 324px;       /* Ajusta la altura  */
+    justify-content: space-between;
     overflow: hidden;     /* Oculta lo que se salga */
-    margin-bottom: 1px;
+    
+}
+/* Alto de las tarjetas de ofertas */
+.productos-destacados .oferta_height  {
+    height: 340px;       /* Ajusta la altura  */
 }
 
 /* Contenedor de productos para fila horizontal */
@@ -429,6 +434,7 @@ body.menu-busqueda-activa .buscador-header input {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 10px;
+    object-fit: cover;
 }
 
 
@@ -488,9 +494,10 @@ section > * {
 }
 
 /* Botón agregar */
+
 .btn-agregar {
-    margin-top: 8px;
-    width: 35%;
+    margin-top: 10px; 
+    width: 42%;
     height: 35px;
     color: #000000;
     font-weight: bold;
@@ -510,7 +517,7 @@ section > * {
     background-color: #ffcc00;
 }
 .btn-agregar:hover {
-    background-color: #ffffff;
+    background-color: #ffe57c;
 }
 
 

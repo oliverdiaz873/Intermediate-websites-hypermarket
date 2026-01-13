@@ -332,6 +332,8 @@ body.menu-busqueda-activa .buscador-header input {
     gap: 2rem;
     width: 100%;
     max-width: 1200px;
+
+    
 }
 
 /* Productos del carrito */
@@ -342,7 +344,6 @@ body.menu-busqueda-activa .buscador-header input {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     color: rgb(0, 0, 0);
-
 }
 
 /* Título Mi Carrito */
