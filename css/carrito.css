@@ -332,8 +332,6 @@ body.menu-busqueda-activa .buscador-header input {
     gap: 2rem;
     width: 100%;
     max-width: 1200px;
-
-    
 }
 
 /* Productos del carrito */
@@ -344,6 +342,7 @@ body.menu-busqueda-activa .buscador-header input {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     color: rgb(0, 0, 0);
+    background-color: rgba(0,0,0,0.8);
 }
 
 /* Título Mi Carrito */
@@ -352,12 +351,12 @@ body.menu-busqueda-activa .buscador-header input {
     margin-top: 5px;
     font-size: 1.7rem;
     font-family: sans-serif;
-    color: #000000;
+    color: #ffffff;
 }
 /* Icono junto al título Mi Carrito */
 .titulo-carrito-icon {
-    width: 90px;         /* ajusta el tamaño según prefieras */
-    height: 90px;
+    width: 80px;         /* ajusta el tamaño según prefieras */
+    height: 80px;
     vertical-align: middle;  /* alinea verticalmente con el texto */
     margin-right: 2px;      /* espacio entre icono y texto */
 }
@@ -369,6 +368,7 @@ body.menu-busqueda-activa .buscador-header input {
     gap: 1rem;
     padding: 1rem 0;
     border-bottom: 0.5px solid #c5c5c5;
+    color: white;
     
 }
 
@@ -449,18 +449,18 @@ body.menu-busqueda-activa .buscador-header input {
 /* Aside con resumen */
 .resumen-compra {
     flex: 1;
-    background-color: #ffffff;
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     height: fit-content;
     position: sticky;
     top: 2rem;
-    color: black;
+    color: rgb(255, 255, 255);
+     background-color: rgba(0,0,0,0.8);
 }
 
 .resumen-compra h3 {
-    color: #000000;
+    color: #ffffff;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }

@@ -490,6 +490,10 @@ section>* {
     background-color: #ffe57c;
 }
 
+/* Botón agregar de la sección de productos similares con ancho del 40% */
+.producto .btn-agregar {
+    width: 40%;
+}
 
 
 /* footer */
@@ -581,7 +585,6 @@ footer {
 }
 
 
-
 /* Sección Productos Similares */
 
 .productos-similares {
@@ -594,7 +597,6 @@ footer {
     /* centra horizontalmente */
     border-radius: 20px;
     height: 500px;
-    /* alto fijo */
     margin-bottom: 20px;
 }
 
@@ -619,8 +621,8 @@ footer {
     width: 200px;
     transition: transform 0.3s, box-shadow 0.3s;
     flex: 0 0 auto;
-    /* evita que se encojan */
-    height: 290px;
+    /* evita que se encojen */
+    height: 330px;
     /* Ajusta la altura  */
     overflow: hidden;
     /* Oculta lo que se salga */
@@ -668,6 +670,7 @@ footer {
     margin-bottom: 10px;
 
 }
+
 
 
 /* Nombre del producto */
