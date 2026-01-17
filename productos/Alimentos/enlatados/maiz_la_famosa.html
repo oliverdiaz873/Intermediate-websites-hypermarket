@@ -5,7 +5,7 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Maíz La Famosa en Hipermercado Superior. Maíz dulce, tierno y perfecto para tus recetas favoritas.">
+    <meta name="description" content="Compra Maíz La Famosa en Hipermercado Superior. Maíz dulce y tierno para tus ensaladas y guisos.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
@@ -14,17 +14,17 @@
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Maíz La Famosa | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/alimentos/enlatados/maiz_la_famosa.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Enlatados/maiz_la_famosa/maiz_la_famosa.avif">
-    <meta property="og:description" content="Maíz La Famosa: dulce, fresco y perfecto para tus comidas diarias.">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Alimentos/enlatados/maiz_la_famosa.html">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Enlatados/maiz_la_famosa.avif">
+    <meta property="og:description" content="Maíz La Famosa: dulzura y frescura en lata.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Maíz La Famosa | Hipermercado Superior">
-    <meta name="twitter:description" content="Maíz La Famosa, dulce y tierno, ideal para tus recetas.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Enlatados/maiz_la_famosa/maiz_la_famosa.avif">
+    <meta name="twitter:description" content="Maíz La Famosa, el toque dulce que tus comidas necesitan.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Enlatados/maiz_la_famosa.avif">
 
     <!-- Título y CSS -->
     <title>Maíz La Famosa | Hipermercado Superior</title>
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_alimentos">
 
@@ -68,7 +74,7 @@
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
                             <li><a href="../../../categorias/Electrodomesticos.html#cocina">Cocina</a></li>
-                            <li><a href="../../../categorias/Electrodomestesticos.html#lavado">Lavado</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#lavado">Lavado</a></li>
                             <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
@@ -137,6 +143,26 @@
 
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -166,19 +192,23 @@
 
             <div class="info-producto">
                 <h1>Maíz La Famosa</h1>
-                <p class="precio">Precio: $45 / 1 Lata</p>
+                <p class="precio">Precio: $45.00 / 1 Lata</p>
 
                 <p class="descripcion">
-                    El <strong>Maíz La Famosa</strong> es dulce, tierno y perfecto para preparar ensaladas, sopas, pasteles y una gran variedad de platos tradicionales. Un ingrediente esencial en tu cocina.
+                    <strong>Maíz La Famosa</strong>, dulce, tierno y listo para comer. Perfecto para añadir un toque de color y sabor a tus ensaladas, pimientos rellenos o como acompañante.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Maíz dulce enlatado</li>
-                    <li>Presentación: Lata de 425g</li>
-                    <li>Beneficios: Fuente natural de energía y fibra</li>
-                    <li>Ideal para: Pasteles, ensaladas, sopas y guisos</li>
-                    <li>Tamaño: 425g</li>
+                    <li>Tipo: Maíz Dulce</li>
+                    <li>Marca: La Famosa</li>
+                    <li>Sabor: Dulce</li>
+                    <li>Presentación: Lata</li>
                 </ul>
+
+                     <button class="btn-agregar" id="maiz_la_famosa">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -188,27 +218,35 @@
         <h2>Productos Similares</h2>
         <div class="productos-container">
 
-            <a href="habichuelas_negras_goya.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Enlatados/habichuelas_negras_goya.avif" loading="lazy" alt="Habichuelas Negras Goya">
-                    <h3>Habichuelas Negras Goya</h3>
-                    <p>Precio: $50</p>
-                </figure>
-            </a>
-
             <a href="atun_dimar.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Enlatados/atun_dimar.avif" loading="lazy" alt="Atún Dimar">
                     <h3>Atún Dimar</h3>
-                    <p>Precio: $120</p>
+                    <p>Precio: $120.00 / 1 Lata</p>
                 </figure>
             </a>
 
             <a href="gandules_verdes_goya.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Enlatados/gandules_verdes_goya.avif" loading="lazy" alt="Gandules Verdes Goya">
-                    <h3>Gandules Verdes Goya</h3>
-                    <p>Precio: $80</p>
+                    <h3>Gandules Goya</h3>
+                    <p>Precio: $80.00 / 1 Lata</p>
+                </figure>
+            </a>
+
+            <a href="habichuelas_negras_goya.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/Enlatados/habichuelas_negras_goya.avif" loading="lazy" alt="Habichuelas Negras Goya">
+                    <h3>Habichuelas Negras</h3>
+                    <p>Precio: $50.00 / 1 Lata</p>
+                </figure>
+            </a>
+
+            <a href="salchichas_jaja.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/Enlatados/salchichas_jaja.avif" loading="lazy" alt="Salchichas Jajá">
+                    <h3>Salchichas Jajá</h3>
+                    <p>Precio: $45.00 / 1 Lata</p>
                 </figure>
             </a>
 
@@ -216,23 +254,7 @@
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Enlatados/sardinas_gord.avif" loading="lazy" alt="Sardinas Gord">
                     <h3>Sardinas Gord</h3>
-                    <p>Precio: $85</p>
-                </figure>
-            </a>
-
-            <a href="salchichas_jaja.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Enlatados/salchichas_jaja.avif" loading="lazy" alt="Salchichas Jaja">
-                    <h3>Salchichas Jaja</h3>
-                    <p>Precio: $45</p>
-                </figure>
-            </a>
-
-            <a href="tomates_pelados_la_famosa.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Enlatados/tomates_pelados.avif" loading="lazy" alt="Tomates Pelados La Famosa">
-                    <h3>Tomates Pelados La Famosa</h3>
-                    <p>Precio: $60</p>
+                    <p>Precio: $85.00 / 1 Lata</p>
                 </figure>
             </a>
 
@@ -263,6 +285,3 @@
 
 </body>
 </html>
-
-
-

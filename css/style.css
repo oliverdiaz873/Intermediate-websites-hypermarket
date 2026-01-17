@@ -394,7 +394,6 @@ body.menu-busqueda-activa .buscador-header input {
     height: 324px;       /* Ajusta la altura  */
     justify-content: space-between;
     overflow: hidden;     /* Oculta lo que se salga */
-    
 }
 /* Alto de las tarjetas de ofertas */
 .productos-destacados .oferta_height  {
@@ -494,7 +493,6 @@ section > * {
 }
 
 /* Botón agregar */
-
 .btn-agregar {
     margin-top: 10px; 
     width: 42%;

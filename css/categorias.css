@@ -393,9 +393,10 @@ body.menu-busqueda-activa .buscador-header input {
     width: 200px;
     transition: transform 0.3s, box-shadow 0.3s;
     flex: 0 0 auto; /* evita que se encojan */
-    height: 290px;       /* Ajusta la altura  */
+    flex-direction: column;
+    height: 324px;       /* Ajusta la altura  */
+    justify-content: space-between;
     overflow: hidden;     /* Oculta lo que se salga */
-     margin-bottom: 1px;
 }
 
 
@@ -471,8 +472,8 @@ section > * {
 
 /* Botón agregar */
 .btn-agregar {
-    margin-top: 8px;
-    width: 35%;
+    margin-top: 10px; 
+    width: 42%;
     height: 35px;
     color: #000000;
     font-weight: bold;
@@ -492,7 +493,7 @@ section > * {
     background-color: #ffcc00;
 }
 .btn-agregar:hover {
-    background-color: #ffffff;
+    background-color: #ffe57c;
 }
 
 

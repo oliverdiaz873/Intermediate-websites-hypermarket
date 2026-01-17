@@ -5,7 +5,7 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Tilapia Roja fresca en Hipermercado Superior. Pescado de alta calidad ideal para freír, hornear o preparar a la parrilla.">
+    <meta name="description" content="Compra Tilapia Roja en Hipermercado Superior. Pescado fresco y nutritivo para una dieta balanceada.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
@@ -14,17 +14,17 @@
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Tilapia Roja | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/tilapia_roja.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/carnes_pescados_mariscos/pescados/tilapia_roja.avif">
-    <meta property="og:description" content="Tilapia Roja fresca y de primera calidad. Perfecta para todo tipo de recetas saludables.">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Alimentos/carnes_pescados_y_mariscos/tilapia_roja.html">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/carnes_pescados_mariscos/pescado/tilapia_roja.avif">
+    <meta property="og:description" content="Tilapia Roja: pescado fresco y suave, rico en proteínas.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Tilapia Roja | Hipermercado Superior">
-    <meta name="twitter:description" content="Tilapia Roja fresca y lista para cocinar. Ideal para preparaciones saludables.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/carnes_pescados_mariscos/pescados/tilapia_roja.avif">
+    <meta name="twitter:description" content="Tilapia Roja, la elección saludable para tu familia.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/carnes_pescados_mariscos/pescado/tilapia_roja.avif">
 
     <!-- Título y CSS -->
     <title>Tilapia Roja | Hipermercado Superior</title>
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_alimentos">
 
@@ -63,6 +69,7 @@
                             <li><a href="../../../categorias/Alimentos.html#enlatados">Enlatados</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
@@ -71,6 +78,7 @@
                             <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -81,6 +89,7 @@
                             <li><a href="../../../categorias/Tecnologia.html#bocinas">Bocinas</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ropa.html">Ropa</a>
                         <ul>
@@ -91,6 +100,7 @@
                             <li><a href="../../../categorias/Ropa.html#vestidos">Vestidos</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
                         <ul>
@@ -100,6 +110,7 @@
                             <li><a href="../../../categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Farmacia.html">Farmacia</a>
                         <ul>
@@ -109,6 +120,7 @@
                             <li><a href="../../../categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ferreteria.html">Ferretería</a>
                         <ul>
@@ -118,6 +130,7 @@
                             <li><a href="../../../categorias/Ferreteria.html#plomeria">Plomería</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/juguetes.html">Juguetes</a>
                         <ul>
@@ -127,8 +140,29 @@
                     </li>
                 </ul>
             </li>
+
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -147,31 +181,34 @@
         <div class="contenedor-producto">
             <figure class="imagen-producto">
                 <a href="#img-full">
-                    <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/pescado/tilapia_roja.avif" alt="Tilapia Roja fresca">
+                    <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/pescado/tilapia_roja.avif" alt="Tilapia Roja">
                 </a>
             </figure>
 
             <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Tilapia Roja">
                 <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
-                <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/pescado/tilapia_roja.avif" alt="Tilapia Roja ampliada">
+                <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/pescado/tilapia_roja.avif" alt="Tilapia Roja ampliado">
             </div>
 
             <div class="info-producto">
                 <h1>Tilapia Roja</h1>
-                <p class="precio">$250.00 / 1 LB</p>
+                <p class="precio">Precio: $250.00 / 1 LB</p>
 
                 <p class="descripcion">
-                    La <strong>Tilapia Roja</strong> es un pescado fresco, suave y versátil, ideal para freír, hornear, asar o preparar guisados. 
-                    Su carne firme y deliciosa la convierte en una opción perfecta para recetas nutritivas y saludables.
+                    <strong>Tilapia Roja</strong> fresca y de sabor suave. Una excelente fuente de proteínas y ácidos grasos omega-3. Fácil de cocinar y perfecta para disfrutar en familia.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Pescado fresco</li>
-                    <li>Origen: Nacional / Importado</li>
-                    <li>Peso aproximado: 1 LB</li>
-                    <li>Conservación: Mantener refrigerado</li>
-                    <li>Beneficios: Rica en proteínas, baja en grasa y fuente de omega 3</li>
+                    <li>Tipo: Pescado</li>
+                    <li>Variedad: Roja</li>
+                    <li>Beneficios: Saludable y nutritiva</li>
+                    <li>Ideal para: Platos a la plancha o al vapor</li>
                 </ul>
+
+                     <button class="btn-agregar" id="tilapia_roja">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -181,49 +218,45 @@
         <h2>Productos Similares</h2>
         <div class="productos-container">
 
-          
-             <a href="camarones_precocidos.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/mariscos/camarones_pre-cocidos.avif" loading="lazy" alt="Camarones pre-cocidos">
-                    <h3>Camarones pre-cocidos</h3>
-                    <p>Precio: $400 / 1 LB</p>
-                </figure>
-            </a>
-
             <a href="camarones_crudos.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/mariscos/camarones_crudos.avif" loading="lazy" alt="Camarones crudos">
-                    <h3>Camarones crudos</h3>
-                    <p>Precio: $350 / 1 LB</p>
-                </figure>
-            </a>
-            <a href="pollo_entero_don_pollo.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/pollo/pollo.avif" loading="lazy" alt="Pollo Entero Don Pollo">
-                    <h3>Pollo Entero Don Pollo</h3>
-                    <p>Precio: $300</p>
-                </figure>
-            </a>
-            <a href="carne_de_res_para_hamburguesas.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/res/carne_de_res.avif" loading="lazy" alt="Carne de res para hamburguesas">
-                    <h3>Carne de res para hamburguesas</h3>
-                    <p>Precio: $370 / 1 LB</p>
+                    <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/mariscos/camarones_crudos.avif" loading="lazy" alt="Camarones Crudos">
+                    <h3>Camarones Crudos</h3>
+                    <p>Precio: $350.00 / 1 LB</p>
                 </figure>
             </a>
 
+            <a href="camarones_precocidos.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/mariscos/camarones_pre-cocidos.avif" loading="lazy" alt="Camarones Pre-cocidos">
+                    <h3>Camarones Pre-cocidos</h3>
+                    <p>Precio: $400.00 / 1 LB</p>
+                </figure>
+            </a>
+
+            <a href="carne_de_res_para_hamburguesas.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/res/carne_de_res.avif" loading="lazy" alt="Carne de Res para Hamburguesas">
+                    <h3>Carne de Res</h3>
+                    <p>Precio: $370.00 / 1 LB</p>
+                </figure>
+            </a>
 
             <a href="chuleta_de_cerdo.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/cerdo/chuleta_de_cerdo.avif" loading="lazy" alt="Chuleta de cerdo">
-                    <h3>Chuleta de cerdo</h3>
-                    <p>Precio: $300 / 1 LB</p>
+                    <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/cerdo/chuleta_de_cerdo.avif" loading="lazy" alt="Chuleta de Cerdo">
+                    <h3>Chuleta de Cerdo</h3>
+                    <p>Precio: $300.00 / 1 LB</p>
                 </figure>
             </a>
 
-
-
-
+            <a href="pollo_entero_don_pollo.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/carnes_pescados_mariscos/pollo/pollo.avif" loading="lazy" alt="Pollo Entero Don Pollo">
+                    <h3>Pollo Entero</h3>
+                    <p>Precio: $300.00 / unidad</p>
+                </figure>
+            </a>
 
         </div>
     </section>
@@ -252,6 +285,3 @@
 
 </body>
 </html>
-
-
-

@@ -5,25 +5,26 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Linterna en Hipermercado Superior. Ideal para emergencias, campamentos y uso diario.">
+    <meta name="description" content="Compra Linterna LED potente en Hipermercado Superior. Ideal para emergencias y trabajos en zonas oscuras.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
+    <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Linterna | Hipermercado Superior">
     <meta property="og:type" content="product">
     <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/ferreteria/electricidad/linterna.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/ferreteria/electricidad/linterna.avif">
-    <meta property="og:description" content="Linterna portátil resistente y de alta iluminación, perfecta para cualquier situación.">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/ferreteria/electricidad/linterna.png">
+    <meta property="og:description" content="Linterna compacta y resistente para cualquier situación.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Linterna | Hipermercado Superior">
-    <meta name="twitter:description" content="Linterna portátil resistente y de alta iluminación.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/ferreteria/electricidad/linterna.avif">
+    <meta name="twitter:description" content="Luz potente en la palma de tu mano. Compra nuestra linterna LED.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/ferreteria/electricidad/linterna.png">
 
     <!-- Título y CSS -->
     <title>Linterna | Hipermercado Superior</title>
@@ -34,22 +35,28 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
 
-<body id="ferreteria">
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
+
+<body id="fondo_ferreteria">
 
 <header>
     <div>
-        <a href="../../../index.html" class="logo-header">
+        <a href="../../../index.html" class="logo-header" aria-label="Ir a la página principal de Hipermercado Superior">
             <img src="../../../imagenes/logo/logo.jpeg" alt="Logo de Hipermercado Superior">
             Hipermercado Superior
         </a>
     </div>
 
-    <nav class="menu">
+    <nav class="menu" role="navigation" aria-label="Menú principal">
         <ul>
             <li><a href="../../../index.html">Inicio</a></li>
-            <li><a href="#">Categorías</a>
+            <li><a href="#" aria-haspopup="true" aria-expanded="false">Categorías</a>
                 <ul>
                     <li>
                         <a href="../../../categorias/Alimentos.html">Alimentos</a>
@@ -62,14 +69,16 @@
                             <li><a href="../../../categorias/Alimentos.html#enlatados">Enlatados</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
-                            <li><a href="../../../categorias/Electrodomedesticos.html#cocina">Cocina</a></li>
-                            <li><a href="../../../categorias/Electrodomedesticos.html#lavado">Lavado</a></li>
-                            <li><a href="../../../categorias/Electrodomedesticos.html#climatizacion">Climatización</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#cocina">Cocina</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#lavado">Lavado</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -80,6 +89,7 @@
                             <li><a href="../../../categorias/Tecnologia.html#bocinas">Bocinas</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ropa.html">Ropa</a>
                         <ul>
@@ -90,6 +100,7 @@
                             <li><a href="../../../categorias/Ropa.html#vestidos">Vestidos</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
                         <ul>
@@ -99,24 +110,27 @@
                             <li><a href="../../../categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Farmacia.html">Farmacia</a>
                         <ul>
-                            <li><a href="../../../categorias/Farmacia.html#dermocosmetica">Dermocosmética</a></li>
                             <li><a href="../../../categorias/Farmacia.html#analgesicos">Analgésicos</a></li>
+                            <li><a href="../../../categorias/Farmacia.html#dermocosmetica">Dermocosmética</a></li>
                             <li><a href="../../../categorias/Farmacia.html#vitaminas_y_minerales">Vitaminas y Minerales</a></li>
                             <li><a href="../../../categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ferreteria.html">Ferretería</a>
                         <ul>
                             <li><a href="../../../categorias/Ferreteria.html#herramientas_manuales">Herramientas Manuales</a></li>
-                            <li><a href="../../../categorias/Ferreteria.html#electricidad">Electricidad</a></li>
                             <li><a href="../../../categorias/Ferreteria.html#pinturas_y_acabados">Pinturas y Acabados</a></li>
+                            <li><a href="../../../categorias/Ferreteria.html#electricidad">Electricidad</a></li>
                             <li><a href="../../../categorias/Ferreteria.html#plomeria">Plomería</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/juguetes.html">Juguetes</a>
                         <ul>
@@ -126,14 +140,35 @@
                     </li>
                 </ul>
             </li>
+
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
 
 <!-- Breadcrumb -->
-<nav class="breadcrumb">
+<nav class="breadcrumb" aria-label="Ruta de navegación">
     <a href="../../../index.html">Inicio</a> ›
     <span>Categorías</span> ›
     <a href="../../../categorias/Ferreteria.html">Ferretería</a> ›
@@ -150,8 +185,8 @@
                 </a>
             </figure>
 
-            <div id="img-full" class="modal-imagen">
-                <a href="#close" class="cerrar"></a>
+            <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Linterna">
+                <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
                 <img src="../../../imagenes/productos/ferreteria/electricidad/linterna.png" alt="Linterna ampliada">
             </div>
 
@@ -160,16 +195,21 @@
                 <p class="precio">Precio: $4,000</p>
 
                 <p class="descripcion">
-                    La <strong>Linterna</strong> es una herramienta esencial para emergencias, actividades al aire libre y uso diario.
-                    Diseñada con un cuerpo resistente y una potente luz LED, garantiza iluminación en cualquier situación.
+                    <strong>Linterna LED</strong> potente y compacta, perfecta para emergencias, camping o trabajos en zonas oscuras.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Electricidad</li>
-                    <li>Material: Plástico resistente + LED de alta intensidad</li>
-                    <li>Uso recomendado: Emergencias, campamentos y hogar</li>
-                    <li>Beneficios: Ligera, resistente y con gran capacidad lumínica</li>
+                    <li>Tipo de luz: LED de alto brillo</li>
+                    <li>Alcance: 200 metros</li>
+                    <li>Batería: Recargable vía USB</li>
+                    <li>Resistencia: Al agua (IPX4)</li>
+                    <li>Modos: 3 (Fuerte, Tenue, SOS)</li>
                 </ul>
+
+                     <button class="btn-agregar" id="linterna">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -179,17 +219,9 @@
         <h2>Productos Similares</h2>
         <div class="productos-container">
 
-           <a href="bombillas.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/ferreteria/electricidad/bombillas.avif" loading="lazy" alt="Bombillas">
-                    <h3>Bombillas</h3>
-                    <p>Precio: $1,500</p>
-                </figure>
-            </a>
-
             <a href="bombillas_led.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/ferreteria/electricidad/bombillas_LED.avif" loading="lazy" alt="Bombillas LED">
+                    <img src="../../../imagenes/productos/ferreteria/electricidad/bombillas_led.avif" loading="lazy" alt="Bombillas LED">
                     <h3>Bombillas LED</h3>
                     <p>Precio: $2,000</p>
                 </figure>
@@ -197,22 +229,27 @@
 
             <a href="extension.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/ferreteria/electricidad/extension_electrica.avif" loading="lazy" alt="Extensión eléctrica">
-                    <h3>Extensión eléctrica</h3>
+                    <img src="../../../imagenes/productos/ferreteria/electricidad/extension_electrica.avif" loading="lazy" alt="Extensión Eléctrica">
+                    <h3>Extensión Eléctrica</h3>
                     <p>Precio: $3,300</p>
                 </figure>
             </a>
 
-
-            <a href="toma_corriente.html">
+            <a href="bombillas.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/ferreteria/electricidad/toma_corriente.png" loading="lazy" alt="Toma corriente">
-                    <h3>Toma corriente</h3>
-                    <p>Precio: $5,500</p>
+                    <img src="../../../imagenes/productos/ferreteria/electricidad/bombillas.avif" loading="lazy" alt="Bombillas">
+                    <h3>Bombillas</h3>
+                    <p>Precio: $1,500</p>
                 </figure>
             </a>
 
-
+            <a href="toma_corriente.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/ferreteria/electricidad/toma_corriente.png" loading="lazy" alt="Toma Corriente">
+                    <h3>Toma Corriente</h3>
+                    <p>Precio: $5,500</p>
+                </figure>
+            </a>
 
         </div>
     </section>
@@ -222,17 +259,16 @@
     <div class="footer-content">
         <small>&copy; 2025 Hipermercado Superior. Todos los derechos reservados.</small>
         <div class="social-icons">
-            <a href="https://facebook.com/tuweb" target="_blank">
-                <img src="../../../imagenes/iconos/redes/facebook.png" alt="Facebook">
+            <a href="https://facebook.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Facebook">
+                <img src="../../../imagenes/iconos/redes/facebook.png" alt="Facebook de Hipermercado Superior">
             </a>
-            <a href="https://twitter.com/tuweb" target="_blank">
-                <img src="../../../imagenes/iconos/redes/x.png" alt="X">
+            <a href="https://twitter.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en X (antes Twitter)">
+                <img src="../../../imagenes/iconos/redes/x.png" alt="X de Hipermercado Superior">
             </a>
-            <a href="https://instagram.com/tuweb" target="_blank">
-                <img src="../../../imagenes/iconos/redes/instagram.png" alt="Instagram">
+            <a href="https://instagram.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Instagram">
+                <img src="../../../imagenes/iconos/redes/instagram.png" alt="Instagram de Hipermercado Superior">
             </a>
         </div>
-
         <div class="footer-links">
             <a href="../../../legal/privacy.html">Política de Privacidad</a> |
             <a href="../../../legal/terms.html">Términos de Uso</a>
@@ -242,6 +278,3 @@
 
 </body>
 </html>
-
-
-

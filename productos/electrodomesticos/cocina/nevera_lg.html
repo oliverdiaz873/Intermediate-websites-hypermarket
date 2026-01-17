@@ -12,22 +12,22 @@
     <meta name="theme-color" content="#7ed957">
 
     <!-- Etiquetas Open Graph -->
-    <meta property="og:title" content="Nevera LG | Hipermercado Superior">
+    <meta property="og:title" content="Nevera LG Grande Moderna | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/nevera_lg.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/neveras/nevera_lg.avif">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Electrodomesticos/cocina/nevera_lg.html">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/cocina/Neveras/Nevera_LG.png">
     <meta property="og:description" content="Nevera LG: tecnología de enfriamiento avanzada, bajo consumo energético y gran capacidad.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nevera LG | Hipermercado Superior">
+    <meta name="twitter:title" content="Nevera LG Grande Moderna | Hipermercado Superior">
     <meta name="twitter:description" content="Nevera LG moderna, eficiente y con gran capacidad.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/neveras/nevera_lg.avif">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/cocina/Neveras/Nevera_LG.png">
 
     <!-- Título y CSS -->
-    <title>Nevera LG | Hipermercado Superior</title>
+    <title>Nevera LG Grande Moderna | Hipermercado Superior</title>
     <link rel="stylesheet" href="../../../css/productos.css">
     <link rel="stylesheet" href="../../../css/fonts.css">
 
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_electrodomesticos">
 
@@ -137,6 +143,26 @@
 
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -147,7 +173,7 @@
     <span>Categorías</span> ›
     <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a> ›
     <a href="../../../categorias/Electrodomesticos.html#cocina">Cocina</a> ›
-    <span class="actual">Nevera LG</span>
+    <span class="actual">Nevera LG Grande Moderna</span>
 </nav>
 
 <main class="producto-main">
@@ -155,13 +181,13 @@
         <div class="contenedor-producto">
             <figure class="imagen-producto">
                 <a href="#img-full">
-                    <img src="../../../imagenes/productos/Electrodomesticos/cocina/Neveras/Nevera_LG.png" alt="Nevera LG">
+                    <img src="../../../imagenes/productos/Electrodomesticos/cocina/Neveras/Nevera_LG.png" alt="Nevera LG Grande Moderna">
                 </a>
             </figure>
 
-            <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Nevera LG">
+            <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Nevera LG Grande Moderna">
                 <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
-                <img src="../../../imagenes/productos/Electrodomesticos/cocina/Neveras/Nevera_LG.png" alt="Nevera LG ampliada">
+                <img src="../../../imagenes/productos/Electrodomesticos/cocina/Neveras/Nevera_LG.png" alt="Nevera LG Grande Moderna ampliada">
             </div>
 
             <div class="info-producto">
@@ -169,9 +195,7 @@
                 <p class="precio">Precio: $80,000</p>
 
                 <p class="descripcion">
-                    La <strong>Nevera LG Grande Moderna</strong> combina tecnología de enfriamiento avanzada con un diseño moderno.
-                    Su alta eficiencia energética, amplio espacio interior y funcionamiento silencioso la convierten
-                    en la elección perfecta para mantener tus alimentos frescos y organizados.
+                    La <strong>Nevera LG Grande Moderna</strong> combina tecnología de enfriamiento avanzada con un diseño moderno. Su alta eficiencia energética, amplio espacio interior y funcionamiento silencioso la convierten en la elección perfecta para mantener tus alimentos frescos y organizados.
                 </p>
 
                 <ul class="detalles">
@@ -181,6 +205,11 @@
                     <li>Tipo: Doble puerta</li>
                     <li>Color: Plateado</li>
                 </ul>
+
+                     <button class="btn-agregar" id="nevera_lg_grande_moderna">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -257,6 +286,3 @@
 
 </body>
 </html>
-
-
-

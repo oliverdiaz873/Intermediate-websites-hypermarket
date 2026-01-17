@@ -5,7 +5,7 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Atún Dimar en Hipermercado Superior. Atún de calidad, fresco y delicioso, ideal para tus comidas y ensaladas.">
+    <meta name="description" content="Compra Atún Dimar en Hipermercado Superior. Atún de alta calidad, rico en proteínas y omega 3.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
@@ -14,17 +14,17 @@
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Atún Dimar | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/alimentos/enlatados/atun_dimar.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Enlatados/atun_dimar/atun_dimar.avif">
-    <meta property="og:description" content="Atún Dimar: fresco, delicioso y perfecto para tus comidas y ensaladas.">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Alimentos/enlatados/atun_dimar.html">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Enlatados/atun_dimar.avif">
+    <meta property="og:description" content="Atún Dimar: nutrición y sabor práctico.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Atún Dimar | Hipermercado Superior">
-    <meta name="twitter:description" content="Atún Dimar, fresco y delicioso.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Enlatados/atun_dimar/atun_dimar.avif">
+    <meta name="twitter:description" content="Atún Dimar, perfecto para ensaladas y platos rápidos.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Enlatados/atun_dimar.avif">
 
     <!-- Título y CSS -->
     <title>Atún Dimar | Hipermercado Superior</title>
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_alimentos">
 
@@ -64,13 +70,12 @@
                         </ul>
                     </li>
 
-                    <!-- resto idéntico -->
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
-                            <a href="../../../categorias/Electrodomesticos.html#cocina">Cocina</a></li>
-                            <a href="../../../categorias/Electrodomesticos.html#lavado">Lavado</a></li>
-                            <a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#cocina">Cocina</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#lavado">Lavado</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
 
@@ -138,6 +143,26 @@
 
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -167,19 +192,23 @@
 
             <div class="info-producto">
                 <h1>Atún Dimar</h1>
-                <p class="precio">Precio: $120 / 1 Lata</p>
+                <p class="precio">Precio: $120.00 / 1 Lata</p>
 
                 <p class="descripcion">
-                    El <strong>Atún Dimar</strong> es fresco, delicioso y de alta calidad, ideal para preparar ensaladas, sándwiches y platos nutritivos. Perfecto para tu despensa y comidas rápidas.
+                    <strong>Atún Dimar</strong>, práctico y delicioso. Una excelente fuente de proteínas y Omega 3, ideal para preparar ensaladas, pastas y sándwiches rápidos y nutritivos.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Atún enlatado</li>
-                    <li>Presentación: Lata de 170g</li>
-                    <li>Beneficios: Rico en proteínas y omega-3</li>
-                    <li>Ideal para: Ensaladas, sándwiches y platos rápidos</li>
-                    <li>Tamaño: 170g</li>
+                    <li>Tipo: Atún en agua</li>
+                    <li>Marca: Dimar</li>
+                    <li>Beneficios: Rico en proteínas</li>
+                    <li>Presentación: Lata</li>
                 </ul>
+
+                     <button class="btn-agregar" id="atun_dimar">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -192,16 +221,16 @@
             <a href="gandules_verdes_goya.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Enlatados/gandules_verdes_goya.avif" loading="lazy" alt="Gandules Verdes Goya">
-                    <h3>Gandules Verdes Goya</h3>
-                    <p>Precio: $80</p>
+                    <h3>Gandules Goya</h3>
+                    <p>Precio: $80.00 / 1 Lata</p>
                 </figure>
             </a>
 
             <a href="habichuelas_negras_goya.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Enlatados/habichuelas_negras_goya.avif" loading="lazy" alt="Habichuelas Negras Goya">
-                    <h3>Habichuelas Negras Goya</h3>
-                    <p>Precio: $50</p>
+                    <h3>Habichuelas Negras</h3>
+                    <p>Precio: $50.00 / 1 Lata</p>
                 </figure>
             </a>
 
@@ -209,7 +238,15 @@
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Enlatados/maiz_la_famosa.avif" loading="lazy" alt="Maíz La Famosa">
                     <h3>Maíz La Famosa</h3>
-                    <p>Precio: $45</p>
+                    <p>Precio: $45.00 / 1 Lata</p>
+                </figure>
+            </a>
+
+            <a href="salchichas_jaja.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/Enlatados/salchichas_jaja.avif" loading="lazy" alt="Salchichas Jajá">
+                    <h3>Salchichas Jajá</h3>
+                    <p>Precio: $45.00 / 1 Lata</p>
                 </figure>
             </a>
 
@@ -217,23 +254,7 @@
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Enlatados/sardinas_gord.avif" loading="lazy" alt="Sardinas Gord">
                     <h3>Sardinas Gord</h3>
-                    <p>Precio: $85</p>
-                </figure>
-            </a>
-
-            <a href="salchichas_jaja.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Enlatados/salchichas_jaja.avif" loading="lazy" alt="Salchichas Jaja">
-                    <h3>Salchichas Jaja</h3>
-                    <p>Precio: $45</p>
-                </figure>
-            </a>
-
-             <a href="tomates_pelados_la_famosa.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Enlatados/tomates_pelados.avif" loading="lazy" alt="Tomates Pelados la famosa">
-                    <h3>Tomates Pelados la famosa</h3>
-                    <p>Precio: $60</p>
+                    <p>Precio: $85.00 / 1 Lata</p>
                 </figure>
             </a>
 
@@ -264,6 +285,3 @@
 
 </body>
 </html>
-
-
-

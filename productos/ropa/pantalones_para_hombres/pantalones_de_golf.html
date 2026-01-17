@@ -5,25 +5,26 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra los Pantalones de Golf en Hipermercado Superior. Comodidad, elasticidad y estilo para tu mejor desempeño.">
+    <meta name="description" content="Compra Pantalones de Golf en Hipermercado Superior. Pantalones diseñados para el campo de golf, ofreciendo flexibilidad y transpirabilidad máxima.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#7ed957">
+    <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Pantalones de Golf | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/pantalones_de_golf.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Ropa/pantalones/pantalones_de_golf.avif">
-    <meta property="og:description" content="Pantalones de Golf cómodos, frescos y resistentes con alta elasticidad para mejorar tu movilidad.">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/ropa/pantalones_para_hombres/pantalones_de_golf.html">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Ropa/pantalones_para_hombres/pantalones_de_golf.avif">
+    <meta property="og:description" content="Flexibilidad y confort para tus mejores golpes.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pantalones de Golf | Hipermercado Superior">
-    <meta name="twitter:description" content="Pantalones de Golf diseñados para máximo rendimiento y confort durante el juego.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Ropa/pantalones/pantalones_de_golf.avif">
+    <meta name="twitter:description" content="Diseño ergonómico para deportistas exigentes. Compra tus pantalones de golf.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Ropa/pantalones_para_hombres/pantalones_de_golf.avif">
 
     <!-- Título y CSS -->
     <title>Pantalones de Golf | Hipermercado Superior</title>
@@ -34,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_ropa">
 
@@ -67,7 +74,7 @@
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
                             <li><a href="../../../categorias/Electrodomesticos.html#cocina">Cocina</a></li>
-                            <li><a href="../../../categorias/Electrodomestesticos.html#lavado">Lavado</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#lavado">Lavado</a></li>
                             <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
@@ -136,9 +143,28 @@
 
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
-
 </header>
 
 <!-- Breadcrumb -->
@@ -153,16 +179,15 @@
 <main class="producto-main">
     <section class="producto-detalle">
         <div class="contenedor-producto">
-
             <figure class="imagen-producto">
                 <a href="#img-full">
                     <img src="../../../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_de_golf.avif" alt="Pantalones de Golf">
                 </a>
             </figure>
 
-            <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de los Pantalones de Golf">
+            <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Pantalones de Golf">
                 <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
-                <img src="../../../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_de_golf.avif" alt="Pantalones de Golf ampliado">
+                <img src="../../../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_de_golf.avif" alt="Pantalones de Golf ampliada">
             </div>
 
             <div class="info-producto">
@@ -170,18 +195,22 @@
                 <p class="precio">Precio: $2,000</p>
 
                 <p class="descripcion">
-                    Los <strong>Pantalones de Golf</strong> están diseñados para ofrecer comodidad y libertad de movimiento durante todo el juego. Hechos con tela ligera, elástica y transpirable.
+                    <strong>Pantalones diseñados específicamente para el campo de golf</strong>. Ofrecen máxima flexibilidad y transpirabilidad para que te sientas cómodo durante todo el juego.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tela elástica y fresca</li>
-                    <li>Perfectos para deporte y uso casual elegante</li>
-                    <li>Resistentes y de secado rápido</li>
-                    <li>Diseño moderno y profesional</li>
-                    <li>Disponible en varias tallas</li>
+                    <li>Material: Tejido técnico transpirable</li>
+                    <li>Tecnología: FlexiStretch</li>
+                    <li>Color: Beige claro</li>
+                    <li>Garantía: 6 meses</li>
+                    <li>Marca: GreenPro</li>
                 </ul>
-            </div>
 
+                     <button class="btn-agregar" id="pantalones_de_golf">
+                           Agregar
+                     </button>
+
+            </div>
         </div>
     </section>
 
@@ -216,7 +245,7 @@
 
             <a href="pantalones_joggers.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_joggers.avif" loading="lazy" alt="Pantalón Formal">
+                    <img src="../../../imagenes/productos/Ropa/pantalones_para_hombres/pantalones_joggers.avif" loading="lazy" alt="Pantalones Joggers">
                     <h3>Pantalones Joggers</h3>
                     <p>Precio: $4,000</p>
                 </figure>
@@ -224,20 +253,19 @@
 
         </div>
     </section>
-
 </main>
 
 <footer>
     <div class="footer-content">
         <small>&copy; 2025 Hipermercado Superior. Todos los derechos reservados.</small>
         <div class="social-icons">
-            <a href="https://facebook.com/tuweb" target="_blank" rel="nofollow noopener noreferrer">
+            <a href="https://facebook.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Facebook">
                 <img src="../../../imagenes/iconos/redes/facebook.png" alt="Facebook de Hipermercado Superior">
             </a>
-            <a href="https://twitter.com/tuweb" target="_blank" rel="nofollow noopener noreferrer">
+            <a href="https://twitter.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en X (antes Twitter)">
                 <img src="../../../imagenes/iconos/redes/x.png" alt="X de Hipermercado Superior">
             </a>
-            <a href="https://instagram.com/tuweb" target="_blank" rel="nofollow noopener noreferrer">
+            <a href="https://instagram.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Instagram">
                 <img src="../../../imagenes/iconos/redes/instagram.png" alt="Instagram de Hipermercado Superior">
             </a>
         </div>
@@ -250,6 +278,3 @@
 
 </body>
 </html>
-
-
-

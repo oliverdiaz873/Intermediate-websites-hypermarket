@@ -5,28 +5,29 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Flintstones en Hipermercado Superior. Multivitamínico para niños que apoya el crecimiento saludable, energía y defensas.">
+    <meta name="description" content="Compra Flintstones Multivitamínico para Niños en Hipermercado Superior. Suplemento esencial para el crecimiento saludable.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
+    <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Etiquetas Open Graph -->
-    <meta property="og:title" content="Flintstones | Hipermercado Superior">
+    <meta property="og:title" content="Flintstones Multivitamínico para Niños | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/farmacia/vitaminas/flintstones.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/farmacia/vitaminas/flintstones.avif">
-    <meta property="og:description" content="Flintstones: multivitamínico para niños que apoya crecimiento, defensas y energía diaria.">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/farmacia/vitaminas_y_minerales/flintstones.html">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/farmacia/Vitaminas_y_Minerales/flintstones.avif">
+    <meta property="og:description" content="Flintstones: multivitaminas en gomitas que a los niños les encantan.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Flintstones | Hipermercado Superior">
-    <meta name="twitter:description" content="Multivitamínico Flintstones para niños: vitaminas esenciales para crecimiento y energía.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/farmacia/vitaminas/flintstones.avif">
+    <meta name="twitter:title" content="Flintstones Multivitamínico para Niños | Hipermercado Superior">
+    <meta name="twitter:description" content="Flintstones: el apoyo nutricional que tus hijos necesitan para crecer fuertes.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/farmacia/Vitaminas_y_Minerales/flintstones.avif">
 
     <!-- Título y CSS -->
-    <title>Flintstones | Hipermercado Superior</title>
+    <title>Flintstones Multivitamínico para Niños | Hipermercado Superior</title>
     <link rel="stylesheet" href="../../../css/productos.css">
     <link rel="stylesheet" href="../../../css/fonts.css">
 
@@ -34,22 +35,28 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_farmacia">
 
 <header>
     <div>
-        <a href="../../../index.html" class="logo-header">
+        <a href="../../../index.html" class="logo-header" aria-label="Ir a la página principal de Hipermercado Superior">
             <img src="../../../imagenes/logo/logo.jpeg" alt="Logo de Hipermercado Superior">
             Hipermercado Superior
         </a>
     </div>
 
-      <nav class="menu">
+    <nav class="menu" role="navigation" aria-label="Menú principal">
         <ul>
             <li><a href="../../../index.html">Inicio</a></li>
-            <li><a href="#">Categorías</a>
+            <li><a href="#" aria-haspopup="true" aria-expanded="false">Categorías</a>
                 <ul>
                     <li>
                         <a href="../../../categorias/Alimentos.html">Alimentos</a>
@@ -62,14 +69,16 @@
                             <li><a href="../../../categorias/Alimentos.html#enlatados">Enlatados</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
-                            <li><a href="../../../categorias/Electrodomedesticos.html#cocina">Cocina</a></li>
-                            <li><a href="../../../categorias/Electrodomedesticos.html#lavado">Lavado</a></li>
-                            <li><a href="../../../categorias/Electrodomedesticos.html#climatizacion">Climatización</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#cocina">Cocina</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#lavado">Lavado</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -80,6 +89,7 @@
                             <li><a href="../../../categorias/Tecnologia.html#bocinas">Bocinas</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ropa.html">Ropa</a>
                         <ul>
@@ -90,6 +100,7 @@
                             <li><a href="../../../categorias/Ropa.html#vestidos">Vestidos</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
                         <ul>
@@ -99,15 +110,17 @@
                             <li><a href="../../../categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Farmacia.html">Farmacia</a>
                         <ul>
-                            <li><a href="../../../categorias/Farmacia.html#dermocosmetica">Dermocosmética</a></li>
                             <li><a href="../../../categorias/Farmacia.html#analgesicos">Analgésicos</a></li>
+                            <li><a href="../../../categorias/Farmacia.html#dermocosmetica">Dermocosmética</a></li>
                             <li><a href="../../../categorias/Farmacia.html#vitaminas_y_minerales">Vitaminas y Minerales</a></li>
                             <li><a href="../../../categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ferreteria.html">Ferretería</a>
                         <ul>
@@ -117,6 +130,7 @@
                             <li><a href="../../../categorias/Ferreteria.html#plomeria">Plomería</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/juguetes.html">Juguetes</a>
                         <ul>
@@ -126,20 +140,40 @@
                     </li>
                 </ul>
             </li>
+
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
-   
 </header>
 
 <!-- Breadcrumb -->
-<nav class="breadcrumb">
+<nav class="breadcrumb" aria-label="Ruta de navegación">
     <a href="../../../index.html">Inicio</a> ›
     <span>Categorías</span> ›
     <a href="../../../categorias/Farmacia.html">Farmacia</a> ›
     <a href="../../../categorias/Farmacia.html#vitaminas_y_minerales">Vitaminas y Minerales</a> ›
-    <span class="actual">Flintstones</span>
+    <span class="actual">Flintstones Multivitamínico</span>
 </nav>
 
 <main class="producto-main">
@@ -151,9 +185,9 @@
                 </a>
             </figure>
 
-            <div id="img-full" class="modal-imagen">
-                <a href="#close" class="cerrar"></a>
-                <img src="../../../imagenes/productos/farmacia/Vitaminas_y_Minerales/flintstones.avif" alt="Flintstones ampliado">
+            <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Flintstones Multivitamínico">
+                <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
+                <img src="../../../imagenes/productos/farmacia/Vitaminas_y_Minerales/flintstones.avif" alt="Flintstones Multivitamínico ampliado">
             </div>
 
             <div class="info-producto">
@@ -161,16 +195,21 @@
                 <p class="precio">Precio: $2,500</p>
 
                 <p class="descripcion">
-                    <strong>Flintstones</strong> es un multivitamínico especialmente formulado para niños. Contribuye al crecimiento saludable, refuerza el sistema inmunológico y ayuda a mantener niveles óptimos de energía para su día a día.
+                    Las <strong>multivitaminas Flintstones</strong> son el suplemento ideal para asegurar que los niños obtengan los nutrientes esenciales para un crecimiento saludable.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Vitaminas y Minerales</li>
-                    <li>Presentación: Gomas masticables</li>
-                    <li>Dosis recomendada: 1 gomita diaria</li>
-                    <li>Contenido: 60 gomitas</li>
-                    <li>Beneficios: Apoya crecimiento, fortalece defensas, aporta energía diaria</li>
+                    <li>Tipo: Suplemento infantil</li>
+                    <li>Presentación: Gomitas masticables</li>
+                    <li>Referencia: Apoyo al sistema inmune y energía</li>
+                    <li>Contenido: Vitaminas A, C, D, E y más</li>
+                    <li>Sabor: Frutas variadas</li>
                 </ul>
+
+                     <button class="btn-agregar" id="flintstones">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -188,11 +227,11 @@
                 </figure>
             </a>
 
-            <a href="omega3.html">
+            <a href="vitaminac.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/farmacia/Vitaminas_y_Minerales/omega3.avif" loading="lazy" alt="Omega 3">
-                    <h3>Omega 3</h3>
-                    <p>Precio: $4,000</p>
+                    <img src="../../../imagenes/productos/farmacia/Vitaminas_y_Minerales/vitaminac.avif" loading="lazy" alt="Vitamina C">
+                    <h3>Vitamina C</h3>
+                    <p>Precio: $1,200</p>
                 </figure>
             </a>
 
@@ -204,15 +243,14 @@
                 </figure>
             </a>
 
-             <a href="vitaminac.html">
+            <a href="omega3.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/farmacia/Vitaminas_y_Minerales/vitaminaC.avif" loading="lazy" alt="Vitamina C">
-                    <h3>Vitamina C</h3>
-                    <p>Precio: $2,000</p>
+                    <img src="../../../imagenes/productos/farmacia/Vitaminas_y_Minerales/omega3.avif" loading="lazy" alt="Omega 3">
+                    <h3>Omega 3</h3>
+                    <p>Precio: $4,000</p>
                 </figure>
             </a>
 
-            
         </div>
     </section>
 </main>
@@ -221,17 +259,16 @@
     <div class="footer-content">
         <small>&copy; 2025 Hipermercado Superior. Todos los derechos reservados.</small>
         <div class="social-icons">
-            <a href="https://facebook.com/tuweb" target="_blank">
-                <img src="../../../imagenes/iconos/redes/facebook.png" alt="Facebook">
+            <a href="https://facebook.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Facebook">
+                <img src="../../../imagenes/iconos/redes/facebook.png" alt="Facebook de Hipermercado Superior">
             </a>
-            <a href="https://twitter.com/tuweb" target="_blank">
-                <img src="../../../imagenes/iconos/redes/x.png" alt="X">
+            <a href="https://twitter.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en X (antes Twitter)">
+                <img src="../../../imagenes/iconos/redes/x.png" alt="X de Hipermercado Superior">
             </a>
-            <a href="https://instagram.com/tuweb" target="_blank">
-                <img src="../../../imagenes/iconos/redes/instagram.png" alt="Instagram">
+            <a href="https://instagram.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Instagram">
+                <img src="../../../imagenes/iconos/redes/instagram.png" alt="Instagram de Hipermercado Superior">
             </a>
         </div>
-
         <div class="footer-links">
             <a href="../../../legal/privacy.html">Política de Privacidad</a> |
             <a href="../../../legal/terms.html">Términos de Uso</a>
@@ -241,6 +278,3 @@
 
 </body>
 </html>
-
-
-

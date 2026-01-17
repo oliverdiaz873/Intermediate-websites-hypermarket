@@ -14,8 +14,8 @@
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Leche Entera Rica | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/leche_entera_rica.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Lacteos/leche_entera_rica.avif">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Alimentos/lacteos_y_huevos/leche_entera_rica.html">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/lacteos_y_huevos/leche/leche_entera_rica.avif">
     <meta property="og:description" content="Leche Entera Rica de alta calidad, ideal para acompañar tus desayunos y aportar nutrición diaria.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Leche Entera Rica | Hipermercado Superior">
     <meta name="twitter:description" content="Leche Entera Rica ideal para tus desayunos y meriendas.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Lacteos/leche_entera_rica.avif">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/lacteos_y_huevos/leche/leche_entera_rica.avif">
 
     <!-- Título y CSS -->
     <title>Leche Entera Rica | Hipermercado Superior</title>
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_alimentos">
 
@@ -64,7 +70,6 @@
                         </ul>
                     </li>
 
-                    <!-- resto de tu menú idéntico -->
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
@@ -73,6 +78,7 @@
                             <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -137,6 +143,26 @@
 
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -169,8 +195,7 @@
                 <p class="precio">$65.00</p>
 
                 <p class="descripcion">
-                    La <strong>Leche Entera Rica</strong> es una leche fresca y de alta calidad, ideal para acompañar tus desayunos,
-                    preparar batidas, postres o disfrutarla sola. Aporta calcio, vitaminas y energía para tu día a día.
+                    La <strong>Leche Entera Rica</strong> es una leche fresca y de alta calidad, ideal para acompañar tus desayunos, preparar batidas, postres o disfrutarla sola. Aporta calcio, vitaminas y energía para tu día a día.
                 </p>
 
                 <ul class="detalles">
@@ -180,6 +205,11 @@
                     <li>Ideal para: Desayunos, batidas, postres</li>
                     <li>Beneficios: Rica en calcio y vitaminas</li>
                 </ul>
+
+                     <button class="btn-agregar" id="leche_entera_rica">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -229,7 +259,6 @@
                 </figure>
             </a>
 
-
         </div>
     </section>
 </main>
@@ -257,6 +286,3 @@
 
 </body>
 </html>
-
-
-

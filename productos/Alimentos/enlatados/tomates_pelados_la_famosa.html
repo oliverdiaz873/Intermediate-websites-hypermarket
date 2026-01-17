@@ -5,24 +5,25 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Tomates Pelados La Famosa en Hipermercado Superior. Tomates jugosos y de calidad, ideales para tus recetas caseras.">
+    <meta name="description" content="Compra Tomates Pelados La Famosa en Hipermercado Superior. La base perfecta para tus salsas y guisos.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
+    <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
     <meta name="theme-color" content="#7ed957">
 
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Tomates Pelados La Famosa | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/alimentos/enlatados/tomates_pelados_la_famosa.html">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Alimentos/enlatados/tomates_pelados_la_famosa.html">
     <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Enlatados/tomates_pelados.avif">
-    <meta property="og:description" content="Tomates Pelados La Famosa: frescos, jugosos y perfectos para cocinar todo tipo de platos.">
+    <meta property="og:description" content="Tomates Pelados La Famosa: frescura y sabor natural.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Tomates Pelados La Famosa | Hipermercado Superior">
-    <meta name="twitter:description" content="Tomates pelados de alta calidad ideales para tus comidas.">
+    <meta name="twitter:description" content="Tomates Pelados La Famosa, esenciales para tu cocina.">
     <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Enlatados/tomates_pelados.avif">
 
     <!-- Título y CSS -->
@@ -34,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_alimentos">
 
@@ -136,6 +143,26 @@
 
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -165,19 +192,23 @@
 
             <div class="info-producto">
                 <h1>Tomates Pelados La Famosa</h1>
-                <p class="precio">Precio: $60 / 1 Lata</p>
+                <p class="precio">Precio: $60.00 / 1 Lata</p>
 
                 <p class="descripcion">
-                    Los <strong>Tomates Pelados La Famosa</strong> son ideales para preparar salsas, guisos y una gran variedad de platos caseros. Su textura suave y sabor fresco los convierten en una opción indispensable en tu despensa.
+                    <strong>Tomates Pelados La Famosa</strong>, madurados al sol y enlatados en su punto óptimo de frescura. La base ideal para salsas de pasta, pizzas y guisos con sabor auténtico.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Tomates pelados enlatados</li>
-                    <li>Presentación: Lata de 425g</li>
-                    <li>Beneficios: Listos para usar en recetas</li>
-                    <li>Ideal para: Salsas, guisos, pastas y estofados</li>
-                    <li>Tamaño: 425g</li>
+                    <li>Tipo: Tomates enteros pelados</li>
+                    <li>Marca: La Famosa</li>
+                    <li>Uso: Salsas y guisos</li>
+                    <li>Presentación: Lata</li>
                 </ul>
+
+                     <button class="btn-agregar" id="tomates_pelados_la_famosa">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -187,27 +218,27 @@
         <h2>Productos Similares</h2>
         <div class="productos-container">
 
-            <a href="habichuelas_negras_goya.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Enlatados/habichuelas_negras_goya.avif" loading="lazy" alt="Habichuelas Negras Goya">
-                    <h3>Habichuelas Negras Goya</h3>
-                    <p>Precio: $50</p>
-                </figure>
-            </a>
-
             <a href="atun_dimar.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Enlatados/atun_dimar.avif" loading="lazy" alt="Atún Dimar">
                     <h3>Atún Dimar</h3>
-                    <p>Precio: $120</p>
+                    <p>Precio: $120.00 / 1 Lata</p>
                 </figure>
             </a>
 
             <a href="gandules_verdes_goya.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Enlatados/gandules_verdes_goya.avif" loading="lazy" alt="Gandules Verdes Goya">
-                    <h3>Gandules Verdes Goya</h3>
-                    <p>Precio: $80</p>
+                    <h3>Gandules Goya</h3>
+                    <p>Precio: $80.00 / 1 Lata</p>
+                </figure>
+            </a>
+
+            <a href="habichuelas_negras_goya.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/Enlatados/habichuelas_negras_goya.avif" loading="lazy" alt="Habichuelas Negras Goya">
+                    <h3>Habichuelas Negras</h3>
+                    <p>Precio: $50.00 / 1 Lata</p>
                 </figure>
             </a>
 
@@ -215,15 +246,7 @@
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Enlatados/maiz_la_famosa.avif" loading="lazy" alt="Maíz La Famosa">
                     <h3>Maíz La Famosa</h3>
-                    <p>Precio: $45</p>
-                </figure>
-            </a>
-
-            <a href="sardinas_gord.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Enlatados/sardinas_gord.avif" loading="lazy" alt="Sardinas Gord">
-                    <h3>Sardinas Gord</h3>
-                    <p>Precio: $85</p>
+                    <p>Precio: $45.00 / 1 Lata</p>
                 </figure>
             </a>
 
@@ -231,7 +254,7 @@
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Enlatados/salchichas_jaja.avif" loading="lazy" alt="Salchichas Jajá">
                     <h3>Salchichas Jajá</h3>
-                    <p>Precio: $45</p>
+                    <p>Precio: $45.00 / 1 Lata</p>
                 </figure>
             </a>
 
@@ -243,13 +266,13 @@
     <div class="footer-content">
         <small>&copy; 2025 Hipermercado Superior. Todos los derechos reservados.</small>
         <div class="social-icons">
-            <a href="https://facebook.com/tuweb" target="_blank" rel="nofollow noopener noreferrer">
+            <a href="https://facebook.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Facebook">
                 <img src="../../../imagenes/iconos/redes/facebook.png" alt="Facebook de Hipermercado Superior">
             </a>
-            <a href="https://twitter.com/tuweb" target="_blank" rel="nofollow noopener noreferrer">
+            <a href="https://twitter.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en X (antes Twitter)">
                 <img src="../../../imagenes/iconos/redes/x.png" alt="X de Hipermercado Superior">
             </a>
-            <a href="https://instagram.com/tuweb" target="_blank" rel="nofollow noopener noreferrer">
+            <a href="https://instagram.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Instagram">
                 <img src="../../../imagenes/iconos/redes/instagram.png" alt="Instagram de Hipermercado Superior">
             </a>
         </div>
@@ -262,6 +285,3 @@
 
 </body>
 </html>
-
-
-

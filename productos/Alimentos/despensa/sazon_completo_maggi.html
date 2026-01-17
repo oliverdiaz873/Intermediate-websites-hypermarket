@@ -5,7 +5,7 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Sazón Completo Maggi en Hipermercado Superior. El condimento ideal para resaltar el sabor de todas tus comidas.">
+    <meta name="description" content="Compra Sazón Completo Maggi en Hipermercado Superior. El secreto para dar el mejor sabor a tus comidas caseras.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
@@ -14,16 +14,16 @@
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Sazón Completo Maggi | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/sazon_completo_maggi.html">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Alimentos/despensa/sazon_completo_maggi.html">
     <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Despensa/condimentos/sazon_completo_maggi.avif">
-    <meta property="og:description" content="El tradicional Sazón Completo Maggi, perfecto para sazonar todo tipo de comidas.">
+    <meta property="og:description" content="Sazón Completo Maggi: sabor irresistible en cada plato.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sazón Completo Maggi | Hipermercado Superior">
-    <meta name="twitter:description" content="El condimento ideal para realzar el sabor de tus recetas.">
+    <meta name="twitter:description" content="Sazón Completo Maggi, ideal para carnes, arroces y guisos.">
     <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Despensa/condimentos/sazon_completo_maggi.avif">
 
     <!-- Título y CSS -->
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_alimentos">
 
@@ -63,6 +69,7 @@
                             <li><a href="../../../categorias/Alimentos.html#enlatados">Enlatados</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
@@ -71,6 +78,7 @@
                             <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -81,6 +89,7 @@
                             <li><a href="../../../categorias/Tecnologia.html#bocinas">Bocinas</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ropa.html">Ropa</a>
                         <ul>
@@ -91,6 +100,7 @@
                             <li><a href="../../../categorias/Ropa.html#vestidos">Vestidos</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
                         <ul>
@@ -100,6 +110,7 @@
                             <li><a href="../../../categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Farmacia.html">Farmacia</a>
                         <ul>
@@ -109,6 +120,7 @@
                             <li><a href="../../../categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ferreteria.html">Ferretería</a>
                         <ul>
@@ -118,6 +130,7 @@
                             <li><a href="../../../categorias/Ferreteria.html#plomeria">Plomería</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/juguetes.html">Juguetes</a>
                         <ul>
@@ -127,8 +140,29 @@
                     </li>
                 </ul>
             </li>
+
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -153,25 +187,28 @@
 
             <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Sazón Completo Maggi">
                 <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
-                <img src="../../../imagenes/productos/Alimentos/Despensa/condimentos/sazon_completo_maggi.avif" alt="Sazón Completo Maggi ampliada">
+                <img src="../../../imagenes/productos/Alimentos/Despensa/condimentos/sazon_completo_maggi.avif" alt="Sazón Completo Maggi ampliado">
             </div>
 
             <div class="info-producto">
                 <h1>Sazón Completo Maggi</h1>
-                <p class="precio">$80.00</p>
+                <p class="precio">Precio: $80.00</p>
 
                 <p class="descripcion">
-                    El <strong>Sazón Completo Maggi</strong> es el aliado perfecto para realzar el sabor de todas tus recetas. 
-                    Su mezcla de especias seleccionadas asegura un aroma y gusto inconfundible que transformará tus comidas.
+                    <strong>Sazón Completo Maggi</strong>, la mezcla perfecta de especias y condimentos. Dale a tus comidas el color y sabor que a todos les encanta, de forma rápida y sencilla.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Condimento</li>
-                    <li>Presentación: Sobre / Paquete</li>
-                    <li>Peso aproximado: 113 g</li>
-                    <li>Uso: Ideal para carnes, sopas, arroces y guisos</li>
-                    <li>Beneficios: Realza el sabor, mezcla equilibrada de especias</li>
+                    <li>Tipo: Sazón en polvo</li>
+                    <li>Marca: Maggi</li>
+                    <li>Uso: Carnes, arroces, habichuelas</li>
+                    <li>Beneficios: Sabor completo</li>
                 </ul>
+
+                     <button class="btn-agregar" id="sazon_completo_maggi">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -181,11 +218,27 @@
         <h2>Productos Similares</h2>
         <div class="productos-container">
 
-            <a href="sopita_dona_gallina.html">
+            <a href="aceite_crisol.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Despensa/condimentos/sopita_doña_gallina.avif" loading="lazy" alt="Sopita Doña gallina">
-                    <h3>Sopita Doña gallina</h3>
-                    <p>Precio: $150 / la caja</p>
+                    <img src="../../../imagenes/productos/Alimentos/Despensa/aceites/aceite_crisol.avif" loading="lazy" alt="Aceite Crisol">
+                    <h3>Aceite Crisol</h3>
+                    <p>Precio: $95.00</p>
+                </figure>
+            </a>
+
+            <a href="aceite_oliva_extra_virgen.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/Despensa/aceites/aceite_de_oliva_extra_virgen.avif" loading="lazy" alt="Aceite de Oliva Extra Virgen">
+                    <h3>Aceite de Oliva</h3>
+                    <p>Precio: $230.00</p>
+                </figure>
+            </a>
+
+            <a href="mayonesa_baldom.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/Despensa/aderezos_y_salsas/mayonesa_baldom.avif" loading="lazy" alt="Mayonesa Baldom">
+                    <h3>Mayonesa Baldom</h3>
+                    <p>Precio: $95.00</p>
                 </figure>
             </a>
 
@@ -197,19 +250,11 @@
                 </figure>
             </a>
 
-            <a href="vinagre_baldom.html">
+            <a href="sopita_dona_gallina.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Despensa/condimentos/vinagre_baldom.avif" loading="lazy" alt="Vinagre Baldom">
-                    <h3>Vinagre Baldom</h3>
-                    <p>Precio: $87</p>
-                </figure>
-            </a>
-
-            <a href="mayonesa_baldom.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Despensa/aderezos_y_salsas/mayonesa_baldom.avif" loading="lazy" alt="Mayonesa Baldom">
-                    <h3>Mayonesa Baldom</h3>
-                    <p>Precio: $95</p>
+                    <img src="../../../imagenes/productos/Alimentos/Despensa/condimentos/sopita_doña_gallina.avif" loading="lazy" alt="Sopita Doña Gallina">
+                    <h3>Sopita Doña Gallina</h3>
+                    <p>Precio: $150.00 / la caja</p>
                 </figure>
             </a>
 
@@ -240,6 +285,3 @@
 
 </body>
 </html>
-
-
-

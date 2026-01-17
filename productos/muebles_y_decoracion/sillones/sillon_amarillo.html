@@ -5,26 +5,26 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Sillón Amarillo en Hipermercado Superior. Mueble cómodo y elegante para tu sala de estar.">
+    <meta name="description" content="Compra Sillón Amarillo en Hipermercado Superior. Sillón individual con diseño ergonómico y acolchado de alta densidad, ideal para añadir confort y estilo.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
-    <meta name="theme-color" content="#ffd000">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Sillón Amarillo | Hipermercado Superior">
     <meta property="og:type" content="product">
     <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/muebles_y_decoracion/sillones/sillon_amarillo.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/muebles_y_decoracion/sillones/sillon_amarillo.avif">
-    <meta property="og:description" content="Sillón Amarillo cómodo y elegante para tu sala de estar.">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/muebles_y_decoracion/sillon/sillon_amarillo.avif">
+    <meta property="og:description" content="Confort excepcional y un toque audaz para tu sala.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sillón Amarillo | Hipermercado Superior">
-    <meta name="twitter:description" content="Sillón Amarillo cómodo y elegante para tu sala de estar.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/muebles_y_decoracion/sillones/sillon_amarillo.avif">
+    <meta name="twitter:description" content="Diseño ergonómico y color vibrante. Compra tu sillón amarillo.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/muebles_y_decoracion/sillon/sillon_amarillo.avif">
 
     <!-- Título y CSS -->
     <title>Sillón Amarillo | Hipermercado Superior</title>
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_muebles_y_decoracion">
 
@@ -63,6 +69,7 @@
                             <li><a href="../../../categorias/Alimentos.html#enlatados">Enlatados</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
@@ -71,6 +78,7 @@
                             <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -81,6 +89,7 @@
                             <li><a href="../../../categorias/Tecnologia.html#bocinas">Bocinas</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ropa.html">Ropa</a>
                         <ul>
@@ -91,6 +100,7 @@
                             <li><a href="../../../categorias/Ropa.html#vestidos">Vestidos</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
                         <ul>
@@ -100,6 +110,7 @@
                             <li><a href="../../../categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Farmacia.html">Farmacia</a>
                         <ul>
@@ -109,6 +120,7 @@
                             <li><a href="../../../categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ferreteria.html">Ferretería</a>
                         <ul>
@@ -118,6 +130,7 @@
                             <li><a href="../../../categorias/Ferreteria.html#plomeria">Plomería</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/juguetes.html">Juguetes</a>
                         <ul>
@@ -127,8 +140,29 @@
                     </li>
                 </ul>
             </li>
+
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -147,13 +181,13 @@
         <div class="contenedor-producto">
             <figure class="imagen-producto">
                 <a href="#img-full">
-                    <img src="../../../imagenes/productos/Muebles_y_decoracion/sillon/sillon_amarillo.avif" alt="Sillón Amarillo">
+                    <img src="../../../imagenes/productos/muebles_y_decoracion/sillon/sillon_amarillo.avif" alt="Sillón Amarillo">
                 </a>
             </figure>
 
-            <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada del Sillón Amarillo">
+            <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Sillón Amarillo">
                 <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
-                <img src="../../../imagenes/productos/muebles_y_decoracion/sillon/sillon_amarillo.avif" alt="Sillón Amarillo ampliado">
+                <img src="../../../imagenes/productos/muebles_y_decoracion/sillon/sillon_amarillo.avif" alt="Sillón Amarillo ampliada">
             </div>
 
             <div class="info-producto">
@@ -161,16 +195,21 @@
                 <p class="precio">Precio: $4,500</p>
 
                 <p class="descripcion">
-                    Este <strong>Sillón Amarillo</strong> es cómodo, elegante y perfecto para cualquier sala de estar. Diseñado con materiales de alta calidad que garantizan comodidad y durabilidad.
+                    <strong>Sillón individual en color amarillo vibrante</strong>. Su diseño ergonómico y acolchado de alta densidad garantizan un confort excepcional mientras añades una pieza de acento audaz a tu sala.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Sillón individual</li>
-                    <li>Color: Amarillo</li>
-                    <li>Material: Tela de alta calidad</li>
-                    <li>Dimensiones aproximadas: 95cm x 85cm x 90cm</li>
-                    <li>Beneficios: Confortable, moderno y duradero</li>
+                    <li>Material: Tela premium y madera</li>
+                    <li>Estilo: Contemporáneo</li>
+                    <li>Ergonomía: Alta</li>
+                    <li>Garantía: 1 año</li>
+                    <li>Marca: ComfortPlus</li>
                 </ul>
+
+                     <button class="btn-agregar" id="sillon_amarillo">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -182,7 +221,7 @@
 
             <a href="sillon_azul.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/muebles_y_decoracion/sillon/sillon_azul.avif" loading="lazy" alt="Sofá Media Luna">
+                    <img src="../../../imagenes/productos/muebles_y_decoracion/sillon/sillon_azul.avif" loading="lazy" alt="Sillón Azul">
                     <h3>Sillón Azul</h3>
                     <p>Precio: $5,500</p>
                 </figure>
@@ -190,7 +229,7 @@
 
             <a href="sillon_blanco.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/muebles_y_decoracion/sillon/sillon_blanco.avif" loading="lazy" alt="Sofá Cama Blanco">
+                    <img src="../../../imagenes/productos/muebles_y_decoracion/sillon/sillon_blanco.avif" loading="lazy" alt="Sillón Blanco">
                     <h3>Sillón Blanco</h3>
                     <p>Precio: $4,000</p>
                 </figure>
@@ -198,7 +237,7 @@
 
             <a href="sillon_gris.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/muebles_y_decoracion/sillon/sillon_gris.avif" loading="lazy" alt="Sofá Gris">
+                    <img src="../../../imagenes/productos/muebles_y_decoracion/sillon/sillon_gris.avif" loading="lazy" alt="Sillón Gris">
                     <h3>Sillón Gris</h3>
                     <p>Precio: $5,000</p>
                 </figure>
@@ -206,7 +245,7 @@
 
             <a href="sillon_verde.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/muebles_y_decoracion/sillon/sillon_verde.avif" loading="lazy" alt="Sofá Negro">
+                    <img src="../../../imagenes/productos/muebles_y_decoracion/sillon/sillon_verde.avif" loading="lazy" alt="Sillón Verde">
                     <h3>Sillón Verde</h3>
                     <p>Precio: $7,000</p>
                 </figure>
@@ -239,6 +278,3 @@
 
 </body>
 </html>
-
-
-

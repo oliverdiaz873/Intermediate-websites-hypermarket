@@ -50,11 +50,30 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             listaCarrito.innerHTML = carrito.map(item => {
                 const subtotal = (Number(item.precio) || 0) * (item.cantidad || 0);
+
+                // Resolver ruta de imagen (local logic)
+                let imgSrc = item.img || '';
+                if (imgSrc.startsWith('/')) {
+                    imgSrc = getRelativePrefix() + imgSrc.substring(1);
+                }
+
+                // Resolver URL del producto para enlace
+                let itemUrl = item.url ? (getRelativePrefix() + item.url) : '#';
+
+                const contenidoInfo = `
+                     ${imgSrc ? `<img src="${imgSrc}" class="item-img" style="width: 50px; height: 50px; object-fit: contain; margin-right: 10px;">` : ''}
+                    <div>
+                        <strong>${escapeHtml(item.nombre)}</strong>
+                        <div>RD$ ${Number(item.precio).toLocaleString()}</div>
+                    </div>
+                `;
+
                 return `
                     <div class="item-carrito" data-id="${escapeHtml(item.id)}">
                         <div class="carrito-item-info">
-                            <strong>${escapeHtml(item.nombre)}</strong>
-                            <div>RD$ ${Number(item.precio).toLocaleString()}</div>
+                            <a href="${itemUrl}" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+                                ${contenidoInfo}
+                            </a>
                         </div>
                         <div class="carrito-item-cantidad">
                             <button class="btn-decrease">−</button>
@@ -92,6 +111,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 id: producto.id,
                 nombre: producto.nombre,
                 precio: Number(producto.precio) || 0,
+                img: producto.img, // Save image
+                url: producto.url, // Save URL for navigation
                 cantidad: 1
             });
         }
@@ -122,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function escapeHtml(str) {
         if (typeof str !== 'string') return str;
         return str.replace(/[&<>\"']/g, m =>
-            ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":"&#39;" }[m])
+            ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": "&#39;" }[m])
         );
     }
 
@@ -136,11 +157,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const btnAgregar = e.target.closest('.btn-agregar');
         if (btnAgregar) {
-            agregarProducto({
-                id: btnAgregar.dataset.id,
-                nombre: btnAgregar.dataset.nombre,
-                precio: btnAgregar.dataset.precio
-            });
+            e.preventDefault();
+            e.stopPropagation(); // Avoid conflict with global carrito.js
+
+            const id = btnAgregar.dataset.id || btnAgregar.id;
+            // Lookup product to get all details including image
+            const productoReal = productos.find(p => p.id === id);
+
+            if (productoReal) {
+                agregarProducto({
+                    id: productoReal.id,
+                    nombre: productoReal.nombre,
+                    precio: productoReal.precio,
+                    img: productoReal.imagen, // Map imagen to img
+                    url: productoReal.url     // Save URL
+                });
+            } else {
+                // Fallback (shouldn't happen if IDs match)
+                agregarProducto({
+                    id: id,
+                    nombre: btnAgregar.dataset.nombre,
+                    precio: btnAgregar.dataset.precio,
+                    img: btnAgregar.dataset.img || '',
+                    url: btnAgregar.dataset.url || '#'
+                });
+            }
             return;
         }
 
@@ -164,11 +205,24 @@ document.addEventListener("DOMContentLoaded", function () {
             const activo = body.classList.toggle("menu-busqueda-activa");
 
             if (activo) {
-                iconoBuscar.src = "/imagenes/iconos/close_icon/close_red2.png";
+                // Cambiar a icono X (preservando la ruta base)
+                const currentSrc = iconoBuscar.src;
+                if (currentSrc.includes('magnifying_glass_icon/magnifying_glass.png')) {
+                    iconoBuscar.src = currentSrc.replace('magnifying_glass_icon/magnifying_glass.png', 'close_icon/close_red2.png');
+                } else {
+                    // Fallback por si la ruta inicial era distinta o absoluta pura
+                    iconoBuscar.src = "imagenes/iconos/close_icon/close_red2.png";
+                }
                 iconoBuscar.alt = "Cerrar búsqueda";
                 inputBuscar.focus();
             } else {
-                iconoBuscar.src = "/imagenes/iconos/magnifying_glass_icon/magnifying_glass.png";
+                // Volver a icono Lupa
+                const currentSrc = iconoBuscar.src;
+                if (currentSrc.includes('close_icon/close_red2.png')) {
+                    iconoBuscar.src = currentSrc.replace('close_icon/close_red2.png', 'magnifying_glass_icon/magnifying_glass.png');
+                } else {
+                    iconoBuscar.src = "imagenes/iconos/magnifying_glass_icon/magnifying_glass.png";
+                }
                 iconoBuscar.alt = "Buscar";
                 inputBuscar.value = "";
                 resultados.style.display = "none";
@@ -198,7 +252,14 @@ document.addEventListener("DOMContentLoaded", function () {
             coincidencias.forEach(p => {
                 const li = document.createElement("li");
                 li.className = "item-busqueda";
-                li.innerHTML = `<img src="${p.imagen}"><span>${p.nombre}</span>`;
+
+                // Resolver ruta relativa para la imagen
+                let imgSrc = p.imagen;
+                if (imgSrc.startsWith('/')) {
+                    imgSrc = getRelativePrefix() + imgSrc.substring(1);
+                }
+
+                li.innerHTML = `<img src="${imgSrc}"><span>${p.nombre}</span>`;
                 li.addEventListener("click", () => irAResultados(p.nombre));
                 resultados.appendChild(li);
             });
@@ -237,17 +298,26 @@ document.addEventListener("DOMContentLoaded", function () {
             const card = document.createElement("div");
             card.className = "resultado-card";
 
+            // Resolver ruta relativa para la imagen
+            let imgSrc = p.imagen;
+            if (imgSrc.startsWith('/')) {
+                imgSrc = getRelativePrefix() + imgSrc.substring(1);
+            }
+
             card.innerHTML = `
-                 <img src="${p.imagen}">
+                 <img src="${imgSrc}">
                      <div class="resultado-info">
                            <h3>${p.nombre}</h3>
                      <div class="resultado-precio">
                             ${p.precioTexto || "RD$ " + p.precio}
                      </div>
                       <button class="btn-agregar"
+                        id="${p.id}"
                         data-id="${p.id}"
                         data-nombre="${p.nombre}"
-                        data-precio="${p.precio}">
+                        data-precio="${p.precio}"
+                        data-url="${p.url || '#'}"
+                        data-img="${p.imagen}">
                          Agregar
                      </button>
                    </div>
@@ -255,7 +325,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             card.addEventListener("click", e => {
                 if (!e.target.closest('.btn-agregar')) {
-                    window.location.href = p.url;
+                    // Fix: usar prefijo relativo para la URL del producto
+                    window.location.href = getRelativePrefix() + p.url;
                 }
             });
 
@@ -273,5 +344,28 @@ function normalizarTexto(texto) {
 
 function irAResultados(texto) {
     const q = encodeURIComponent(texto.trim());
-    window.location.href = `/resultados_busqueda.html?q=${q}`;
+    // Fix: usar prefijo relativo para ir a resultados_busqueda.html
+    window.location.href = getRelativePrefix() + `resultados_busqueda.html?q=${q}`;
+}
+
+function getRelativePrefix() {
+    const path = window.location.pathname;
+
+    if (path.includes('/productos/')) {
+        const parts = path.split('/productos/');
+        if (parts.length > 1) {
+            const subPath = parts[1];
+            const depth = subPath.split('/').length - 1;
+            let up = '../';
+            for (let i = 0; i < depth; i++) up += '../';
+            return up;
+        }
+        return '../';
+    }
+
+    if (path.includes('/categorias/')) {
+        return '../';
+    }
+
+    return ''; // Root
 }

@@ -5,7 +5,7 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Pepinos frescos en Hipermercado Superior. Verduras crujientes, frescas y de la mejor calidad al mejor precio.">
+    <meta name="description" content="Compra Pepinos frescos en Hipermercado Superior. Ideales para tus ensaladas y jugos verdes.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
@@ -14,19 +14,19 @@
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Pepinos | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/pepinos.html">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Alimentos/Frutas_y_verduras/pepinos.html">
     <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/frutas_y_verduras/pepino.avif">
-    <meta property="og:description" content="Pepinos frescos, crujientes y naturales. Perfectos para ensaladas, snacks o jugos saludables.">
+    <meta property="og:description" content="Pepinos frescos y crujientes.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
-    <!-- Twitter Cards para X -->
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pepinos | Hipermercado Superior">
-    <meta name="twitter:description" content="Disfruta de Pepinos frescos y naturales en Hipermercado Superior. Crocantes y saludables.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Frutas/pepino.jpg">
+    <meta name="twitter:description" content="Pepinos frescos de la mejor calidad.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/frutas_y_verduras/pepino.avif">
 
-    <!-- Título, CSS y Fuentes -->
+    <!-- Título y CSS -->
     <title>Pepinos | Hipermercado Superior</title>
     <link rel="stylesheet" href="../../../css/productos.css">
     <link rel="stylesheet" href="../../../css/fonts.css">
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_alimentos">
 
@@ -63,6 +69,7 @@
                             <li><a href="../../../categorias/Alimentos.html#enlatados">Enlatados</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
@@ -71,6 +78,7 @@
                             <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -81,6 +89,7 @@
                             <li><a href="../../../categorias/Tecnologia.html#bocinas">Bocinas</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ropa.html">Ropa</a>
                         <ul>
@@ -91,6 +100,7 @@
                             <li><a href="../../../categorias/Ropa.html#vestidos">Vestidos</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
                         <ul>
@@ -100,6 +110,7 @@
                             <li><a href="../../../categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Farmacia.html">Farmacia</a>
                         <ul>
@@ -109,6 +120,7 @@
                             <li><a href="../../../categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ferreteria.html">Ferretería</a>
                         <ul>
@@ -118,6 +130,7 @@
                             <li><a href="../../../categorias/Ferreteria.html#plomeria">Plomería</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/juguetes.html">Juguetes</a>
                         <ul>
@@ -127,8 +140,29 @@
                     </li>
                 </ul>
             </li>
+
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -153,25 +187,28 @@
 
             <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Pepinos">
                 <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
-                <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/pepino.avif" alt="Pepinos ampliada">
+                <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/pepino.avif" alt="Pepinos ampliado">
             </div>
 
             <div class="info-producto">
                 <h1>Pepinos</h1>
-                <p class="precio">$35.00 / 1 kg</p>
+                <p class="precio">Precio: $35.00 / 1 kg</p>
 
                 <p class="descripcion">
-                    Los <strong>pepinos</strong> son verduras frescas, crujientes y refrescantes. Ideales para ensaladas, snacks o jugos naturales.
-                    Su textura y sabor los hacen perfectos para una alimentación saludable y ligera.
+                    <strong>Pepinos</strong> frescos y crujientes. Son una excelente fuente de hidratación y fibra, perfectos para ensaladas refrescantes o para añadir a tus batidos saludables.
                 </p>
 
                 <ul class="detalles">
                     <li>Tipo: Verdura fresca</li>
-                    <li>Origen: Nacional</li>
-                    <li>Peso aproximado: 1 kg</li>
-                    <li>Conservación: Mantener en lugar fresco y seco</li>
-                    <li>Beneficios: Hidratantes, bajos en calorías y ricos en vitaminas</li>
+                    <li>Uso: Ensaladas y jugos</li>
+                    <li>Beneficios: Hidratante y bajo en calorías</li>
+                    <li>Venta: Por kg</li>
                 </ul>
+
+                     <button class="btn-agregar" id="pepinos">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -181,35 +218,46 @@
         <h2>Productos Similares</h2>
         <div class="productos-container">
 
-           
             <a href="tomates_de_ensalada.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/tomate_de_ensalada.avif" loading="lazy" alt="Tomates">
-                    <h3>Tomates de ensalada</h3>
-                    <p>Precio: $80 1KG</p>
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/tomate_de_ensalada.avif" loading="lazy" alt="Tomates de Ensalada">
+                    <h3>Tomates de Ensalada</h3>
+                    <p>Precio: $80.00 / 1 kg</p>
                 </figure>
             </a>
-            <a href="zanahorias.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/zanahoria.avif" loading="lazy" alt="Zanahorias">
-                    <h3>Zanahorias</h3>
-                    <p>Precio: $30.00 / 1 kg</p>
-                </figure>
-            </a>
-            <a href="cebollas_rojas.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/cebolla_roja.avif" loading="lazy" alt="Cebollas rojas">
-                    <h3>Cebollas rojas</h3>
-                    <p>Precio: $170 1KG</p>
-                </figure>
-            </a>
+
             <a href="ajies_morrones.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/Ajies_morron.avif" loading="lazy" alt="Ajíes Morrones">
                     <h3>Ajíes Morrones</h3>
-                    <p>Precio: $60.00 / 1 kg</p>
+                    <p>Precio: $80.00 / La unidad</p>
                 </figure>
             </a>
+
+            <a href="cebollas_rojas.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/cebolla_roja.avif" loading="lazy" alt="Cebollas Rojas">
+                    <h3>Cebollas Rojas</h3>
+                    <p>Precio: $170.00 / 1 kg</p>
+                </figure>
+            </a>
+
+            <a href="zanahorias.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/zanahoria.avif" loading="lazy" alt="Zanahorias">
+                    <h3>Zanahorias</h3>
+                    <p>Precio: $80.00 / 1 kg</p>
+                </figure>
+            </a>
+
+            <a href="limones_persa.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/limon_persa.avif" loading="lazy" alt="Limones Persa">
+                    <h3>Limones Persa</h3>
+                    <p>Precio: $200.00 / 1 kg</p>
+                </figure>
+            </a>
+
         </div>
     </section>
 </main>
@@ -237,6 +285,3 @@
 
 </body>
 </html>
-
-
-

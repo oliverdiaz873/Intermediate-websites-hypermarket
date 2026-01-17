@@ -8,12 +8,13 @@
     <meta name="description" content="Compra el Ventilador KDK en Hipermercado Superior. Potente, silencioso y perfecto para mantener tus espacios frescos.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
+    <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
     <meta name="theme-color" content="#7ed957">
 
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Ventilador KDK | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/ventilador_kdk.html">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Electrodomesticos/climatizacion/ventilador_kdk.html">
     <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/climatizacion/ventiladores/ventilador_KDK.avif">
     <meta property="og:description" content="Ventilador KDK de alta eficiencia para mantener tus espacios frescos cómodamente.">
     <meta property="og:site_name" content="Hipermercado Superior">
@@ -34,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_electrodomesticos">
 
@@ -136,6 +143,26 @@
 
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -145,7 +172,7 @@
     <a href="../../../index.html">Inicio</a> ›
     <span>Categorías</span> ›
     <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a> ›
-     <a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a> ›
+    <a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a> ›
     <span class="actual">Ventilador KDK</span>
 </nav>
 
@@ -168,8 +195,7 @@
                 <p class="precio">Precio: $6,000</p>
 
                 <p class="descripcion">
-                    El <strong>Ventilador KDK</strong> ofrece un rendimiento silencioso y eficiente, ideal para mantener tus espacios frescos.
-                    Diseño moderno y compacto que se adapta a cualquier ambiente.
+                    El <strong>Ventilador KDK</strong> ofrece un rendimiento silencioso y eficiente, ideal para mantener tus espacios frescos. Diseño moderno y compacto que se adapta a cualquier ambiente.
                 </p>
 
                 <ul class="detalles">
@@ -179,6 +205,11 @@
                     <li>Diseño moderno y compacto</li>
                     <li>Duradero y confiable</li>
                 </ul>
+
+                     <button class="btn-agregar" id="ventilador_kdk">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -224,7 +255,7 @@
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Electrodomesticos/climatizacion/ventiladores/ventilador_pequeño.png" loading="lazy" alt="Ventilador Pequeño">
                     <h3>Ventilador Pequeño</h3>
-                    <p>Precio: $8,000</p>
+                    <p>Precio: $2,500</p>
                 </figure>
             </a>
 
@@ -255,6 +286,3 @@
 
 </body>
 </html>
-
-
-

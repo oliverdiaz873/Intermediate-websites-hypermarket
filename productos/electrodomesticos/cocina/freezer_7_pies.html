@@ -14,8 +14,8 @@
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Freezer 7 Pies | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/freezer_7_pies.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/cocina/freezer/freezer_7pies.avif">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Electrodomesticos/cocina/freezer_7_pies.html">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/cocina/freezer/freezer_7pies.png">
     <meta property="og:description" content="Freezer de 7 Pies, amplio y eficiente para conservar tus alimentos en perfectas condiciones.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
@@ -24,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Freezer 7 Pies | Hipermercado Superior">
     <meta name="twitter:description" content="Freezer de 7 Pies amplio y eficiente para tu hogar.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/cocina/freezer/freezer_7pies.avif">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/cocina/freezer/freezer_7pies.png">
 
     <!-- Título y CSS -->
     <title>Freezer 7 Pies | Hipermercado Superior</title>
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_electrodomesticos">
 
@@ -137,6 +143,26 @@
 
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -169,9 +195,7 @@
                 <p class="precio">Precio: $16,500</p>
 
                 <p class="descripcion">
-                    El <strong>Freezer de 7 Pies</strong> ofrece una excelente capacidad de almacenamiento, 
-                    eficiencia energética y un funcionamiento silencioso, ideal para conservar alimentos 
-                    por largos períodos. Perfecto para hogares, negocios pequeños o respaldo adicional.
+                    El <strong>Freezer de 7 Pies</strong> ofrece una excelente capacidad de almacenamiento, eficiencia energética y un funcionamiento silencioso, ideal para conservar alimentos por largos períodos. Perfecto para hogares, negocios pequeños o respaldo adicional.
                 </p>
 
                 <ul class="detalles">
@@ -181,6 +205,11 @@
                     <li>Temperatura ajustable</li>
                     <li>Ideal para carnes, pescados y almacenamiento prolongado</li>
                 </ul>
+
+                     <button class="btn-agregar" id="freezer_7_pies">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -257,6 +286,3 @@
 
 </body>
 </html>
-
-
-

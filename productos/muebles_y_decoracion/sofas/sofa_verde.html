@@ -5,26 +5,26 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Sofá Verde en Hipermercado Superior. Mueble cómodo y elegante para tu sala de estar.">
+    <meta name="description" content="Compra Sofá Verde en Hipermercado Superior. Sofá espacioso de color verde esmeralda, un mueble imponente que destaca por su estilo y comodidad para toda la familia.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
-    <meta name="theme-color" content="#7ed957">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Sofá Verde | Hipermercado Superior">
     <meta property="og:type" content="product">
     <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/muebles_y_decoracion/sofas/sofa_verde.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/muebles_y_decoracion/sofas/sofa_verde.avif">
-    <meta property="og:description" content="Sofá Verde cómodo y elegante para tu sala de estar.">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Muebles_y_decoracion/sofa/sofa_verde.avif">
+    <meta property="og:description" content="Estilo vibrante y amplitud para tu hogar.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sofá Verde | Hipermercado Superior">
-    <meta name="twitter:description" content="Sofá Verde cómodo y elegante para tu sala de estar.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/muebles_y_decoracion/sofas/sofa_verde.avif">
+    <meta name="twitter:description" content="Color verde esmeralda y máxima amplitud. Compra tu sofá verde.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Muebles_y_decoracion/sofa/sofa_verde.avif">
 
     <!-- Título y CSS -->
     <title>Sofá Verde | Hipermercado Superior</title>
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_muebles_y_decoracion">
 
@@ -63,6 +69,7 @@
                             <li><a href="../../../categorias/Alimentos.html#enlatados">Enlatados</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
@@ -71,6 +78,7 @@
                             <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -81,6 +89,7 @@
                             <li><a href="../../../categorias/Tecnologia.html#bocinas">Bocinas</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ropa.html">Ropa</a>
                         <ul>
@@ -91,6 +100,7 @@
                             <li><a href="../../../categorias/Ropa.html#vestidos">Vestidos</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
                         <ul>
@@ -100,6 +110,7 @@
                             <li><a href="../../../categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Farmacia.html">Farmacia</a>
                         <ul>
@@ -109,6 +120,7 @@
                             <li><a href="../../../categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ferreteria.html">Ferretería</a>
                         <ul>
@@ -118,6 +130,7 @@
                             <li><a href="../../../categorias/Ferreteria.html#plomeria">Plomería</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/juguetes.html">Juguetes</a>
                         <ul>
@@ -127,8 +140,29 @@
                     </li>
                 </ul>
             </li>
+
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -151,9 +185,9 @@
                 </a>
             </figure>
 
-            <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada del Sofá Verde">
+            <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Sofá Verde">
                 <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
-                <img src="../../../imagenes/productos/Muebles_y_decoracion/sofa/sofa_verde.avif" alt="Sofá Verde ampliado">
+                <img src="../../../imagenes/productos/Muebles_y_decoracion/sofa/sofa_verde.avif" alt="Sofá Verde ampliada">
             </div>
 
             <div class="info-producto">
@@ -161,16 +195,21 @@
                 <p class="precio">Precio: $14,000</p>
 
                 <p class="descripcion">
-                    Este <strong>Sofá Verde</strong> es cómodo y elegante, perfecto para decorar y disfrutar de tu sala de estar. Fabricado con materiales de alta calidad para garantizar durabilidad y confort.
+                    <strong>Sofá espacioso en color verde esmeralda</strong>. Un mueble imponente que destaca por su color vibrante y su capacidad para acoger a toda la familia con estilo.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Sofá de 3 plazas</li>
-                    <li>Color: Verde</li>
-                    <li>Material: Tela de alta calidad</li>
-                    <li>Dimensiones aproximadas: 200cm x 90cm x 85cm</li>
-                    <li>Beneficios: Confortable, elegante y resistente</li>
+                    <li>Material: Terciopelo verde esmeralda y madera noble</li>
+                    <li>Capacidad: 4-5 personas</li>
+                    <li>Estilo: Glamour Moderno</li>
+                    <li>Garantía: 3 años</li>
+                    <li>Marca: LuxuryComfort</li>
                 </ul>
+
+                     <button class="btn-agregar" id="Sofa_verde">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -179,43 +218,38 @@
     <section class="productos-similares">
         <h2>Productos Similares</h2>
         <div class="productos-container">
-           
-            
 
-          
-              <a href="sofa_media_luna.html">
+            <a href="sofa_cama_blanco.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/muebles_y_decoracion/sofa/sofa_media_luna.avif" loading="lazy" alt="Sofá Media Luna">
-                    <h3>Sofá Media Luna</h3>
-                    <p>Precio: $3,000</p>
-                </figure>
-            </a>
-
-
-             <a href="sofa_cama_blanco.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Muebles_y_decoracion/sofa/sofa_cama_blanco.png" loading="lazy" alt="Sofá Cama blanco">
+                    <img src="../../../imagenes/productos/Muebles_y_decoracion/sofa/sofa_cama_blanco.png" loading="lazy" alt="Sofá Cama Blanco">
                     <h3>Sofá Cama Blanco</h3>
                     <p>Precio: $9,000</p>
                 </figure>
             </a>
 
-             <a href="sofa_gris.html">
+            <a href="sofa_gris.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/Muebles_y_decoracion/sofa/sofa_gris.avif" loading="lazy" alt="Sofá Azul">
+                    <img src="../../../imagenes/productos/Muebles_y_decoracion/sofa/sofa_gris.avif" loading="lazy" alt="Sofá Gris">
                     <h3>Sofá Gris</h3>
                     <p>Precio: $8,000</p>
                 </figure>
             </a>
 
-               <a href="sofa_negro.html">
+            <a href="sofa_media_luna.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/muebles_y_decoracion/sofa/sofa_negro.avif" loading="lazy" alt="Sofá Negro">
+                    <img src="../../../imagenes/productos/Muebles_y_decoracion/sofa/sofa_media_luna.avif" loading="lazy" alt="Sofá Media Luna">
+                    <h3>Sofá Media Luna</h3>
+                    <p>Precio: $3,000</p>
+                </figure>
+            </a>
+
+            <a href="sofa_negro.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Muebles_y_decoracion/sofa/sofa_negro.avif" loading="lazy" alt="Sofá Negro">
                     <h3>Sofá Negro</h3>
                     <p>Precio: $5,000</p>
                 </figure>
             </a>
-
 
         </div>
     </section>
@@ -244,6 +278,3 @@
 
 </body>
 </html>
-
-
-

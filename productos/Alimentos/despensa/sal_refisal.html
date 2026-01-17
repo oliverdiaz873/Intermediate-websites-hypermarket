@@ -5,7 +5,7 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Sal Marina Refisal en Hipermercado Superior. Sal de alta calidad ideal para cocinar y sazonar tus comidas.">
+    <meta name="description" content="Compra Sal Marina Refisal en Hipermercado Superior. La sal pura y natural para realzar el sabor de tus comidas.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
@@ -14,17 +14,17 @@
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Sal Marina Refisal | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/sal_marina_refisal.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/despensa/sal/sal_marina_refisal.avif">
-    <meta property="og:description" content="Sal Marina Refisal de alta pureza, perfecta para todo tipo de preparaciones culinarias.">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Alimentos/despensa/sal_refisal.html">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Despensa/condimentos/sal_marina_refisal.jpg">
+    <meta property="og:description" content="Sal Marina Refisal: pureza y sabor natural.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sal Marina Refisal | Hipermercado Superior">
-    <meta name="twitter:description" content="Sal Marina Refisal ideal para cocinar y sazonar tus platos.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/despensa/sal/sal_marina_refisal.avif">
+    <meta name="twitter:description" content="Sal Marina Refisal, el toque esencial en tu cocina.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Despensa/condimentos/sal_marina_refisal.jpg">
 
     <!-- Título y CSS -->
     <title>Sal Marina Refisal | Hipermercado Superior</title>
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_alimentos">
 
@@ -63,6 +69,7 @@
                             <li><a href="../../../categorias/Alimentos.html#enlatados">Enlatados</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
@@ -71,6 +78,7 @@
                             <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -81,6 +89,7 @@
                             <li><a href="../../../categorias/Tecnologia.html#bocinas">Bocinas</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ropa.html">Ropa</a>
                         <ul>
@@ -91,6 +100,7 @@
                             <li><a href="../../../categorias/Ropa.html#vestidos">Vestidos</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
                         <ul>
@@ -100,6 +110,7 @@
                             <li><a href="../../../categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Farmacia.html">Farmacia</a>
                         <ul>
@@ -109,6 +120,7 @@
                             <li><a href="../../../categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ferreteria.html">Ferretería</a>
                         <ul>
@@ -118,6 +130,7 @@
                             <li><a href="../../../categorias/Ferreteria.html#plomeria">Plomería</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/juguetes.html">Juguetes</a>
                         <ul>
@@ -127,8 +140,29 @@
                     </li>
                 </ul>
             </li>
+
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -153,25 +187,28 @@
 
             <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Sal Marina Refisal">
                 <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
-                <img src="../../../imagenes/productos/Alimentos/Despensa/condimentos/sal_marina_refisal.jpg" alt="Sal Marina Refisal ampliada">
+                <img src="../../../imagenes/productos/Alimentos/Despensa/condimentos/sal_marina_refisal.jpg" alt="Sal Marina Refisal ampliado">
             </div>
 
             <div class="info-producto">
                 <h1>Sal Marina Refisal</h1>
-                <p class="precio">$65.00</p>
+                <p class="precio">Precio: $65.00</p>
 
                 <p class="descripcion">
-                    La <strong>Sal Marina Refisal</strong> es un producto natural y de alta calidad, ideal para cocinar, sazonar y potenciar el sabor de tus comidas. 
-                    Su pureza y textura fina la convierten en una opción esencial en tu despensa.
+                    <strong>Sal Marina Refisal</strong>, extraída de forma natural. Grano perfecto para condimentar tus comidas y resaltar todos los sabores. Indispensable en tu alacena.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Sal marina</li>
-                    <li>Presentación: Bolsa / Paquete</li>
-                    <li>Peso aproximado: 1 LB</li>
-                    <li>Conservación: Mantener en un lugar fresco y seco</li>
-                    <li>Beneficios: Natural, sin aditivos artificiales</li>
+                    <li>Tipo: Sal Marina</li>
+                    <li>Marca: Refisal</li>
+                    <li>Uso: Condimento universal</li>
+                    <li>Beneficios: Fuente de yodo</li>
                 </ul>
+
+                     <button class="btn-agregar" id="sal_marina_refisal">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -181,59 +218,45 @@
         <h2>Productos Similares</h2>
         <div class="productos-container">
 
-            <a href="sazon_completo_maggi.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Despensa/condimentos/sazon_completo_maggi.avif" loading="lazy" alt="Sazón completo Maggi">
-                    <h3>Sazón completo Maggi</h3>
-                    <p>Precio: $80.00</p>
-                </figure>
-            </a>
-
-            <a href="sopita_dona_gallina.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Despensa/condimentos/sopita_doña_gallina.avif" loading="lazy" alt="Sopita Doña gallina">
-                    <h3>Sopita Doña gallina</h3>
-                    <p>Precio: $150 / la caja</p>
-                </figure>
-            </a>
-
             <a href="aceite_crisol.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Despensa/aceites/aceite_crisol.avif" loading="lazy" alt="Aceite Crisol">
                     <h3>Aceite Crisol</h3>
-                    <p>Precio: $95</p>
-                </figure>
-            </a>
-
-            <a href="vinagre_baldom.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Despensa/condimentos/vinagre_baldom.avif" loading="lazy" alt="Vinagre Baldom">
-                    <h3>Vinagre Baldom</h3>
-                    <p>Precio: $87</p>
+                    <p>Precio: $95.00</p>
                 </figure>
             </a>
 
             <a href="aceite_oliva_extra_virgen.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Despensa/aceites/aceite_de_oliva_extra_virgen.avif" loading="lazy" alt="Aceite de oliva extra virgen">
-                    <h3>Aceite de oliva extra virgen</h3>
-                    <p>Precio: $230</p>
+                    <img src="../../../imagenes/productos/Alimentos/Despensa/aceites/aceite_de_oliva_extra_virgen.avif" loading="lazy" alt="Aceite de Oliva Extra Virgen">
+                    <h3>Aceite de Oliva</h3>
+                    <p>Precio: $230.00</p>
                 </figure>
             </a>
-
 
             <a href="mayonesa_baldom.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Despensa/aderezos_y_salsas/mayonesa_baldom.avif" loading="lazy" alt="Mayonesa Baldom">
                     <h3>Mayonesa Baldom</h3>
-                    <p>Precio: $95</p>
+                    <p>Precio: $95.00</p>
                 </figure>
             </a>
 
+            <a href="sazon_completo_maggi.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/Despensa/condimentos/sazon_completo_maggi.avif" loading="lazy" alt="Sazón Completo Maggi">
+                    <h3>Sazón Maggi</h3>
+                    <p>Precio: $80.00</p>
+                </figure>
+            </a>
 
-
-
-
+             <a href="sopita_dona_gallina.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/Despensa/condimentos/sopita_doña_gallina.avif" loading="lazy" alt="Sopita Doña Gallina">
+                    <h3>Sopita Doña Gallina</h3>
+                    <p>Precio: $150.00 / la caja</p>
+                </figure>
+            </a>
 
         </div>
     </section>
@@ -262,6 +285,3 @@
 
 </body>
 </html>
-
-
-

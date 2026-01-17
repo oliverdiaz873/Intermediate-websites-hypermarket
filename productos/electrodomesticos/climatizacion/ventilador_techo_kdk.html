@@ -8,12 +8,13 @@
     <meta name="description" content="Compra el Ventilador de Techo KDK en Hipermercado Superior. Potente, silencioso y perfecto para mantener tus espacios frescos desde el techo.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
+    <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
     <meta name="theme-color" content="#7ed957">
 
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Ventilador de Techo KDK | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/ventilador_techo_kdk.html">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Electrodomesticos/climatizacion/ventilador_techo_kdk.html">
     <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/climatizacion/ventiladores_de_techo/ventilador_de_techo_KDK.avif">
     <meta property="og:description" content="Ventilador de Techo KDK de alta eficiencia y diseño moderno para mantener cualquier espacio fresco.">
     <meta property="og:site_name" content="Hipermercado Superior">
@@ -34,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_electrodomesticos">
 
@@ -51,7 +58,6 @@
             <li><a href="../../../index.html">Inicio</a></li>
             <li><a href="#" aria-haspopup="true" aria-expanded="false">Categorías</a>
                 <ul>
-
                     <li>
                         <a href="../../../categorias/Alimentos.html">Alimentos</a>
                         <ul>
@@ -132,12 +138,31 @@
                             <li><a href="../../../categorias/juguetes.html#juguetes_para_niñas">Juguetes para Niñas</a></li>
                         </ul>
                     </li>
-
                 </ul>
             </li>
 
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -147,14 +172,13 @@
     <a href="../../../index.html">Inicio</a> ›
     <span>Categorías</span> ›
     <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a> ›
-     <a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a> ›
+    <a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a> ›
     <span class="actual">Ventilador de Techo KDK</span>
 </nav>
 
 <main class="producto-main">
     <section class="producto-detalle">
         <div class="contenedor-producto">
-
             <figure class="imagen-producto">
                 <a href="#img-full">
                     <img src="../../../imagenes/productos/Electrodomesticos/climatizacion/ventiladores_de_techo/ventilador_de_techo_KDK.avif" alt="Ventilador de Techo KDK">
@@ -171,8 +195,7 @@
                 <p class="precio">Precio: $20,000</p>
 
                 <p class="descripcion">
-                    El <strong>Ventilador de Techo KDK</strong> combina potencia, eficiencia y un diseño moderno para refrescar tus espacios desde lo alto.
-                    Ideal para dormitorios, salas y oficinas, con un funcionamiento silencioso y confiable.
+                    El <strong>Ventilador de Techo KDK</strong> combina potencia, eficiencia y un diseño moderno para refrescar tus espacios desde lo alto. Ideal para dormitorios, salas y oficinas, con un funcionamiento silencioso y confiable.
                 </p>
 
                 <ul class="detalles">
@@ -182,8 +205,12 @@
                     <li>Control remoto incluido</li>
                     <li>Amplia cobertura de ventilación</li>
                 </ul>
-            </div>
 
+                     <button class="btn-agregar" id="ventilador_de_techo_kdk">
+                           Agregar
+                     </button>
+
+            </div>
         </div>
     </section>
 
@@ -226,7 +253,6 @@
 
         </div>
     </section>
-
 </main>
 
 <footer>
@@ -252,6 +278,3 @@
 
 </body>
 </html>
-
-
-

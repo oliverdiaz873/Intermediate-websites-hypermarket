@@ -5,25 +5,26 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Vitafusion en Hipermercado Superior. Gomas multivitamínicas para energía diaria, bienestar general y soporte nutricional.">
+    <meta name="description" content="Compra Vitafusion en Hipermercado Superior. Vitaminas en gomitas con sabores naturales a frutas.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
+    <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Vitafusion | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/farmacia/vitaminas/vitafusion.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/farmacia/vitaminas/vitafusion.avif">
-    <meta property="og:description" content="Vitafusion: gomitas multivitamínicas para energía, inmunidad y bienestar diario.">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/farmacia/vitaminas_y_minerales/vitafusion.html">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/farmacia/Vitaminas_y_Minerales/vitafusion.avif">
+    <meta property="og:description" content="Vitafusion: la forma deliciosa de obtener tus vitaminas diarias.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Vitafusion | Hipermercado Superior">
-    <meta name="twitter:description" content="Vitafusion multivitamínico en gomitas para energía, inmunidad y bienestar diario.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/farmacia/vitaminas/vitafusion.avif">
+    <meta name="twitter:description" content="Vitafusion: gomitas vitamínicas con sabores que te encantarán.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/farmacia/Vitaminas_y_Minerales/vitafusion.avif">
 
     <!-- Título y CSS -->
     <title>Vitafusion | Hipermercado Superior</title>
@@ -34,22 +35,28 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_farmacia">
 
 <header>
     <div>
-        <a href="../../../index.html" class="logo-header">
+        <a href="../../../index.html" class="logo-header" aria-label="Ir a la página principal de Hipermercado Superior">
             <img src="../../../imagenes/logo/logo.jpeg" alt="Logo de Hipermercado Superior">
             Hipermercado Superior
         </a>
     </div>
 
-      <nav class="menu">
+    <nav class="menu" role="navigation" aria-label="Menú principal">
         <ul>
             <li><a href="../../../index.html">Inicio</a></li>
-            <li><a href="#">Categorías</a>
+            <li><a href="#" aria-haspopup="true" aria-expanded="false">Categorías</a>
                 <ul>
                     <li>
                         <a href="../../../categorias/Alimentos.html">Alimentos</a>
@@ -62,14 +69,16 @@
                             <li><a href="../../../categorias/Alimentos.html#enlatados">Enlatados</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
-                            <li><a href="../../../categorias/Electrodomedesticos.html#cocina">Cocina</a></li>
-                            <li><a href="../../../categorias/Electrodomedesticos.html#lavado">Lavado</a></li>
-                            <li><a href="../../../categorias/Electrodomedesticos.html#climatizacion">Climatización</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#cocina">Cocina</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#lavado">Lavado</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -80,6 +89,7 @@
                             <li><a href="../../../categorias/Tecnologia.html#bocinas">Bocinas</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ropa.html">Ropa</a>
                         <ul>
@@ -90,6 +100,7 @@
                             <li><a href="../../../categorias/Ropa.html#vestidos">Vestidos</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
                         <ul>
@@ -99,15 +110,17 @@
                             <li><a href="../../../categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Farmacia.html">Farmacia</a>
                         <ul>
-                            <li><a href="../../../categorias/Farmacia.html#dermocosmetica">Dermocosmética</a></li>
                             <li><a href="../../../categorias/Farmacia.html#analgesicos">Analgésicos</a></li>
+                            <li><a href="../../../categorias/Farmacia.html#dermocosmetica">Dermocosmética</a></li>
                             <li><a href="../../../categorias/Farmacia.html#vitaminas_y_minerales">Vitaminas y Minerales</a></li>
                             <li><a href="../../../categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ferreteria.html">Ferretería</a>
                         <ul>
@@ -117,6 +130,7 @@
                             <li><a href="../../../categorias/Ferreteria.html#plomeria">Plomería</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/juguetes.html">Juguetes</a>
                         <ul>
@@ -126,16 +140,35 @@
                     </li>
                 </ul>
             </li>
+
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
-
-   
 </header>
 
 <!-- Breadcrumb -->
-<nav class="breadcrumb">
+<nav class="breadcrumb" aria-label="Ruta de navegación">
     <a href="../../../index.html">Inicio</a> ›
     <span>Categorías</span> ›
     <a href="../../../categorias/Farmacia.html">Farmacia</a> ›
@@ -152,8 +185,8 @@
                 </a>
             </figure>
 
-            <div id="img-full" class="modal-imagen">
-                <a href="#close" class="cerrar"></a>
+            <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Vitafusion">
+                <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
                 <img src="../../../imagenes/productos/farmacia/Vitaminas_y_Minerales/vitafusion.avif" alt="Vitafusion ampliado">
             </div>
 
@@ -162,16 +195,21 @@
                 <p class="precio">Precio: $1,300</p>
 
                 <p class="descripcion">
-                    <strong>Vitafusion</strong> es un multivitamínico en forma de gomitas deliciosas, formulado para proporcionar nutrientes esenciales que apoyan la energía diaria, fortalecen el sistema inmunológico y promueven el bienestar general. Ideal para quienes prefieren una alternativa más agradable a las tabletas tradicionales.
+                    Vitaminas en gomitas <strong>Vitafusion</strong>, una forma deliciosa y fácil de obtener tus nutrientes diarios con sabores naturales a frutas.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Vitaminas y Minerales</li>
-                    <li>Presentación: Gomitas</li>
-                    <li>Dosis recomendada: 2 gomitas diarias</li>
-                    <li>Contenido: 70 gomitas</li>
-                    <li>Beneficios: Energía diaria, soporte inmunológico, bienestar general</li>
+                    <li>Tipo: Suplemento vitamínico en gomitas</li>
+                    <li>Referencia: Bienestar diario</li>
+                    <li>Características: Sin gluten, sabores naturales</li>
+                    <li>Sabor: Frutas variadas</li>
+                    <li>Contenido: 150 gomitas</li>
                 </ul>
+
+                     <button class="btn-agregar" id="Vitafusion">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -181,11 +219,19 @@
         <h2>Productos Similares</h2>
         <div class="productos-container">
 
-             <a href="multivitaminico.html">
+            <a href="multivitaminico.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/farmacia/Vitaminas_y_Minerales/multivitaminico.avif" loading="lazy" alt="Multivitamínico">
                     <h3>Multivitamínico</h3>
                     <p>Precio: $3,000</p>
+                </figure>
+            </a>
+
+            <a href="vitaminac.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/farmacia/Vitaminas_y_Minerales/vitaminac.avif" loading="lazy" alt="Vitamina C">
+                    <h3>Vitamina C</h3>
+                    <p>Precio: $1,200</p>
                 </figure>
             </a>
 
@@ -197,24 +243,13 @@
                 </figure>
             </a>
 
-
-             <a href="vitaminac.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/farmacia/Vitaminas_y_Minerales/vitaminaC.avif" loading="lazy" alt="Vitamina C">
-                    <h3>Vitamina C</h3>
-                    <p>Precio: $2,000</p>
-                </figure>
-            </a>
-
-            
-             <a href="flintstones.html">
+            <a href="flintstones.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/farmacia/Vitaminas_y_Minerales/flintstones.avif" loading="lazy" alt="Flintstones">
                     <h3>Flintstones</h3>
                     <p>Precio: $2,500</p>
                 </figure>
             </a>
-
 
         </div>
     </section>
@@ -224,17 +259,16 @@
     <div class="footer-content">
         <small>&copy; 2025 Hipermercado Superior. Todos los derechos reservados.</small>
         <div class="social-icons">
-            <a href="https://facebook.com/tuweb" target="_blank">
-                <img src="../../../imagenes/iconos/redes/facebook.png" alt="Facebook">
+            <a href="https://facebook.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Facebook">
+                <img src="../../../imagenes/iconos/redes/facebook.png" alt="Facebook de Hipermercado Superior">
             </a>
-            <a href="https://twitter.com/tuweb" target="_blank">
-                <img src="../../../imagenes/iconos/redes/x.png" alt="X">
+            <a href="https://twitter.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en X (antes Twitter)">
+                <img src="../../../imagenes/iconos/redes/x.png" alt="X de Hipermercado Superior">
             </a>
-            <a href="https://instagram.com/tuweb" target="_blank">
-                <img src="../../../imagenes/iconos/redes/instagram.png" alt="Instagram">
+            <a href="https://instagram.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Instagram">
+                <img src="../../../imagenes/iconos/redes/instagram.png" alt="Instagram de Hipermercado Superior">
             </a>
         </div>
-
         <div class="footer-links">
             <a href="../../../legal/privacy.html">Política de Privacidad</a> |
             <a href="../../../legal/terms.html">Términos de Uso</a>
@@ -244,6 +278,3 @@
 
 </body>
 </html>
-
-
-

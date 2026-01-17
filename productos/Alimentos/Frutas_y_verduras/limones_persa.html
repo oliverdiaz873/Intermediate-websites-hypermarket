@@ -5,28 +5,28 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Limones Persa frescos en Hipermercado Superior. Frutas cítricas, jugosas y de la mejor calidad al mejor precio.">
+    <meta name="description" content="Compra Limones Persa en Hipermercado Superior. Jugosos y perfectos para tus bebidas y recetas.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
-    <meta name="theme-color" content="#f4e841">
+    <meta name="theme-color" content="#7ed957">
 
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Limones Persa | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/limones_persa.html">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Alimentos/Frutas_y_verduras/limones_persa.html">
     <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/frutas_y_verduras/limon_persa.avif">
-    <meta property="og:description" content="Limones Persa frescos, jugosos y naturales. Perfectos para jugos, postres o ensaladas.">
+    <meta property="og:description" content="Limones Persa jugosos y frescos.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
-    <!-- Twitter Cards para X -->
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Limones Persa | Hipermercado Superior">
-    <meta name="twitter:description" content="Disfruta de Limones Persa frescos y naturales en Hipermercado Superior. Crocantes y saludables.">
+    <meta name="twitter:description" content="Limones Persa, el toque cítrico ideal.">
     <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/frutas_y_verduras/limon_persa.avif">
 
-    <!-- Título, CSS y Fuentes -->
+    <!-- Título y CSS -->
     <title>Limones Persa | Hipermercado Superior</title>
     <link rel="stylesheet" href="../../../css/productos.css">
     <link rel="stylesheet" href="../../../css/fonts.css">
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_alimentos">
 
@@ -63,6 +69,7 @@
                             <li><a href="../../../categorias/Alimentos.html#enlatados">Enlatados</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
@@ -71,6 +78,7 @@
                             <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -81,6 +89,7 @@
                             <li><a href="../../../categorias/Tecnologia.html#bocinas">Bocinas</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ropa.html">Ropa</a>
                         <ul>
@@ -91,6 +100,7 @@
                             <li><a href="../../../categorias/Ropa.html#vestidos">Vestidos</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
                         <ul>
@@ -100,6 +110,7 @@
                             <li><a href="../../../categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Farmacia.html">Farmacia</a>
                         <ul>
@@ -109,6 +120,7 @@
                             <li><a href="../../../categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ferreteria.html">Ferretería</a>
                         <ul>
@@ -118,6 +130,7 @@
                             <li><a href="../../../categorias/Ferreteria.html#plomeria">Plomería</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/juguetes.html">Juguetes</a>
                         <ul>
@@ -127,8 +140,29 @@
                     </li>
                 </ul>
             </li>
+
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -153,24 +187,28 @@
 
             <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Limones Persa">
                 <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
-                <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/limon_persa.avif" alt="Limones Persa ampliada">
+                <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/limon_persa.avif" alt="Limones Persa ampliado">
             </div>
 
             <div class="info-producto">
                 <h1>Limones Persa</h1>
-                <p class="precio">$200 / 1 kg</p>
+                <p class="precio">Precio: $200.00 / 1 kg</p>
 
                 <p class="descripcion">
-                    Los <strong>Limones Persa</strong> son frutas cítricas frescas, jugosas y llenas de sabor. Ideales para jugos, postres o ensaladas. Ricos en vitamina C y antioxidantes.
+                    <strong>Limones Persa</strong>, grandes, jugosos y sin semillas. Perfectos para preparar jugos, aderezos o sazonar tus carnes y pescados.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Fruta fresca</li>
-                    <li>Origen: Nacional</li>
-                    <li>Peso aproximado: 1 kg</li>
-                    <li>Conservación: Mantener en lugar fresco y seco</li>
-                    <li>Beneficios: Ricos en vitamina C, antioxidantes y propiedades digestivas</li>
+                    <li>Tipo: Limón Persa</li>
+                    <li>Uso: Jugos y Sazón</li>
+                    <li>Beneficios: Fuente de vitamina C</li>
+                    <li>Venta: Por kg</li>
                 </ul>
+
+                     <button class="btn-agregar" id="limones_persa">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -180,47 +218,45 @@
         <h2>Productos Similares</h2>
         <div class="productos-container">
 
-             <a href="manzanas_rojas.html">
-            <figure class="producto">
-                <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/manzana_roja.avif" loading="lazy" alt="Manzanas Rojas">
-                <h3>Manzanas Rojas</h3>
-                <p>Precio: $65.00 / 1 kg</p>
-            </figure>
+            <a href="mandarinas.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/mandarinas.avif" loading="lazy" alt="Mandarinas">
+                    <h3>Mandarinas</h3>
+                    <p>Precio: $100.00 / 1 kg</p>
+                </figure>
             </a>
 
-            <a href="manzanas_amarillas.html">
-            <figure class="producto">
-                <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/manzana_amarilla.avif" loading="lazy" alt="Manzanas Amarillas">
-                <h3>Manzanas Amarillas</h3>
-                <p>Precio: $50.00 / 1 kg</p>
-            </figure>
-            </a>
-
-            <a href="paquete_de_fresas.html">
-            <figure class="producto">
-                <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/fresas.avif" loading="lazy" alt="Paquete de fresas frescas">
-                <h3>Paquete de Fresas</h3>
-                <p>Precio: $350.00 / 1 paquete</p>
-            </figure>
+            <a href="manzanas_verdes.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/manzana_verde.avif" loading="lazy" alt="Manzanas Verdes">
+                    <h3>Manzanas Verdes</h3>
+                    <p>Precio: $45.00 / 1 kg</p>
+                </figure>
             </a>
 
             <a href="uvas_moradas.html">
-            <figure class="producto">
-                <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/uva_morada.avif" loading="lazy" alt="Uvas Moradas">
-                <h3>Uvas Moradas</h3>
-                <p>Precio: $150.00 / 1 kg</p>
-            </figure>
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/uva_morada.avif" loading="lazy" alt="Uvas Moradas">
+                    <h3>Uvas Moradas</h3>
+                    <p>Precio: $150.00 / 1 kg</p>
+                </figure>
             </a>
 
-            <a href="mandarinas.html">
-            <figure class="producto">
-                <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/mandarinas.avif" loading="lazy" alt="Mandarinas">
-                <h3>Mandarinas</h3>
-                <p>Precio: $100.00 / 1 kg</p>
-            </figure>
+            <a href="zanahorias.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/zanahoria.avif" loading="lazy" alt="Zanahorias">
+                    <h3>Zanahorias</h3>
+                    <p>Precio: $80.00 / 1 kg</p>
+                </figure>
             </a>
 
-             
+            <a href="paquete_de_fresas.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/fresas.avif" loading="lazy" alt="Paquete de Fresas">
+                    <h3>Paquete de Fresas</h3>
+                    <p>Precio: $350.00 / 1 paquete</p>
+                </figure>
+            </a>
 
         </div>
     </section>
@@ -249,6 +285,3 @@
 
 </body>
 </html>
-
-
-

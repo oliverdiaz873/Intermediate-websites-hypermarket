@@ -5,9 +5,10 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Pinza en Hipermercado Superior. Herramienta manual resistente ideal para sujetar, cortar y realizar trabajos de ferretería.">
+    <meta name="description" content="Compra Pinza universal en Hipermercado Superior. Herramienta versátil con agarre antideslizante para profesionales y aficionados.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
+    <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Etiquetas Open Graph -->
@@ -15,14 +16,14 @@
     <meta property="og:type" content="product">
     <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/ferreteria/herramientas_manuales/pinza.html">
     <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/ferreteria/herramientas_manuales/pinza.avif">
-    <meta property="og:description" content="Pinza resistente ideal para reparaciones y trabajos de ferretería.">
+    <meta property="og:description" content="Pinza universal con empuñadura antideslizante y gran capacidad de corte.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pinza | Hipermercado Superior">
-    <meta name="twitter:description" content="Pinza resistente para reparaciones y trabajos de ferretería.">
+    <meta name="twitter:description" content="Sujeta, dobla y corta con facilidad. Compra nuestra pinza universal.">
     <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/ferreteria/herramientas_manuales/pinza.avif">
 
     <!-- Título y CSS -->
@@ -34,22 +35,28 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
 
-<body id="ferreteria">
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
+
+<body id="fondo_ferreteria">
 
 <header>
     <div>
-        <a href="../../../index.html" class="logo-header">
+        <a href="../../../index.html" class="logo-header" aria-label="Ir a la página principal de Hipermercado Superior">
             <img src="../../../imagenes/logo/logo.jpeg" alt="Logo de Hipermercado Superior">
             Hipermercado Superior
         </a>
     </div>
 
-    <nav class="menu">
+    <nav class="menu" role="navigation" aria-label="Menú principal">
         <ul>
             <li><a href="../../../index.html">Inicio</a></li>
-            <li><a href="#">Categorías</a>
+            <li><a href="#" aria-haspopup="true" aria-expanded="false">Categorías</a>
                 <ul>
                     <li>
                         <a href="../../../categorias/Alimentos.html">Alimentos</a>
@@ -62,14 +69,16 @@
                             <li><a href="../../../categorias/Alimentos.html#enlatados">Enlatados</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
-                            <li><a href="../../../categorias/Electrodomedesticos.html#cocina">Cocina</a></li>
-                            <li><a href="../../../categorias/Electrodomedesticos.html#lavado">Lavado</a></li>
-                            <li><a href="../../../categorias/Electrodomedesticos.html#climatizacion">Climatización</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#cocina">Cocina</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#lavado">Lavado</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -80,6 +89,7 @@
                             <li><a href="../../../categorias/Tecnologia.html#bocinas">Bocinas</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ropa.html">Ropa</a>
                         <ul>
@@ -90,6 +100,7 @@
                             <li><a href="../../../categorias/Ropa.html#vestidos">Vestidos</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
                         <ul>
@@ -99,15 +110,17 @@
                             <li><a href="../../../categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Farmacia.html">Farmacia</a>
                         <ul>
-                            <li><a href="../../../categorias/Farmacia.html#dermocosmetica">Dermocosmética</a></li>
                             <li><a href="../../../categorias/Farmacia.html#analgesicos">Analgésicos</a></li>
+                            <li><a href="../../../categorias/Farmacia.html#dermocosmetica">Dermocosmética</a></li>
                             <li><a href="../../../categorias/Farmacia.html#vitaminas_y_minerales">Vitaminas y Minerales</a></li>
                             <li><a href="../../../categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ferreteria.html">Ferretería</a>
                         <ul>
@@ -117,6 +130,7 @@
                             <li><a href="../../../categorias/Ferreteria.html#plomeria">Plomería</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/juguetes.html">Juguetes</a>
                         <ul>
@@ -126,14 +140,35 @@
                     </li>
                 </ul>
             </li>
+
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
 
 <!-- Breadcrumb -->
-<nav class="breadcrumb">
+<nav class="breadcrumb" aria-label="Ruta de navegación">
     <a href="../../../index.html">Inicio</a> ›
     <span>Categorías</span> ›
     <a href="../../../categorias/Ferreteria.html">Ferretería</a> ›
@@ -150,8 +185,8 @@
                 </a>
             </figure>
 
-            <div id="img-full" class="modal-imagen">
-                <a href="#close" class="cerrar"></a>
+            <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Pinza">
+                <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
                 <img src="../../../imagenes/productos/ferreteria/herramientas_manuales/pinza.avif" alt="Pinza ampliada">
             </div>
 
@@ -160,16 +195,21 @@
                 <p class="precio">Precio: $500</p>
 
                 <p class="descripcion">
-                    <strong>Pinza</strong> fabricada en acero templado de alta resistencia, ideal para sujetar, doblar y cortar cables o piezas pequeñas. Diseñada para ofrecer precisión y durabilidad.
+                    <strong>Pinza universal</strong> con empuñadura antideslizante, perfecta para sujetar, doblar y cortar cables con facilidad.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Herramienta Manual</li>
-                    <li>Material: Acero templado</li>
-                    <li>Mango: Antideslizante ergonómico</li>
-                    <li>Uso recomendado: Reparaciones eléctricas y mecánicas</li>
-                    <li>Beneficios: Precisa, resistente y segura</li>
+                    <li>Tipo: Universal</li>
+                    <li>Material: Acero forjado pulido</li>
+                    <li>Mango: Agarre bicomponente</li>
+                    <li>Funciones: Corte y sujeción</li>
+                    <li>Resistencia: Durabilidad industrial</li>
                 </ul>
+
+                     <button class="btn-agregar" id="pinza">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -179,22 +219,6 @@
         <h2>Productos Similares</h2>
         <div class="productos-container">
 
-              <a href="destornillador.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/ferreteria/herramientas_manuales/destornillador.png" loading="lazy" alt="Destornillador">
-                    <h3>Destornillador</h3>
-                    <p>Precio: $2,000</p>
-                </figure>
-            </a>
-
-            <a href="llave_de_tuerca.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/ferreteria/herramientas_manuales/llave_de_tuerca.png" loading="lazy" alt="Llave de tuerca">
-                    <h3>Llave de tuerca</h3>
-                    <p>Precio: $2,500</p>
-                </figure>
-            </a>
-
             <a href="martillo.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/ferreteria/herramientas_manuales/martillo.png" loading="lazy" alt="Martillo">
@@ -203,15 +227,30 @@
                 </figure>
             </a>
 
+            <a href="llave_de_tuerca.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/ferreteria/herramientas_manuales/llave_de_tuerca.png" loading="lazy" alt="Llave de Tuerca">
+                    <h3>Llave de Tuerca</h3>
+                    <p>Precio: $2,500</p>
+                </figure>
+            </a>
+
+            <a href="destornillador.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/ferreteria/herramientas_manuales/destornillador.png" loading="lazy" alt="Destornillador">
+                    <h3>Destornillador</h3>
+                    <p>Precio: $2,000</p>
+                </figure>
+            </a>
+
             <a href="sierra_de_mano.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/ferreteria/herramientas_manuales/sierra_de_mano.avif" loading="lazy" alt="Sierra de mano">
-                    <h3>Sierra de mano</h3>
+                    <img src="../../../imagenes/productos/ferreteria/herramientas_manuales/sierra_de_mano.avif" loading="lazy" alt="Sierra de Mano">
+                    <h3>Sierra de Mano</h3>
                     <p>Precio: $3,000</p>
                 </figure>
             </a>
 
-          
         </div>
     </section>
 </main>
@@ -220,17 +259,16 @@
     <div class="footer-content">
         <small>&copy; 2025 Hipermercado Superior. Todos los derechos reservados.</small>
         <div class="social-icons">
-            <a href="https://facebook.com/tuweb" target="_blank">
-                <img src="../../../imagenes/iconos/redes/facebook.png" alt="Facebook">
+            <a href="https://facebook.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Facebook">
+                <img src="../../../imagenes/iconos/redes/facebook.png" alt="Facebook de Hipermercado Superior">
             </a>
-            <a href="https://twitter.com/tuweb" target="_blank">
-                <img src="../../../imagenes/iconos/redes/x.png" alt="X">
+            <a href="https://twitter.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en X (antes Twitter)">
+                <img src="../../../imagenes/iconos/redes/x.png" alt="X de Hipermercado Superior">
             </a>
-            <a href="https://instagram.com/tuweb" target="_blank">
-                <img src="../../../imagenes/iconos/redes/instagram.png" alt="Instagram">
+            <a href="https://instagram.com/tuweb" target="_blank" rel="nofollow noopener noreferrer" aria-label="Visítanos en Instagram">
+                <img src="../../../imagenes/iconos/redes/instagram.png" alt="Instagram de Hipermercado Superior">
             </a>
         </div>
-
         <div class="footer-links">
             <a href="../../../legal/privacy.html">Política de Privacidad</a> |
             <a href="../../../legal/terms.html">Términos de Uso</a>
@@ -240,6 +278,3 @@
 
 </body>
 </html>
-
-
-

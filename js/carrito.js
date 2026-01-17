@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Cargar carrito desde localStorage o iniciar vacío
     let carrito = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
+    // LIMPIEZA DE SEGURIDAD
+    carrito = carrito.filter(p => p && p.id);
+    guardarCarrito();
+
     // === Funciones para carrito ===
     function guardarCarrito() {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(carrito));
@@ -48,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function escapeHtml(str) {
         if (typeof str !== 'string') return str;
         return str.replace(/[&<>"']/g, m =>
-            ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":"&#39;" }[m])
+            ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": "&#39;" }[m])
         );
     }
 
@@ -75,16 +79,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         listaCarrito.innerHTML = carrito.map(p => {
             const subtotal = p.precio * p.cantidad;
+
+            // Ajustar ruta de imagen para soporte local (file://) y subdirectorios
+            let imgBtn = p.img;
+            if (imgBtn.startsWith('/')) {
+                const isInSubDir = window.location.pathname.includes('/categorias/') || window.location.pathname.includes('/productos/');
+                if (isInSubDir) {
+                    imgBtn = '..' + imgBtn;
+                } else {
+                    imgBtn = imgBtn.substring(1); // Quitar '/' inicial para root
+                }
+            }
+
             const contenido = `
-                <img src="${escapeHtml(p.img)}" alt="${escapeHtml(p.nombre)}" class="item-img">
+                <img src="${escapeHtml(imgBtn)}" alt="${escapeHtml(p.nombre)}" class="item-img">
                 <strong>${escapeHtml(p.nombre)}</strong>
             `;
             return `
                 <div class="item-carrito" data-id="${escapeHtml(p.id)}">
                     <div class="carrito-item-info">
                         ${p.url
-                            ? `<a href="${escapeHtml(p.url)}" class="carrito-link">${contenido}</a>`
-                            : contenido}
+                    ? `<a href="${escapeHtml(p.url)}" class="carrito-link">${contenido}</a>`
+                    : contenido}
                         <div>RD$ ${p.precio.toLocaleString()}</div>
                     </div>
                     <div class="carrito-item-cantidad">
@@ -100,24 +116,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // === Delegación de eventos para agregar productos ===
-   document.addEventListener('click', e => {
-    const btn = e.target.closest('.btn-agregar');
-    if (!btn) return;
+    // === Delegación de eventos para agregar productos (FUENTE ÚNICA) ===
+    document.addEventListener('click', e => {
+        const btn = e.target.closest('.btn-agregar');
+        if (!btn) return;
 
-    e.preventDefault(); // <-- evita que el <a> se siga
-    e.stopPropagation(); // <-- evita que otros handlers se disparen
+        e.preventDefault();
+        e.stopPropagation();
 
-    const articulo = btn.closest('.producto');
-    if (!articulo) return;
+        const id = btn.id;
+        if (!id) return;
 
-    const id = articulo.dataset.id;
-    const nombre = articulo.dataset.nombre;
-    const precio = parseFloat(articulo.dataset.precio) || 0;
-    const img = articulo.dataset.img || '';
-    const url = articulo.dataset.url || null;
+        // 🔥 siempre tomar el producto real desde productos[]
+        const producto = productos.find(p => p.id === id);
+        if (!producto) return;
 
-    agregarProducto({ id, nombre, precio, img, url });
-});
+        agregarProducto({
+            id: producto.id,
+            nombre: producto.nombre,
+            precio: producto.precio,
+            img: producto.imagen,
+            url: producto.url
+        });
+    });
+
 
 
     // === Delegación de eventos dentro del carrito ===

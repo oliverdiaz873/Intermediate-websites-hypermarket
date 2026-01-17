@@ -14,7 +14,7 @@
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Cilindro de gas Duragas | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/cilindro_duragas.html">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Electrodomesticos/cocina/cilindro_duragas.html">
     <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/cocina/Cilindros_de_gas/cilindro_de_gas_duragas.avif">
     <meta property="og:description" content="Cilindro de gas Duragas seguro y resistente, ideal para el uso diario en tu hogar.">
     <meta property="og:site_name" content="Hipermercado Superior">
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_electrodomesticos">
 
@@ -137,6 +143,26 @@
 
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -169,9 +195,7 @@
                 <p class="precio">Precio: $5,200</p>
 
                 <p class="descripcion">
-                    El <strong>Cilindro de gas Duragas</strong> ofrece seguridad, resistencia 
-                    y un rendimiento confiable para uso doméstico. Fabricado con materiales 
-                    de alta calidad que garantizan una mayor durabilidad y seguridad en tu hogar.
+                    El <strong>Cilindro de gas Duragas</strong> ofrece seguridad, resistencia y un rendimiento confiable para uso doméstico. Fabricado con materiales de alta calidad que garantizan una mayor durabilidad y seguridad en tu hogar.
                 </p>
 
                 <ul class="detalles">
@@ -181,6 +205,11 @@
                     <li>Color: Azul Duragas</li>
                     <li>Ideal para estufas y calentadores</li>
                 </ul>
+
+                     <button class="btn-agregar" id="cilindro_de_gas_duragas">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -208,7 +237,7 @@
 
             <a href="freezer_7_pies.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/Electrodomesticos/cocina/freezer/freezer_7pies.png" loading="lazy" alt="Freezer 7 pies">
+                    <img src="../../../imagenes/productos/Electrodomesticos/cocina/freezer/freezer_7pies.png" loading="lazy" alt="Freezer 7 Pies">
                     <h3>Freezer 7 Pies</h3>
                     <p>Precio: $16,500</p>
                 </figure>
@@ -257,6 +286,3 @@
 
 </body>
 </html>
-
-
-

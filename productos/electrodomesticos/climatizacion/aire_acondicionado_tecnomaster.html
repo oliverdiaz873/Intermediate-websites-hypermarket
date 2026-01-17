@@ -8,13 +8,14 @@
     <meta name="description" content="Compra el Aire Acondicionado Tecnomaster en Hipermercado Superior. Potente, eficiente y perfecto para mantener tus espacios frescos.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
+    <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
     <meta name="theme-color" content="#7ed957">
 
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Aire Acondicionado Tecnomaster | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/aire_acondicionado_tecnomaster.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/climatizacion/aire_acondicionado/aire_acondicionado_tecnomaster.avif">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Electrodomesticos/climatizacion/aire_acondicionado_tecnomaster.html">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/climatizacion/aire_acondicionado/aire_acondicionado_tecnomaster.png">
     <meta property="og:description" content="Aire Acondicionado Tecnomaster de alta eficiencia para enfriar tus espacios cómodamente.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
@@ -23,7 +24,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Aire Acondicionado Tecnomaster | Hipermercado Superior">
     <meta name="twitter:description" content="Aire Acondicionado Tecnomaster eficiente, moderno y silencioso.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/climatizacion/aire_acondicionado/aire_acondicionado_tecnomaster.avif">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Electrodomesticos/climatizacion/aire_acondicionado/aire_acondicionado_tecnomaster.png">
 
     <!-- Título y CSS -->
     <title>Aire Acondicionado Tecnomaster | Hipermercado Superior</title>
@@ -34,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_electrodomesticos">
 
@@ -136,6 +143,26 @@
 
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -168,8 +195,7 @@
                 <p class="precio">Precio: $33,000</p>
 
                 <p class="descripcion">
-                    El <strong>Aire Acondicionado Tecnomaster</strong> ofrece un rendimiento confiable y eficiente para mantener cualquier espacio fresco.
-                    Diseñado con tecnología moderna que optimiza el consumo energético y brinda un enfriamiento uniforme.
+                    El <strong>Aire Acondicionado Tecnomaster</strong> ofrece un rendimiento confiable y eficiente para mantener cualquier espacio fresco. Diseñado con tecnología moderna que optimiza el consumo energético y brinda un enfriamiento uniforme.
                 </p>
 
                 <ul class="detalles">
@@ -179,6 +205,11 @@
                     <li>Función de temporizador</li>
                     <li>Diseño moderno y compacto</li>
                 </ul>
+
+                     <button class="btn-agregar" id="aire_acondicionado_tecnomaster">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -224,7 +255,7 @@
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Electrodomesticos/climatizacion/ventiladores/ventilador_pequeño.png" loading="lazy" alt="Ventilador Pequeño">
                     <h3>Ventilador Pequeño</h3>
-                    <p>Precio: $8,000</p>
+                    <p>Precio: $2,500</p>
                 </figure>
             </a>
 
@@ -255,6 +286,3 @@
 
 </body>
 </html>
-
-
-

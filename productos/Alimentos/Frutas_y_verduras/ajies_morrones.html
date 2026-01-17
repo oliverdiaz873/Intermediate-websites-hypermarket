@@ -5,7 +5,7 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Ajíes Morrones frescos en Hipermercado Superior. Verduras crujientes y de la mejor calidad al mejor precio.">
+    <meta name="description" content="Compra Ajíes Morrones frescos en Hipermercado Superior. Calidad garantizada para tus comidas.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
@@ -14,19 +14,19 @@
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Ajíes Morrones | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/ajies_morrones.html">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Alimentos/Frutas_y_verduras/ajies_morrones.html">
     <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/frutas_y_verduras/Ajies_morron.avif">
-    <meta property="og:description" content="Ajíes Morrones frescos, crujientes y saludables. Perfectos para ensaladas, guisos y salsas.">
+    <meta property="og:description" content="Ajíes Morrones frescos y crujientes.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
-    <!-- Twitter Cards para X -->
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ajíes Morrones | Hipermercado Superior">
-    <meta name="twitter:description" content="Disfruta de Ajíes Morrones frescos y crujientes en Hipermercado Superior. Ideales para recetas saludables.">
+    <meta name="twitter:description" content="Ajíes Morrones de la mejor calidad.">
     <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/frutas_y_verduras/Ajies_morron.avif">
 
-    <!-- Título, CSS y Fuentes -->
+    <!-- Título y CSS -->
     <title>Ajíes Morrones | Hipermercado Superior</title>
     <link rel="stylesheet" href="../../../css/productos.css">
     <link rel="stylesheet" href="../../../css/fonts.css">
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_alimentos">
 
@@ -63,6 +69,7 @@
                             <li><a href="../../../categorias/Alimentos.html#enlatados">Enlatados</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
@@ -71,6 +78,7 @@
                             <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Tecnologia.html">Tecnología</a>
                         <ul>
@@ -81,6 +89,7 @@
                             <li><a href="../../../categorias/Tecnologia.html#bocinas">Bocinas</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ropa.html">Ropa</a>
                         <ul>
@@ -91,6 +100,7 @@
                             <li><a href="../../../categorias/Ropa.html#vestidos">Vestidos</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/muebles_y_decoracion.html">Muebles y Decoración</a>
                         <ul>
@@ -100,6 +110,7 @@
                             <li><a href="../../../categorias/muebles_y_decoracion.html#floreros">Floreros</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Farmacia.html">Farmacia</a>
                         <ul>
@@ -109,6 +120,7 @@
                             <li><a href="../../../categorias/Farmacia.html#antigripales_y_resfriado">Antigripales y Resfriado</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/Ferreteria.html">Ferretería</a>
                         <ul>
@@ -118,6 +130,7 @@
                             <li><a href="../../../categorias/Ferreteria.html#plomeria">Plomería</a></li>
                         </ul>
                     </li>
+
                     <li>
                         <a href="../../../categorias/juguetes.html">Juguetes</a>
                         <ul>
@@ -127,8 +140,29 @@
                     </li>
                 </ul>
             </li>
+
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -153,25 +187,28 @@
 
             <div id="img-full" class="modal-imagen" aria-modal="true" role="dialog" aria-label="Imagen ampliada de Ajíes Morrones">
                 <a href="#close" class="cerrar" aria-label="Cerrar imagen ampliada"></a>
-                <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/Ajies_morron.avif" alt="Ajíes Morrones ampliada">
+                <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/Ajies_morron.avif" alt="Ajíes Morrones ampliado">
             </div>
 
             <div class="info-producto">
                 <h1>Ajíes Morrones</h1>
-                <p class="precio">$80.00 / La unidad</p>
+                <p class="precio">Precio: $80.00 / La unidad</p>
 
                 <p class="descripcion">
-                    Los <strong>ajíes morrones</strong> son frescos, crujientes y coloridos. Ideales para ensaladas, guisos, rellenos y todo tipo de recetas saludables.
-                    Aportan sabor, vitaminas y antioxidantes a tu dieta diaria.
+                    <strong>Ajíes Morrones</strong> frescos y coloridos. Ideales para dar sabor y color a tus platos, ya sea en ensaladas, sofritos o asados. Fuente de vitamina C.
                 </p>
 
                 <ul class="detalles">
-                    <li>Tipo: Verdura fresca</li>
-                    <li>Origen: Nacional</li>
-                    <li>Peso aproximado: 1 kg</li>
-                    <li>Conservación: Mantener en lugar fresco y seco</li>
-                    <li>Beneficios: Ricos en vitaminas, antioxidantes y fibra</li>
+                    <li>Tipo: Fresco</li>
+                    <li>Uso: Cocina y Ensaladas</li>
+                    <li>Beneficios: Rico en antioxidantes</li>
+                    <li>Venta: Por unidad</li>
                 </ul>
+
+                     <button class="btn-agregar" id="ajies_morrones">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -180,27 +217,7 @@
     <section class="productos-similares">
         <h2>Productos Similares</h2>
         <div class="productos-container">
-            <a href="pepinos.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/pepino.avif" loading="lazy" alt="Pepinos">
-                    <h3>Pepinos</h3>
-                    <p>Precio: $35.00 / 1 kg</p>
-                </figure>
-            </a>
-            <a href="tomates_de_ensalada.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/tomate_de_ensalada.avif" loading="lazy" alt="Tomates de Ensalada">
-                    <h3>Tomates de Ensalada</h3>
-                    <p>Precio: $80.00 / 1 kg</p>
-                </figure>
-            </a>
-            <a href="zanahorias.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/zanahoria.avif" loading="lazy" alt="Zanahorias">
-                    <h3>Zanahorias</h3>
-                    <p>Precio: $30.00 / 1 kg</p>
-                </figure>
-            </a>
+
             <a href="cebollas_rojas.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/cebolla_roja.avif" loading="lazy" alt="Cebollas Rojas">
@@ -208,6 +225,39 @@
                     <p>Precio: $170.00 / 1 kg</p>
                 </figure>
             </a>
+
+            <a href="tomates_de_ensalada.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/tomate_de_ensalada.avif" loading="lazy" alt="Tomates de Ensalada">
+                    <h3>Tomates de Ensalada</h3>
+                    <p>Precio: $80.00 / 1 kg</p>
+                </figure>
+            </a>
+
+            <a href="pepinos.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/pepino.avif" loading="lazy" alt="Pepinos">
+                    <h3>Pepinos</h3>
+                    <p>Precio: $35.00 / 1 kg</p>
+                </figure>
+            </a>
+
+            <a href="zanahorias.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/zanahoria.avif" loading="lazy" alt="Zanahorias">
+                    <h3>Zanahorias</h3>
+                    <p>Precio: $80.00 / 1 kg</p>
+                </figure>
+            </a>
+
+            <a href="limones_persa.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/frutas_y_verduras/limon_persa.avif" loading="lazy" alt="Limones Persa">
+                    <h3>Limones Persa</h3>
+                    <p>Precio: $200.00 / 1 kg</p>
+                </figure>
+            </a>
+
         </div>
     </section>
 </main>
@@ -235,6 +285,3 @@
 
 </body>
 </html>
-
-
-

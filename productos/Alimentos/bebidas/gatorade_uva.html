@@ -5,7 +5,7 @@
     <!-- META ETIQUETAS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compra Gatorade Uva en Hipermercado Superior. Bebida hidratante con sabor a uva para reponer electrolitos.">
+    <meta name="description" content="Compra Gatorade Uva en Hipermercado Superior. Bebida isotónica ideal para rehidratarte después del ejercicio.">
     <meta name="author" content="Oliver Antonio Díaz"/>
     <meta name="robots" content="index, follow">
     <meta name="copyright" content="Oliver Antonio Díaz. Todos los derechos reservados.">
@@ -14,17 +14,17 @@
     <!-- Etiquetas Open Graph -->
     <meta property="og:title" content="Gatorade Uva | Hipermercado Superior">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/gatorade_uva.html">
-    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/bebidas/gatorade_uva.avif">
-    <meta property="og:description" content="Gatorade Uva: hidratación efectiva y sabor refrescante. Ideal para deportistas y actividades físicas.">
+    <meta property="og:url" content="https://www.hipermercadosuperior.com/productos/Alimentos/bebidas/gatorade_uva.html">
+    <meta property="og:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Bebidas/energizantes/gatorade_uva.avif">
+    <meta property="og:description" content="Gatorade Uva: rehidrata, repone y reactiva tu cuerpo.">
     <meta property="og:site_name" content="Hipermercado Superior">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Gatorade Uva | Hipermercado Superior">
-    <meta name="twitter:description" content="Gatorade Uva, bebida hidratante ideal para reponer energías y electrolitos.">
-    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/bebidas/gatorade_uva.avif">
+    <meta name="twitter:description" content="Gatorade Uva, la mejor opción para deportistas.">
+    <meta name="twitter:image" content="https://www.hipermercadosuperior.com/imagenes/productos/Alimentos/Bebidas/energizantes/gatorade_uva.avif">
 
     <!-- Título y CSS -->
     <title>Gatorade Uva | Hipermercado Superior</title>
@@ -35,7 +35,13 @@
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-16x16.jpg" type="image/jpg" sizes="16x16">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-32x32.jpg" type="image/jpg" sizes="32x32">
     <link rel="icon" href="../../../imagenes/iconos/favicon/icon-48x48.jpg" type="image/jpg" sizes="48x48">
-    <script src="../../../js/menu_movil.js" defer></script>   <!-- codigo js para el comportamiento del menu en dispositivos móviles --></head>
+
+    <!-- Scripts -->
+    <script src="../../../js/menu_movil.js" defer></script>   
+    <script src="../../../js/productos.js" defer></script> 
+    <script src="../../../js/boton_de_busqueda.js" defer></script>   
+    <script src="../../../js/carrito.js" defer></script>
+</head>
 
 <body id="fondo_alimentos">
 
@@ -64,13 +70,12 @@
                         </ul>
                     </li>
 
-                    <!-- resto idéntico -->
                     <li>
                         <a href="../../../categorias/Electrodomesticos.html">Electrodomésticos</a>
                         <ul>
-                            <a href="../../../categorias/Electrodomesticos.html#cocina">Cocina</a></li>
-                            <a href="../../../categorias/Electrodomesticos.html#lavado">Lavado</a></li>
-                            <a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#cocina">Cocina</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#lavado">Lavado</a></li>
+                            <li><a href="../../../categorias/Electrodomesticos.html#climatizacion">Climatización</a></li>
                         </ul>
                     </li>
 
@@ -138,6 +143,26 @@
 
             <li><a href="../../../index.html#ofertas">Ofertas</a></li>
             <li><a href="../../../contacto.html">Contacto</a></li>
+
+             <!-- botón de búsqueda -->
+       <li class="buscador-header">
+         <input type="text" id="input-buscar" placeholder="Buscar productos..."  autocomplete="off" aria-label="Escribe tu búsqueda">
+            <button type="button" aria-label="Buscar productos" id="btn-buscar">
+               <img src="../../../imagenes/iconos/magnifying_glass_icon/magnifying_glass.png" alt="Buscar" id="icono-buscar">
+            </button>
+         <ul id="resultados-busqueda" class="resultados-busqueda"></ul> 
+       </li>
+
+       <!-- botón del carrito -->
+        <a href="../../../carrito.html" class="carrito-header" aria-label="Ver carrito">
+               <img 
+                  src="../../../imagenes/iconos/shopping_cart_icon/shopping_car_icon.png" 
+                  alt="Carrito de compras"
+                  class="icono-carrito"
+                >
+                <span id="contador-carrito">0</span>
+       </a>
+
         </ul>
     </nav>
 </header>
@@ -170,18 +195,20 @@
                 <p class="precio">Precio: $75</p>
 
                 <p class="descripcion">
-                    El <strong>Gatorade Uva</strong> es una bebida hidratante diseñada para reponer electrolitos y energía
-                    durante el ejercicio o actividades diarias. Su refrescante sabor a uva lo convierte en una opción
-                    perfecta para mantenerte activo y bien hidratado.
+                    <strong>Gatorade Uva</strong> es la bebida deportiva científicamente formulada para reponer los electrolitos perdidos durante el entrenamiento físico. Mantente hidratado y al máximo rendimiento.
                 </p>
 
                 <ul class="detalles">
                     <li>Sabor: Uva</li>
-                    <li>Presentación: Botella individual</li>
-                    <li>Beneficios: Reposición de electrolitos y energía</li>
-                    <li>Ideal para: Ejercicio, deportes y actividades físicas</li>
-                    <li>Tamaño: 500 ml</li>
+                    <li>Tipo: Bebida Isotónica</li>
+                    <li>Beneficios: Repone electrolitos y energía</li>
+                    <li>Ideal para: Deportes y actividad física intensa</li>
                 </ul>
+
+                     <button class="btn-agregar" id="gatorade_uva">
+                           Agregar
+                     </button>
+
             </div>
         </div>
     </section>
@@ -191,11 +218,27 @@
         <h2>Productos Similares</h2>
         <div class="productos-container">
 
-            <a href="red_bull.html">
+            <a href="coca_cola.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Bebidas/energizantes/red_bull.avif" loading="lazy" alt="Red Bull">
-                    <h3>Red Bull</h3>
-                    <p>Precio: $90</p>
+                    <img src="../../../imagenes/productos/Alimentos/Bebidas/refresco/coca_cola.avif" loading="lazy" alt="Coca Cola">
+                    <h3>Coca Cola</h3>
+                    <p>Precio: $80</p>
+                </figure>
+            </a>
+
+            <a href="country_club_frambuesa.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/Bebidas/refresco/country_club_frambuesa.avif" loading="lazy" alt="Country Club Frambuesa">
+                    <h3>Country Club Frambuesa</h3>
+                    <p>Precio: $70</p>
+                </figure>
+            </a>
+
+            <a href="country_club_uva.html">
+                <figure class="producto">
+                    <img src="../../../imagenes/productos/Alimentos/Bebidas/refresco/country_club_uva.avif" loading="lazy" alt="Country Club Uva">
+                    <h3>Country Club Uva</h3>
+                    <p>Precio: $70</p>
                 </figure>
             </a>
 
@@ -207,7 +250,6 @@
                 </figure>
             </a>
 
-        
             <a href="jugo_pera_santal.html">
                 <figure class="producto">
                     <img src="../../../imagenes/productos/Alimentos/Bebidas/jugo/jugo_pera_santal.avif" loading="lazy" alt="Jugo de Pera Santal">
@@ -216,31 +258,13 @@
                 </figure>
             </a>
 
-            <a href="coca_cola.html">
+            <a href="red_bull.html">
                 <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Bebidas/refresco/coca_cola.avif" loading="lazy" alt="Coca Cola">
-                    <h3>Coca Cola</h3>
-                    <p>Precio: $80 / 2 Litros</p>
+                    <img src="../../../imagenes/productos/Alimentos/Bebidas/energizantes/red_bull.avif" loading="lazy" alt="Red Bull">
+                    <h3>Red Bull</h3>
+                    <p>Precio: $90</p>
                 </figure>
             </a>
-
-             <a href="country_club_frambuesa.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Bebidas/refresco/country_club_frambuesa.avif" loading="lazy" alt="Country Club Frambuesa">
-                    <h3>Country Club Frambuesa</h3>
-                    <p>Precio: $70 / 2 Litros</p>
-                </figure>
-            </a>
-
-             <a href="country_club_uva.html">
-                <figure class="producto">
-                    <img src="../../../imagenes/productos/Alimentos/Bebidas/refresco/country_club_uva.avif" loading="lazy" alt="Country Club Uva">
-                    <h3>Country Club Uva</h3>
-                    <p>Precio: $70 / 2 Litros</p>
-                </figure>
-            </a>
-
-
 
         </div>
     </section>
@@ -269,6 +293,3 @@
 
 </body>
 </html>
-
-
-
