@@ -16,15 +16,12 @@ It belongs to the `intermediate-websites` category, focused on strengthening fro
 ## Features
 
 - Well-structured layout with **header, main sections, sidebar, and footer**.
-- Responsive design using **CSS Grid** and **Flexbox**.
 - Interactive elements powered by **Vanilla JavaScript**.
 - Dynamic behaviors such as:
-  - Responsive navigation menu.
   - Conditional UI behavior based on screen size.
   - DOM manipulation for user interaction.
 - SEO-friendly meta tags.
 - Social media integration using **Open Graph** and **Twitter Cards**.
-- Favicons optimized for multiple devices.
 - Clean, readable, and scalable code structure.
 
 ---
@@ -42,7 +39,6 @@ It belongs to the `intermediate-websites` category, focused on strengthening fro
 This project helps practice and reinforce:
 
 - DOM hierarchy and manipulation.
-- Responsive web design principles.
 - Separation of concerns (HTML / CSS / JS).
 - Writing maintainable front-end code.
 - Building intermediate-level static websites with interactivity.
